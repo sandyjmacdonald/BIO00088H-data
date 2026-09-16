@@ -4,5 +4,5 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of BIO00088H-data is to ...
+The goal of BIO00088H-data is to ....
 
