@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Emma Rand">
   <title>Data Analysis for Group Project – Independent Study to prepare for workshop</title>
@@ -17,10 +17,16 @@
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -32,7 +38,6 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
-      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -49,7 +54,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TVF95J593T"></script>
 
   <script type="text/javascript">
@@ -164,12 +169,12 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Emma Rand 
+Emma Rand
 </div>
 </div>
 </div>
 
-  <p class="date">3 December, 2025</p>
+  <p class="date">21 September, 2026</p>
 </section>
 <section id="overview" class="slide level2">
 <h2>Overview</h2>
@@ -352,7 +357,7 @@ Emma Rand
 <li><p>Brand spanking new! Provided by Alex Marks <span class="citation" data-cites="marks_nickel_nodate">(<a href="#/references" role="doc-biblioref" onclick="">Marks and Rylott, n.d.</a>)</span></p></li>
 <li><p>Expression for the whole transcriptome <a href="https://plants.ensembl.org/Arabidopsis_thaliana/Info/Index">ENSEMBL <em>Arabidopsis</em> TAIR10</a><span class="citation" data-cites="yates_ensembl_2022">(<a href="#/references" role="doc-biblioref" onclick="">Yates et al. 2022</a>)</span></p></li>
 <li><p>Values are raw counts</p></li>
-<li><p>The statistical analysis method we will use is <code>DESeq2</code> <span class="citation" data-cites="DESeq2">(<a href="#/references" role="doc-biblioref" onclick="">Love, Huber, and Anders 2014</a>)</span>. It requires raw counts and performs the normalisation itself.</p></li>
+<li><p>The statistical analysis method we will use is <code>DESeq2</code> <span class="citation" data-cites="DESeq2">(<a href="#/references" role="doc-biblioref" onclick="">Love et al. 2014</a>)</span>. It requires raw counts and performs the normalisation itself.</p></li>
 </ul>
 </section>
 <section id="data-1" class="slide level2">
@@ -361,7 +366,7 @@ Emma Rand
 <li><p>Brand spanking new!</p></li>
 <li><p>Expression for the whole transcriptome <a href="https://tritrypdb.org/tritrypdb/app/record/dataset/DS_e318592c8e"><em>L. mexicana</em> MHOM/GT/2001/U1103</a><span class="citation" data-cites="rogers_chromosome_2011">(<a href="#/references" role="doc-biblioref" onclick="">Rogers et al. 2011</a>)</span></p></li>
 <li><p>Values are raw counts</p></li>
-<li><p>The statistical analysis method we will use is <code>DESeq2</code> <span class="citation" data-cites="DESeq2">(<a href="#/references" role="doc-biblioref" onclick="">Love, Huber, and Anders 2014</a>)</span>. It requires raw counts and performs the normalisation itself.</p></li>
+<li><p>The statistical analysis method we will use is <code>DESeq2</code> <span class="citation" data-cites="DESeq2">(<a href="#/references" role="doc-biblioref" onclick="">Love et al. 2014</a>)</span>. It requires raw counts and performs the normalisation itself.</p></li>
 </ul>
 </section>
 <section id="data-2" class="slide level2">
@@ -374,7 +379,7 @@ Emma Rand
 </ul>
 <ul>
 <li><p>Values are log<sub>2</sub> normalised values</p></li>
-<li><p>The statistical analysis method we will use is <code>scran</code> <span class="citation" data-cites="scran">(<a href="#/references" role="doc-biblioref" onclick="">Lun, McCarthy, and Marioni 2016</a>)</span> and it requires normalised values</p></li>
+<li><p>The statistical analysis method we will use is <code>scran</code> <span class="citation" data-cites="scran">(<a href="#/references" role="doc-biblioref" onclick="">Lun et al. 2016</a>)</span> and it requires normalised values</p></li>
 </ul>
 </section></section>
 <section>
@@ -395,9 +400,9 @@ Emma Rand
 <p>Pages made with R <span class="citation" data-cites="R-core">(<a href="#/references" role="doc-biblioref" onclick="">R Core Team 2024</a>)</span>, Quarto <span class="citation" data-cites="Allaire_Quarto_2024">(<a href="#/references" role="doc-biblioref" onclick="">Allaire et al. 2024</a>)</span>, <code>knitr</code> <span class="citation" data-cites="knitr1 knitr2 knitr3">(<a href="#/references" role="doc-biblioref" onclick="">Xie 2024</a>, <a href="#/references" role="doc-biblioref" onclick="">2015</a>, <a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span>, <code>kableExtra</code> <span class="citation" data-cites="kableExtra">(<a href="#/references" role="doc-biblioref" onclick="">Zhu 2021</a>)</span></p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-Allaire_Quarto_2024" class="csl-entry" role="listitem">
-Allaire, J. J., Charles Teague, Carlos Scheidegger, Yihui Xie, and Christophe Dervieux. 2024. <span>“<span>Quarto</span>.”</span> <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>.
+Allaire, J. J., Charles Teague, Carlos Scheidegger, Yihui Xie, and Christophe Dervieux. 2024. <em><span>Quarto</span></em>. V. 1.4. Released February. <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>.
 </div>
 <div id="ref-DESeq2" class="csl-entry" role="listitem">
 Love, Michael I., Wolfgang Huber, and Simon Anders. 2014. <span>“Moderated Estimation of Fold Change and Dispersion for RNA-Seq Data with DESeq2.”</span> <em>Genome Biology</em> 15: 550. <a href="https://doi.org/10.1186/s13059-014-0550-8">https://doi.org/10.1186/s13059-014-0550-8</a>.
@@ -406,34 +411,34 @@ Love, Michael I., Wolfgang Huber, and Simon Anders. 2014. <span>“Moderated Est
 Lun, Aaron T. L., Davis J. McCarthy, and John C. Marioni. 2016. <span>“A Step-by-Step Workflow for Low-Level Analysis of Single-Cell RNA-Seq Data with Bioconductor.”</span> <em>F1000Res.</em> 5: 2122. <a href="https://doi.org/10.12688/f1000research.9501.2">https://doi.org/10.12688/f1000research.9501.2</a>.
 </div>
 <div id="ref-marks_nickel_nodate" class="csl-entry" role="listitem">
-Marks, Alex, and Elizabeth Rylott. n.d. <span>“Nickel <span>Dosing</span> <span>Arabidopsis</span> Thaliana <span>RNA</span>-Seq.”</span>
+Marks, Alex, and Elizabeth Rylott. n.d. <em>Nickel <span>Dosing</span> <span>Arabidopsis</span> Thaliana <span>RNA</span>-Seq</em>.
 </div>
 <div id="ref-nestorowa2016" class="csl-entry" role="listitem">
-Nestorowa, Sonia, Fiona K. Hamey, Blanca Pijuan Sala, Evangelia Diamanti, Mairi Shepherd, Elisa Laurenti, Nicola K. Wilson, David G. Kent, and Berthold Göttgens. 2016. <span>“A Single-Cell Resolution Map of Mouse Hematopoietic Stem and Progenitor Cell Differentiation.”</span> <em>Blood</em> 128 (8): e20–31. <a href="https://doi.org/10.1182/blood-2016-05-716480">https://doi.org/10.1182/blood-2016-05-716480</a>.
+Nestorowa, Sonia, Fiona K. Hamey, Blanca Pijuan Sala, et al. 2016. <span>“A Single-Cell Resolution Map of Mouse Hematopoietic Stem and Progenitor Cell Differentiation.”</span> <em>Blood</em> 128 (8): e20–31. <a href="https://doi.org/10.1182/blood-2016-05-716480">https://doi.org/10.1182/blood-2016-05-716480</a>.
 </div>
 <div id="ref-R-core" class="csl-entry" role="listitem">
-R Core Team. 2024. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+R Core Team. 2024. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 <div id="ref-rand_statistically_2022" class="csl-entry" role="listitem">
-Rand, Emma, and Sarah Forrester. 2022. <span>“Statistically Useful Experimental Design.”</span> <a href="https://cloud-span.github.io/experimental_design00-overview/">https://cloud-span.github.io/experimental_design00-overview/</a>.
+Rand, Emma, and Sarah Forrester. 2022. <em>Statistically Useful Experimental Design</em>. <a href="https://cloud-span.github.io/experimental_design00-overview/">https://cloud-span.github.io/experimental_design00-overview/</a>.
 </div>
 <div id="ref-rogers_chromosome_2011" class="csl-entry" role="listitem">
-Rogers, Matthew B., James D. Hilley, Nicholas J. Dickens, Jon Wilkes, Paul A. Bates, Daniel P. Depledge, David Harris, et al. 2011. <span>“Chromosome and Gene Copy Number Variation Allow Major Structural Change Between Species and Strains of <span>Leishmania</span>.”</span> <em>Genome Research</em> 21 (12): 2129–42. <a href="https://doi.org/10.1101/gr.122945.111">https://doi.org/10.1101/gr.122945.111</a>.
+Rogers, Matthew B., James D. Hilley, Nicholas J. Dickens, et al. 2011. <span>“Chromosome and Gene Copy Number Variation Allow Major Structural Change Between Species and Strains of <span>Leishmania</span>.”</span> <em>Genome Research</em> 21 (12): 2129–42. <a href="https://doi.org/10.1101/gr.122945.111">https://doi.org/10.1101/gr.122945.111</a>.
 </div>
 <div id="ref-knitr3" class="csl-entry" role="listitem">
 Xie, Yihui. 2014. <span>“Knitr: A Comprehensive Tool for Reproducible Research in <span>R</span>.”</span> In <em>Implementing Reproducible Computational Research</em>, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC.
 </div>
 <div id="ref-knitr2" class="csl-entry" role="listitem">
-———. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 <div id="ref-knitr1" class="csl-entry" role="listitem">
-———. 2024. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+Xie, Yihui. 2024. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 <div id="ref-yates_ensembl_2022" class="csl-entry" role="listitem">
-Yates, Andrew D, James Allen, Ridwan M Amode, Andrey G Azov, Matthieu Barba, Andrés Becerra, Jyothish Bhai, et al. 2022. <span>“Ensembl <span>Genomes</span> 2022: An Expanding Genome Resource for Non-Vertebrates.”</span> <em>Nucleic Acids Research</em> 50 (D1): D996–1003. <a href="https://doi.org/10.1093/nar/gkab1007">https://doi.org/10.1093/nar/gkab1007</a>.
+Yates, Andrew D, James Allen, Ridwan M Amode, et al. 2022. <span>“Ensembl <span>Genomes</span> 2022: An Expanding Genome Resource for Non-Vertebrates.”</span> <em>Nucleic Acids Research</em> 50 (D1): D996–1003. <a href="https://doi.org/10.1093/nar/gkab1007">https://doi.org/10.1093/nar/gkab1007</a>.
 </div>
 <div id="ref-kableExtra" class="csl-entry" role="listitem">
-Zhu, Hao. 2021. <span>“kableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax.”</span> <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.
+Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax</em>. <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.
 </div>
 </div>
 </section></section>

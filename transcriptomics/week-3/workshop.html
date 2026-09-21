@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.10.18">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Emma Rand">
+
 <title>Workshop – Data Analysis for Group Project</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -57,7 +66,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -75,6 +83,7 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
+
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -84,22 +93,22 @@ div.csl-indent {
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-bd31597842da8e70aa6de660987a7f7b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-0724b92bd66eafb47a2b216599690d49.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-bd31597842da8e70aa6de660987a7f7b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-82799ebfa3da69fe16e5c7c91689ef9b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-e6f2650f75f8cdf2227206bda207c621.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-82799ebfa3da69fe16e5c7c91689ef9b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -125,14 +134,21 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TVF95J593T"></script><script type="text/javascript">
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TVF95J593T"></script>
+
+<script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
-</script><link rel="stylesheet" href="styles.css">
+</script>
+
+
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -298,7 +314,9 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Data Analysis for Group Project</span>
@@ -310,7 +328,7 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Welcome!</span></a>
   </li>  
@@ -331,13 +349,15 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <span class="menu-text">Structure Analysis</span></a>
   </li>  
 </ul>
-</div> <!-- /navcollapse -->
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
     <a href="https://github.com/3mmaRand/BIO00088H-data" title="BIO00088H-data GitHub" class="quarto-navigation-tool px-1" aria-label="BIO00088H-data GitHub"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -345,11 +365,15 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../transcriptomics/transcriptomics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transcriptomics Data Analysis for Group Project</span></a>
@@ -363,8 +387,8 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../transcriptomics/week-3/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
@@ -389,7 +413,7 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
@@ -398,8 +422,8 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../transcriptomics/week-4/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
@@ -424,7 +448,7 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -433,8 +457,8 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../transcriptomics/week-5/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
@@ -459,7 +483,7 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -468,15 +492,15 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../transcriptomics/semester-2/stem_cell_variant.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Additional 🐭 stem cell labels</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
@@ -485,87 +509,80 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../transcriptomics/kelly/workshop.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Workshop</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li>
-<a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul>
-<li><a href="#session-overview" id="toc-session-overview" class="nav-link" data-scroll-target="#session-overview">Session overview</a></li>
-  </ul>
-</li>
+  <li><a href="#session-overview" id="toc-session-overview" class="nav-link" data-scroll-target="#session-overview">Session overview</a></li>
+  </ul></li>
   <li><a href="#set-up-a-project" id="toc-set-up-a-project" class="nav-link" data-scroll-target="#set-up-a-project">Set up a Project</a></li>
   <li><a href="#examine-data-using-a-spreadsheet" id="toc-examine-data-using-a-spreadsheet" class="nav-link" data-scroll-target="#examine-data-using-a-spreadsheet">Examine data using a spreadsheet</a></li>
-  <li>
-<a href="#explore-data-in-r" id="toc-explore-data-in-r" class="nav-link" data-scroll-target="#explore-data-in-r">Explore data in R</a>
+  <li><a href="#explore-data-in-r" id="toc-explore-data-in-r" class="nav-link" data-scroll-target="#explore-data-in-r">Explore data in R</a>
   <ul>
-<li>
-<a href="#arabidopsis" id="toc-arabidopsis" class="nav-link" data-scroll-target="#arabidopsis">🎄 <em>Arabidopsis</em></a>
+  <li><a href="#arabidopsis" id="toc-arabidopsis" class="nav-link" data-scroll-target="#arabidopsis">🎄 <em>Arabidopsis</em></a>
   <ul class="collapse">
-<li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import">Import</a></li>
+  <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import">Import</a></li>
   <li><a href="#distribution-of-values-across-all-the-data-in-the-file" id="toc-distribution-of-values-across-all-the-data-in-the-file" class="nav-link" data-scroll-target="#distribution-of-values-across-all-the-data-in-the-file">Distribution of values across all the data in the file</a></li>
   <li><a href="#distribution-of-values-across-the-samples" id="toc-distribution-of-values-across-the-samples" class="nav-link" data-scroll-target="#distribution-of-values-across-the-samples">Distribution of values across the samples</a></li>
   <li><a href="#distribution-of-values-across-the-genes" id="toc-distribution-of-values-across-the-genes" class="nav-link" data-scroll-target="#distribution-of-values-across-the-genes">Distribution of values across the genes</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#leishmania" id="toc-leishmania" class="nav-link" data-scroll-target="#leishmania">💉 <em>Leishmania</em></a>
+  </ul></li>
+  <li><a href="#leishmania" id="toc-leishmania" class="nav-link" data-scroll-target="#leishmania">💉 <em>Leishmania</em></a>
   <ul class="collapse">
-<li><a href="#import-1" id="toc-import-1" class="nav-link" data-scroll-target="#import-1">Import</a></li>
+  <li><a href="#import-1" id="toc-import-1" class="nav-link" data-scroll-target="#import-1">Import</a></li>
   <li><a href="#distribution-of-values-across-all-the-data-in-the-file-1" id="toc-distribution-of-values-across-all-the-data-in-the-file-1" class="nav-link" data-scroll-target="#distribution-of-values-across-all-the-data-in-the-file-1">Distribution of values across all the data in the file</a></li>
   <li><a href="#distribution-of-values-across-the-samples-1" id="toc-distribution-of-values-across-the-samples-1" class="nav-link" data-scroll-target="#distribution-of-values-across-the-samples-1">Distribution of values across the samples</a></li>
   <li><a href="#distribution-of-values-across-the-genes-1" id="toc-distribution-of-values-across-the-genes-1" class="nav-link" data-scroll-target="#distribution-of-values-across-the-genes-1">Distribution of values across the genes</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#stem-cells" id="toc-stem-cells" class="nav-link" data-scroll-target="#stem-cells">🐭 Stem cells</a>
+  </ul></li>
+  <li><a href="#stem-cells" id="toc-stem-cells" class="nav-link" data-scroll-target="#stem-cells">🐭 Stem cells</a>
   <ul class="collapse">
-<li><a href="#import-2" id="toc-import-2" class="nav-link" data-scroll-target="#import-2">Import</a></li>
+  <li><a href="#import-2" id="toc-import-2" class="nav-link" data-scroll-target="#import-2">Import</a></li>
   <li><a href="#distribution-of-values-across-all-the-data-in-the-file-2" id="toc-distribution-of-values-across-all-the-data-in-the-file-2" class="nav-link" data-scroll-target="#distribution-of-values-across-all-the-data-in-the-file-2">Distribution of values across all the data in the file</a></li>
   <li><a href="#distribution-of-values-across-the-samples-2" id="toc-distribution-of-values-across-the-samples-2" class="nav-link" data-scroll-target="#distribution-of-values-across-the-samples-2">Distribution of values across the samples</a></li>
   <li><a href="#distribution-of-values-across-the-genes-2" id="toc-distribution-of-values-across-the-genes-2" class="nav-link" data-scroll-target="#distribution-of-values-across-the-genes-2">Distribution of values across the genes</a></li>
-  </ul>
-</li>
-  </ul>
-</li>
-  <li>
-<a href="#filtering-for-qc" id="toc-filtering-for-qc" class="nav-link" data-scroll-target="#filtering-for-qc">Filtering for QC</a>
+  </ul></li>
+  </ul></li>
+  <li><a href="#filtering-for-qc" id="toc-filtering-for-qc" class="nav-link" data-scroll-target="#filtering-for-qc">Filtering for QC</a>
   <ul>
-<li><a href="#arabidopsis-filterqc" id="toc-arabidopsis-filterqc" class="nav-link" data-scroll-target="#arabidopsis-filterqc">🎄 <em>Arabidopsis</em></a></li>
+  <li><a href="#arabidopsis-filterqc" id="toc-arabidopsis-filterqc" class="nav-link" data-scroll-target="#arabidopsis-filterqc">🎄 <em>Arabidopsis</em></a></li>
   <li><a href="#leishmania-filterqc" id="toc-leishmania-filterqc" class="nav-link" data-scroll-target="#leishmania-filterqc">💉 <em>Leishmania</em></a></li>
   <li><a href="#stem-cells-filterqc" id="toc-stem-cells-filterqc" class="nav-link" data-scroll-target="#stem-cells-filterqc">🐭 Stem cells</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#look-after-future-you" id="toc-look-after-future-you" class="nav-link" data-scroll-target="#look-after-future-you">🤗 Look after future you!</a>
+  </ul></li>
+  <li><a href="#look-after-future-you" id="toc-look-after-future-you" class="nav-link" data-scroll-target="#look-after-future-you">🤗 Look after future you!</a>
   <ul>
-<li><a href="#arabidopsis-and-future-you" id="toc-arabidopsis-and-future-you" class="nav-link" data-scroll-target="#arabidopsis-and-future-you">🎄 <em>Arabidopsis</em> and future you</a></li>
+  <li><a href="#arabidopsis-and-future-you" id="toc-arabidopsis-and-future-you" class="nav-link" data-scroll-target="#arabidopsis-and-future-you">🎄 <em>Arabidopsis</em> and future you</a></li>
   <li><a href="#leishmania-and-future-you" id="toc-leishmania-and-future-you" class="nav-link" data-scroll-target="#leishmania-and-future-you">💉 <em>Leishmania</em> and future you</a></li>
   <li><a href="#stem-cells-and-future-you" id="toc-stem-cells-and-future-you" class="nav-link" data-scroll-target="#stem-cells-and-future-you">🐭 Stem cells and future you</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#finished" id="toc-finished" class="nav-link" data-scroll-target="#finished">🥳 Finished</a></li>
   <li><a href="#independent-study-following-the-workshop" id="toc-independent-study-following-the-workshop" class="nav-link" data-scroll-target="#independent-study-following-the-workshop">Independent study following the workshop</a></li>
   <li><a href="#the-code-file" id="toc-the-code-file" class="nav-link" data-scroll-target="#the-code-file">The Code file</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/3mmaRand/BIO00088H-data/edit/main/transcriptomics/week-3/workshop.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="#"><i class="bi bi-chat-left-dots"></i>Make a suggestion</a></li></ul></div></nav>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/3mmaRand/BIO00088H-data/edit/main/transcriptomics/week-3/workshop.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="#"><i class="bi bi-chat-left-dots"></i>Make a suggestion</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../transcriptomics/week-3/overview.html">Week 3: Hello data!</a></li><li class="breadcrumb-item"><a href="../../transcriptomics/week-3/workshop.html">Workshop</a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../transcriptomics/week-3/overview.html">Week 3: Hello data!</a></li><li class="breadcrumb-item"><a href="../../transcriptomics/week-3/workshop.html">Workshop</a></li></ol></nav>
+<div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Workshop</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead">Transcriptomics 1: Hello data!</p>
 </div>
@@ -584,7 +601,7 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">3 December, 2025</p>
+      <p class="date">21 September, 2026</p>
     </div>
   </div>
   
@@ -593,11 +610,19 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
   
 
 
-</header><section id="introduction" class="level1"><h1>Introduction</h1>
-<section id="session-overview" class="level2"><h2 class="anchored" data-anchor-id="session-overview">Session overview</h2>
+</header>
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<section id="session-overview" class="level2">
+<h2 class="anchored" data-anchor-id="session-overview">Session overview</h2>
 <p>In this workshop you will learn what steps to take to get a good understanding of your transcriptomics data before you consider any statistical analysis. This is an often overlooked, but very valuable and informative, part of any data pipeline. It gives you the deep understanding of the data structures and values that you will need to code and trouble-shoot code, allows you to spot failed or problematic samples and informs your decisions on quality control.</p>
 <p>In this session, you should examine <strong>all three data sets</strong> because the comparisons will give you a much stronger understanding of your own project data. Compare and contrast is a very useful way to build understanding.</p>
-</section></section><section id="set-up-a-project" class="level1"><h1>Set up a Project</h1>
+</section>
+</section>
+<section id="set-up-a-project" class="level1">
+<h1>Set up a Project</h1>
 <p>🎬 Start RStudio from the Start menu</p>
 <p>🎬 Make an RStudio project. Be deliberate about where you create it so that it is a good place for you</p>
 <p>🎬 Use the Files pane to make new folders for the data. I suggest <code>data-raw</code> and <code>data-processed</code></p>
@@ -605,9 +630,11 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <p>🎬 Record what you do and what you find out. All of it!</p>
 <p>🎬 Load <code>tidyverse</code> <span class="citation" data-cites="tidyverse">(<a href="#ref-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span> for importing, summarising, plotting and filtering.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="examine-data-using-a-spreadsheet" class="level1"><h1>Examine data using a spreadsheet</h1>
+</section>
+<section id="examine-data-using-a-spreadsheet" class="level1">
+<h1>Examine data using a spreadsheet</h1>
 <p>These are the three datasets. Each set compromises several files.</p>
 <p>🎄 <em>Arabidopsis</em>:</p>
 <ul>
@@ -635,7 +662,9 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <li>Google gene id. Where does your search take you? How much information is available?</li>
 </ul>
 <p>🎬 Did you record all that??</p>
-</section><section id="explore-data-in-r" class="level1"><h1>Explore data in R</h1>
+</section>
+<section id="explore-data-in-r" class="level1">
+<h1>Explore data in R</h1>
 <p>The first task is to get an overview. We want to know</p>
 <ul>
 <li>how may zeros are there and how are they distributed?</li>
@@ -651,29 +680,33 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <li><p>The <strong>distribution of values across the genes</strong> (i.e., averaged across samples/cells). This allows us to see variation between genes.</p></li>
 </ul>
 <p>The next sections will guide you through each of these for each of the data sets. Start with your own data set then move on to at least one of the others.</p>
-<section id="arabidopsis" class="level2"><h2 class="anchored" data-anchor-id="arabidopsis">🎄 <em>Arabidopsis</em>
-</h2>
-<section id="import" class="level3"><h3 class="anchored" data-anchor-id="import">Import</h3>
+<section id="arabidopsis" class="level2">
+<h2 class="anchored" data-anchor-id="arabidopsis">🎄 <em>Arabidopsis</em></h2>
+<section id="import" class="level3">
+<h3 class="anchored" data-anchor-id="import">Import</h3>
 <p>Import the data for root tissue.</p>
 <p>🎬 Import <a href="data-raw/arabidopsis-root.csv">arabidopsis-root.csv</a></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 🎄 import the root data</span></span>
-<span><span class="va">root</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data-raw/arabidopsis-root.csv"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 🎄 import the root data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>root <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-raw/arabidopsis-root.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>🎬 Check the dataframe has the number of rows and columns you were expecting and that column types and names are as expected.</p>
-</section><section id="distribution-of-values-across-all-the-data-in-the-file" class="level3"><h3 class="anchored" data-anchor-id="distribution-of-values-across-all-the-data-in-the-file">Distribution of values across all the data in the file</h3>
-<p>The values are spread over multiple columns so in order to plot the distribution as a whole, we will need to first use <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code> to put the data in <a href="https://3mmarand.github.io/R4BABS/r4babs1/week-9/workshop.html#tidying-data">‘tidy’ format</a> <span class="citation" data-cites="wickham2014">(<a href="#ref-wickham2014" role="doc-biblioref">Wickham 2014</a>)</span> by stacking the columns. We <em>could</em> save a copy of the stacked data and then plot it, but here, I have just piped the stacked data straight into <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code>. This helps me avoid cluttering my R environment with temporary objects.</p>
-<p>🎬 Pivot the counts (stack the columns) so all the counts are in a single column (<code>count</code>) labelled in <code>sample</code> by the column it came from and pipe into <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> to create a histogram:</p>
+</section>
+<section id="distribution-of-values-across-all-the-data-in-the-file" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-of-values-across-all-the-data-in-the-file">Distribution of values across all the data in the file</h3>
+<p>The values are spread over multiple columns so in order to plot the distribution as a whole, we will need to first use <code>pivot_longer()</code> to put the data in <a href="https://3mmarand.github.io/R4BABS/r4babs1/week-9/workshop.html#tidying-data">‘tidy’ format</a> <span class="citation" data-cites="wickham2014">(<a href="#ref-wickham2014" role="doc-biblioref">Wickham 2014</a>)</span> by stacking the columns. We <em>could</em> save a copy of the stacked data and then plot it, but here, I have just piped the stacked data straight into <code>ggplot()</code>. This helps me avoid cluttering my R environment with temporary objects.</p>
+<p>🎬 Pivot the counts (stack the columns) so all the counts are in a single column (<code>count</code>) labelled in <code>sample</code> by the column it came from and pipe into <code>ggplot()</code> to create a histogram:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">root</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">gene_id</span>, <span class="op">-</span><span class="va">gene_name</span><span class="op">)</span>,</span>
-<span>               names_to <span class="op">=</span> <span class="st">"sample"</span>,</span>
-<span>               values_to <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">count</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>root <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="sc">-</span>gene_id, <span class="sc">-</span>gene_name),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"sample"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"count"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> count)) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="workshop_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="workshop_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="workshop_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="workshop_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -681,27 +714,30 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <p>This data is very skewed - there are very many low counts and a very few higher numbers. It is hard to see the very low bars for the higher values. Logging the counts is a way to make the distribution more visible. You cannot take the log of 0 so we add 1 to the count before logging. The log of 1 is zero so we will be able to see how many zeros we had.</p>
 <p>🎬 Repeat the plot of log of the counts.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">root</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">gene_id</span>, <span class="op">-</span><span class="va">gene_name</span><span class="op">)</span>,</span>
-<span>               names_to <span class="op">=</span> <span class="st">"sample"</span>,</span>
-<span>               values_to <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">count</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>root <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="sc">-</span>gene_id, <span class="sc">-</span>gene_name),</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"sample"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"count"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(count <span class="sc">+</span> <span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="workshop_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="workshop_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="workshop_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="workshop_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
 <p>I’ve used base 10 only because it easy to convert to the original scale (1 is 10, 2 is 100, 3 is 1000 etc). Notice we have a peak at zero indicating there are many zeros. We would expect the distribution of counts to be roughly log normal because this is expression of <em>all</em> the genes in the genome<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. The number of low counts is inflated (small peak near the low end). This suggests that these lower counts might be false positives. The removal of low counts is a common processing step in ’omic data. We will revisit this after we have considered the distribution of counts across samples and genes.</p>
-</section><section id="distribution-of-values-across-the-samples" class="level3"><h3 class="anchored" data-anchor-id="distribution-of-values-across-the-samples">Distribution of values across the samples</h3>
-<p>Summary statistics including the the number of NAs can be seen using the <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>. It is most helpful which you have up to about 25 columns. There is nothing special about the number 25, it is just that summaries of a larger number of columns are difficult to grasp.</p>
+</section>
+<section id="distribution-of-values-across-the-samples" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-of-values-across-the-samples">Distribution of values across the samples</h3>
+<p>Summary statistics including the the number of NAs can be seen using the <code>summary()</code>. It is most helpful which you have up to about 25 columns. There is nothing special about the number 25, it is just that summaries of a larger number of columns are difficult to grasp.</p>
 <p>🎬 Get a quick overview of the 14 columns:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># examine all the columns quickly</span></span>
-<span><span class="co"># works well with smaller numbers of column</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">root</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># examine all the columns quickly</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># works well with smaller numbers of column</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(root)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   gene_id           gene_name              CTR1               CTR2         
  Length:32833       Length:32833       Min.   :     0.0   Min.   :     0.0  
@@ -741,19 +777,19 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <p>We want to know how many zeros there are in each a column. To achieve this, we can make use of the fact that <code>TRUE</code> evaluates to 1 and <code>FALSE</code> evaluates to 0. Consequently, summing a column of TRUE/FALSE values will give you the number of TRUE values. For example, <code>sum(CTR1 &gt; 0)</code> gives the number of values above zero in the <code>CTR1</code> column. If you wanted the number of zeros, you could use <code>sum(CTR1 == 0)</code>.</p>
 <p>🎬 Find the number values above zero in all six columns:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">root</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">CTR1</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">CTR2</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">CTR3</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">CTR4</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">CTR5</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">CTR6</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">LWR1</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">LWR2</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">LWR3</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">LWR4</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">LWR5</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">LWR6</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>root <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">sum</span>(CTR1 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(CTR2 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(CTR3 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(CTR4 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(CTR5 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(CTR6 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(LWR1 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(LWR2 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(LWR3 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(LWR4 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(LWR5 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(LWR6 <span class="sc">&gt;</span> <span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 12
   `sum(CTR1 &gt; 0)` `sum(CTR2 &gt; 0)` `sum(CTR3 &gt; 0)` `sum(CTR4 &gt; 0)`
@@ -764,15 +800,15 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 #   `sum(LWR4 &gt; 0)` &lt;int&gt;, `sum(LWR5 &gt; 0)` &lt;int&gt;, `sum(LWR6 &gt; 0)` &lt;int&gt;</code></pre>
 </div>
 </div>
-<p>There is a better way of doing this that saves you having to repeat so much code - very useful if you have a lot more than 6 columns! We can use <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code> to put the data in tidy format and then use the <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> approach we have used extensively before.</p>
+<p>There is a better way of doing this that saves you having to repeat so much code - very useful if you have a lot more than 6 columns! We can use <code>pivot_longer()</code> to put the data in tidy format and then use the <code>group_by()</code> and <code>summarise()</code> approach we have used extensively before.</p>
 <p>🎬 Find the number of zeros in all columns:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">root</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">gene_id</span>, <span class="op">-</span><span class="va">gene_name</span><span class="op">)</span>,</span>
-<span>               names_to <span class="op">=</span> <span class="st">"sample"</span>,</span>
-<span>               values_to <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">sample</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n_above_zero <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">count</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>root <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="sc">-</span>gene_id, <span class="sc">-</span>gene_name),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"sample"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"count"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sample) <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n_above_zero =</span> <span class="fu">sum</span>(count <span class="sc">&gt;</span> <span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 2
    sample n_above_zero
@@ -794,18 +830,18 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <p>You could expand this code to get get other useful summary information</p>
 <p>🎬 Summarise all the samples:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">root</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">gene_id</span>, <span class="op">-</span><span class="va">gene_name</span><span class="op">)</span>,</span>
-<span>               names_to <span class="op">=</span> <span class="st">"sample"</span>,</span>
-<span>               values_to <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">sample</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>min <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span>,</span>
-<span>            lowerq <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">count</span>, <span class="fl">0.25</span><span class="op">)</span>,</span>
-<span>            mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span>,</span>
-<span>            median <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span>,</span>
-<span>            upperq <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">count</span>, <span class="fl">0.75</span><span class="op">)</span>,</span>
-<span>            max <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span>,</span>
-<span>            n_above_zero <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">count</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>root <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="sc">-</span>gene_id, <span class="sc">-</span>gene_name),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"sample"</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"count"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sample) <span class="sc">|&gt;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(count),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">lowerq =</span> <span class="fu">quantile</span>(count, <span class="fl">0.25</span>),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean =</span> <span class="fu">mean</span>(count),</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">median =</span> <span class="fu">median</span>(count),</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">upperq =</span> <span class="fu">quantile</span>(count, <span class="fl">0.75</span>),</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">max =</span> <span class="fu">max</span>(count),</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">n_above_zero =</span> <span class="fu">sum</span>(count <span class="sc">&gt;</span> <span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 8
    sample   min lowerq  mean median upperq    max n_above_zero
@@ -826,19 +862,20 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 </div>
 <p>The mean count ranges from 704 to 931. <code>CTR2</code> stands out a little - having a higher mean and maximum than the others. When we have a good number of replicates – 6 is good in these experiments – this is unlikely to be a problem. The potential effect of having an odd replicate when you have only two or three replicates, is reduced statistical power. Differences between genes with lower average expression and or more variable expression might be missed. Whether this matters depends on the biological question you are asking. In this case, it does not matter because a) we have 6 replicates and b) because the major differences in gene expression will be enough.</p>
 <p>🎬 Save the summary as a dataframe, <code>root_summary_samp</code> (using assignment).</p>
-<p>We can also plot the distribution of counts across samples. We have many values (32833) so we are not limited to using <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code>. <code><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density()</a></code> gives us a smooth distribution.</p>
+<p>We can also plot the distribution of counts across samples. We have many values (32833) so we are not limited to using <code>geom_histogram()</code>. <code>geom_density()</code> gives us a smooth distribution.</p>
 <p>🎬 Plot the log10 of the counts + 1 again but this time facet by the sample:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">root</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">gene_id</span>, <span class="op">-</span><span class="va">gene_name</span><span class="op">)</span>,</span>
-<span>               names_to <span class="op">=</span> <span class="st">"sample"</span>,</span>
-<span>               values_to <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">count</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="va">.</span> <span class="op">~</span> <span class="va">sample</span>, nrow <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>root <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="sc">-</span>gene_id, <span class="sc">-</span>gene_name),</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"sample"</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"count"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(count <span class="sc">+</span> <span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(. <span class="sc">~</span> sample, <span class="at">nrow =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="workshop_files/figure-html/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="workshop_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="workshop_files/figure-html/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="workshop_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -849,7 +886,9 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <li>we would expect the distribution of counts in each sample to be roughly log normal so that the rise near the low end, even before the peak at zero, suggests that these lower counts might be anomalies.</li>
 </ul>
 <p>We have found the distribution across samples to be similar to that over all. This is good because it means that the samples are fairly consistent with each other. We can now move on to the next step.</p>
-</section><section id="distribution-of-values-across-the-genes" class="level3"><h3 class="anchored" data-anchor-id="distribution-of-values-across-the-genes">Distribution of values across the genes</h3>
+</section>
+<section id="distribution-of-values-across-the-genes" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-of-values-across-the-genes">Distribution of values across the genes</h3>
 <p>There are lots of genes in this dataset therefore we will take a slightly different approach. We would not want to use plot a distribution for each gene in the same way. Will pivot the data to tidy and then summarise the counts for each gene.</p>
 <p>🎬 Summarise the counts for each gene and save the result as <code>root_summary_gene</code>. Include the same columns as we had in the by sample summary (<code>root_summary_samp</code>) <em>and</em> an additional column, <code>total</code> for the total number of counts for each gene.</p>
 <p>🎬 View the <code>root_summary_gene</code> dataframe.</p>
@@ -860,17 +899,18 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <li>some very very low counts.</li>
 </ul>
 <p>Genes with very low counts should be filtered out because they are unreliable - or, at the least, uninformative. The goal of our downstream analysis will be to see if there is a significant difference in gene expression between the control and FGF-treated sibling. Since we have only three replicates in each group, having one or two unreliable, missing or zero values, makes such a determination impossible for a particular gene. We will use the total counts (<code>total</code>) and the number of samples with non-zero values (<code>n_above_zero</code>) in this dataframe to filter our genes later.</p>
-<p>As we have a lot of genes, it is helpful to plot the mean counts with <code><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_pointrange()</a></code> to get an overview of the distributions. We will again plot the log of the mean counts. We will also order the genes from lowest to highest mean count.</p>
-<p>🎬 Plot the logged mean counts for each gene in order of size using <code><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_pointrange()</a></code>:</p>
+<p>As we have a lot of genes, it is helpful to plot the mean counts with <code>geom_pointrange()</code> to get an overview of the distributions. We will again plot the log of the mean counts. We will also order the genes from lowest to highest mean count.</p>
+<p>🎬 Plot the logged mean counts for each gene in order of size using <code>geom_pointrange()</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">root_summary_gene</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">gene_id</span>, <span class="va">mean</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">mean</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_pointrange</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>ymin <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">mean</span> <span class="op">-</span> <span class="va">sd</span><span class="op">)</span>, </span>
-<span>                      ymax <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">mean</span> <span class="op">+</span> <span class="va">sd</span> <span class="op">)</span><span class="op">)</span>,</span>
-<span>                  size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>root_summary_gene <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(gene_id, mean), <span class="at">y =</span> <span class="fu">log10</span>(mean))) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> <span class="fu">log10</span>(mean <span class="sc">-</span> sd), </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ymax =</span> <span class="fu">log10</span>(mean <span class="sc">+</span> sd )),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="workshop_files/figure-html/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="workshop_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="workshop_files/figure-html/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="workshop_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -878,38 +918,44 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <p>(Note the warning is expected since we have zero means).</p>
 <p>You can see we also have quite a few genes with means less than 1 (log below zero). Note that the variability between genes (average counts between 0 and 43348) is far greater than between samples (average counts from 70 to 296) which is exactly what we would expect to see.</p>
 <p>Now go to <a href="#arabidopsis-filterqc">Filtering for QC</a>.</p>
-</section></section><section id="leishmania" class="level2"><h2 class="anchored" data-anchor-id="leishmania">💉 <em>Leishmania</em>
-</h2>
-<section id="import-1" class="level3"><h3 class="anchored" data-anchor-id="import-1">Import</h3>
+</section>
+</section>
+<section id="leishmania" class="level2">
+<h2 class="anchored" data-anchor-id="leishmania">💉 <em>Leishmania</em></h2>
+<section id="import-1" class="level3">
+<h3 class="anchored" data-anchor-id="import-1">Import</h3>
 <p>Import the data for <em>L.mexicana</em> procyclic promastigote (pro) and the metacyclic promastigotes (meta)</p>
 <p>🎬 Import <a href="data-raw/leishmania-mex-pro.csv">leishmania-mex-pro.csv</a> and <a href="data-raw/leishmania-mex-meta.csv">leishmania-mex-meta.csv</a></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 💉 import the pro and meta leish data</span></span>
-<span><span class="va">pro</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data-raw/leishmania-mex-pro.csv"</span><span class="op">)</span></span>
-<span><span class="va">meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data-raw/leishmania-mex-meta.csv"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 💉 import the pro and meta leish data</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>pro <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-raw/leishmania-mex-pro.csv"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>meta <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-raw/leishmania-mex-meta.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We will need to combine the two sets of columns (datasets) so we can compare the two stages. We will join them using <code>gene_id</code> to match the rows. The column names differ so we don’t need to worry about renaming any of them.</p>
 <p>🎬 Combine the two datasets by <code>gene_id</code> and save the result as <code>pro_meta</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#  combine the two datasets</span></span>
-<span><span class="va">pro_meta</span> <span class="op">&lt;-</span> <span class="va">pro</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">meta</span>, </span>
-<span>            by <span class="op">=</span> <span class="st">"gene_id"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  combine the two datasets</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>pro_meta <span class="ot">&lt;-</span> pro <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(meta, </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="st">"gene_id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>🎬 Check the dataframe has the number of rows and columns you were expecting and that column types and names are as expected.</p>
-</section><section id="distribution-of-values-across-all-the-data-in-the-file-1" class="level3"><h3 class="anchored" data-anchor-id="distribution-of-values-across-all-the-data-in-the-file-1">Distribution of values across all the data in the file</h3>
-<p>The values are spread over multiple columns so in order to plot the distribution as a whole, we will need to first use <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code> to put the data in <a href="https://3mmarand.github.io/R4BABS/r4babs1/week-9/workshop.html#tidying-data">‘tidy’ format</a> <span class="citation" data-cites="wickham2014">(<a href="#ref-wickham2014" role="doc-biblioref">Wickham 2014</a>)</span> by stacking the columns. We <em>could</em> save a copy of the stacked data and then plot it, but here, I have just piped the stacked data straight into <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code>. This helps me avoid cluttering my R environment with temporary objects.</p>
-<p>🎬 Pivot the counts (stack the columns) so all the counts are in a single column (<code>count</code>) labelled in <code>sample</code> by the column it came from and pipe into <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> to create a histogram:</p>
+</section>
+<section id="distribution-of-values-across-all-the-data-in-the-file-1" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-of-values-across-all-the-data-in-the-file-1">Distribution of values across all the data in the file</h3>
+<p>The values are spread over multiple columns so in order to plot the distribution as a whole, we will need to first use <code>pivot_longer()</code> to put the data in <a href="https://3mmarand.github.io/R4BABS/r4babs1/week-9/workshop.html#tidying-data">‘tidy’ format</a> <span class="citation" data-cites="wickham2014">(<a href="#ref-wickham2014" role="doc-biblioref">Wickham 2014</a>)</span> by stacking the columns. We <em>could</em> save a copy of the stacked data and then plot it, but here, I have just piped the stacked data straight into <code>ggplot()</code>. This helps me avoid cluttering my R environment with temporary objects.</p>
+<p>🎬 Pivot the counts (stack the columns) so all the counts are in a single column (<code>count</code>) labelled in <code>sample</code> by the column it came from and pipe into <code>ggplot()</code> to create a histogram:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pro_meta</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="op">-</span><span class="va">gene_id</span>,</span>
-<span>               names_to <span class="op">=</span> <span class="st">"sample"</span>,</span>
-<span>               values_to <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">count</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pro_meta <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>gene_id,</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"sample"</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"count"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> count)) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="workshop_files/figure-html/unnamed-chunk-15-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="workshop_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="workshop_files/figure-html/unnamed-chunk-15-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="workshop_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -917,27 +963,30 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <p>This data is very skewed - there are very many low counts and a very few higher numbers. It is hard to see the very low bars for the higher values. Logging the counts is a way to make the distribution more visible. You cannot take the log of 0 so we add 1 to the count before logging. The log of 1 is zero so we will be able to see how many zeros we had.</p>
 <p>🎬 Repeat the plot of log of the counts.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pro_meta</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="op">-</span><span class="va">gene_id</span>,</span>
-<span>               names_to <span class="op">=</span> <span class="st">"sample"</span>,</span>
-<span>               values_to <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">count</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pro_meta <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>gene_id,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"sample"</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"count"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(count <span class="sc">+</span> <span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="workshop_files/figure-html/unnamed-chunk-16-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="workshop_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="workshop_files/figure-html/unnamed-chunk-16-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="workshop_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
 <p>I’ve used base 10 only because it easy to convert to the original scale (1 is 10, 2 is 100, 3 is 1000 etc). Notice we have a peak at zero indicating there are many zeros. We would expect the distribution of counts to be roughly log normal because this is expression of <em>all</em> the genes in the genome<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. The number of low counts is inflated (small peak near the low end). This suggests that these lower counts might be false positives. The removal of low counts is a common processing step in ’omic data. We will revisit this after we have considered the distribution of counts across samples and genes.</p>
-</section><section id="distribution-of-values-across-the-samples-1" class="level3"><h3 class="anchored" data-anchor-id="distribution-of-values-across-the-samples-1">Distribution of values across the samples</h3>
-<p>Summary statistics including the the number of NAs can be seen using the <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>. It is most helpful which you have up to about 25 columns. There is nothing special about the number 25, it is just that summaries of a larger number of columns are difficult to grasp.</p>
+</section>
+<section id="distribution-of-values-across-the-samples-1" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-of-values-across-the-samples-1">Distribution of values across the samples</h3>
+<p>Summary statistics including the the number of NAs can be seen using the <code>summary()</code>. It is most helpful which you have up to about 25 columns. There is nothing special about the number 25, it is just that summaries of a larger number of columns are difficult to grasp.</p>
 <p>🎬 Get a quick overview of the 7 columns:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># examine all the columns quickly</span></span>
-<span><span class="co"># works well with smaller numbers of column</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">pro_meta</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># examine all the columns quickly</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># works well with smaller numbers of column</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pro_meta)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   gene_id             lm_pro_1           lm_pro_2           lm_pro_3       
  Length:8677        Min.   :     0.0   Min.   :     0.0   Min.   :     0.0  
@@ -963,13 +1012,13 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <p>We want to know how many zeros there are in each a column. To achieve this, we can make use of the fact that <code>TRUE</code> evaluates to 1 and <code>FALSE</code> evaluates to 0. Consequently, summing a column of TRUE/FALSE values will give you the number of TRUE values. For example, <code>sum(lm_pro_1 &gt; 0)</code> gives the number of values above zero in the <code>lm_pro_1</code> column. If you wanted the number of zeros, you could use <code>sum(lm_pro_1 == 0)</code>.</p>
 <p>🎬 Find the number values above zero in all six columns:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pro_meta</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">lm_pro_1</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">lm_pro_2</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">lm_pro_3</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">lm_meta_1</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">lm_meta_2</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>,</span>
-<span>            <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">lm_meta_3</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>pro_meta <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">sum</span>(lm_pro_1 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(lm_pro_2 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(lm_pro_3 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(lm_meta_1 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(lm_meta_2 <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sum</span>(lm_meta_3 <span class="sc">&gt;</span> <span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 6
   `sum(lm_pro_1 &gt; 0)` `sum(lm_pro_2 &gt; 0)` `sum(lm_pro_3 &gt; 0)`
@@ -979,15 +1028,15 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 #   `sum(lm_meta_3 &gt; 0)` &lt;int&gt;</code></pre>
 </div>
 </div>
-<p>There is a better way of doing this that saves you having to repeat so much code - very useful if you have a lot more than 6 columns! We can use <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code> to put the data in tidy format and then use the <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> approach we have used extensively before.</p>
+<p>There is a better way of doing this that saves you having to repeat so much code - very useful if you have a lot more than 6 columns! We can use <code>pivot_longer()</code> to put the data in tidy format and then use the <code>group_by()</code> and <code>summarise()</code> approach we have used extensively before.</p>
 <p>🎬 Find the number of zeros in all columns:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pro_meta</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="op">-</span><span class="va">gene_id</span>,</span>
-<span>               names_to <span class="op">=</span> <span class="st">"sample"</span>,</span>
-<span>               values_to <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">sample</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n_above_zero <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">count</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>pro_meta <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>gene_id,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"sample"</span>,</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"count"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sample) <span class="sc">|&gt;</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n_above_zero =</span> <span class="fu">sum</span>(count <span class="sc">&gt;</span> <span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   sample    n_above_zero
@@ -1003,18 +1052,18 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <p>You could expand this code to get get other useful summary information</p>
 <p>🎬 Summarise all the samples:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pro_meta</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="op">-</span><span class="va">gene_id</span>,</span>
-<span>               names_to <span class="op">=</span> <span class="st">"sample"</span>,</span>
-<span>               values_to <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">sample</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>min <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span>,</span>
-<span>            lowerq <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">count</span>, <span class="fl">0.25</span><span class="op">)</span>,</span>
-<span>            mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span>,</span>
-<span>            median <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span>,</span>
-<span>            upperq <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">count</span>, <span class="fl">0.75</span><span class="op">)</span>,</span>
-<span>            max <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span>,</span>
-<span>            n_above_zero <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">count</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pro_meta <span class="sc">|&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>gene_id,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"sample"</span>,</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"count"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sample) <span class="sc">|&gt;</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(count),</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">lowerq =</span> <span class="fu">quantile</span>(count, <span class="fl">0.25</span>),</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean =</span> <span class="fu">mean</span>(count),</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">median =</span> <span class="fu">median</span>(count),</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">upperq =</span> <span class="fu">quantile</span>(count, <span class="fl">0.75</span>),</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">max =</span> <span class="fu">max</span>(count),</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">n_above_zero =</span> <span class="fu">sum</span>(count <span class="sc">&gt;</span> <span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   sample      min lowerq  mean median upperq    max n_above_zero
@@ -1029,19 +1078,20 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 </div>
 <p>The mean count ranges from 220 to 364. We do not appear to have any outlying (odd) replicates. The potential effect of an odd replicate is reduced statistical power. Major differences in gene expression will still be uncovered. Differences between genes with lower average expression and or more variable expression might be missed. Whether this matters depends on the biological question you are asking.</p>
 <p>🎬 Save the summary as a dataframe, <code>pro_meta_summary_samp</code> (using assignment).</p>
-<p>We can also plot the distribution of counts across samples. We have many values (8677) so we are not limited to using <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code>. <code><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density()</a></code> gives us a smooth distribution.</p>
+<p>We can also plot the distribution of counts across samples. We have many values (8677) so we are not limited to using <code>geom_histogram()</code>. <code>geom_density()</code> gives us a smooth distribution.</p>
 <p>🎬 Plot the log10 of the counts + 1 again but this time facet by the sample:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pro_meta</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="op">-</span><span class="va">gene_id</span>,</span>
-<span>               names_to <span class="op">=</span> <span class="st">"sample"</span>,</span>
-<span>               values_to <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">count</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="va">.</span> <span class="op">~</span> <span class="va">sample</span>, nrow <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>pro_meta <span class="sc">|&gt;</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>gene_id,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"sample"</span>,</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"count"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">log10</span>(count <span class="sc">+</span> <span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(. <span class="sc">~</span> sample, <span class="at">nrow =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="workshop_files/figure-html/unnamed-chunk-22-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="workshop_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="workshop_files/figure-html/unnamed-chunk-22-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="workshop_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1053,7 +1103,9 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <li>we would expect the distribution of counts in each sample to be roughly log normal so that the small rise near the low end, even before the peak at zero, suggests that these lower counts might be anomalies.</li>
 </ul>
 <p>We have found the distribution across samples to be similar to that over all. This is good because it means that the samples are fairly consistent with each other. We can now move on to the next step.</p>
-</section><section id="distribution-of-values-across-the-genes-1" class="level3"><h3 class="anchored" data-anchor-id="distribution-of-values-across-the-genes-1">Distribution of values across the genes</h3>
+</section>
+<section id="distribution-of-values-across-the-genes-1" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-of-values-across-the-genes-1">Distribution of values across the genes</h3>
 <p>There are lots of genes in this dataset therefore we will take a slightly different approach. We would not want to use plot a distribution for each gene in the same way. Will pivot the data to tidy and then summarise the counts for each gene.</p>
 <p>🎬 Summarise the counts for each gene and save the result as <code>pro_meta_summary_gene</code>. Include the same columns as we had in the by sample summary (<code>pro_meta_summary_samp</code>) <em>and</em> an additional column, <code>total</code> for the total number of counts for each gene.</p>
 <p>🎬 View the <code>pro_meta_summary_gene</code> dataframe.</p>
@@ -1064,17 +1116,18 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <li>some very very low counts.</li>
 </ul>
 <p>Genes with very low counts should be filtered out because they are unreliable - or, at the least, uninformative. The goal of our downstream analysis will be to see if there is a significant difference in gene expression between the stages. Since we have only three replicates in each group, having one or two unreliable, missing or zero values, makes such a determination impossible for a particular gene. We will use the total counts (<code>total</code>) and the number of samples with non-zero values (<code>n_above_zero</code>) in this dataframe to filter our genes later.</p>
-<p>As we have a lot of genes, it is helpful to plot the mean counts with <code><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_pointrange()</a></code> to get an overview of the distributions. We will again plot the log of the mean counts. We will also order the genes from lowest to highest mean count.</p>
-<p>🎬 Plot the logged mean counts for each gene in order of size using <code><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_pointrange()</a></code>:</p>
+<p>As we have a lot of genes, it is helpful to plot the mean counts with <code>geom_pointrange()</code> to get an overview of the distributions. We will again plot the log of the mean counts. We will also order the genes from lowest to highest mean count.</p>
+<p>🎬 Plot the logged mean counts for each gene in order of size using <code>geom_pointrange()</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pro_meta_summary_gene</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">gene_id</span>, <span class="va">mean</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">mean</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_pointrange</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>ymin <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">mean</span> <span class="op">-</span> <span class="va">sd</span><span class="op">)</span>, </span>
-<span>                      ymax <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">mean</span> <span class="op">+</span> <span class="va">sd</span> <span class="op">)</span><span class="op">)</span>,</span>
-<span>                  size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>pro_meta_summary_gene <span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(gene_id, mean), <span class="at">y =</span> <span class="fu">log10</span>(mean))) <span class="sc">+</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> <span class="fu">log10</span>(mean <span class="sc">-</span> sd), </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ymax =</span> <span class="fu">log10</span>(mean <span class="sc">+</span> sd )),</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="workshop_files/figure-html/unnamed-chunk-24-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="workshop_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="workshop_files/figure-html/unnamed-chunk-24-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="workshop_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1082,37 +1135,44 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <p>(Note the warning is expected since we have zero means).</p>
 <p>You can see we also have quite a few genes with means less than 1 (log below zero). Note that the variability between genes (average counts between 0 and 349606) is far greater than between samples (average counts from 220 to 364) which is exactly what we would expect to see.</p>
 <p>Now go to <a href="#leishmania-filterqc">Filtering for QC</a>.</p>
-</section></section><section id="stem-cells" class="level2"><h2 class="anchored" data-anchor-id="stem-cells">🐭 Stem cells</h2>
-<section id="import-2" class="level3"><h3 class="anchored" data-anchor-id="import-2">Import</h3>
+</section>
+</section>
+<section id="stem-cells" class="level2">
+<h2 class="anchored" data-anchor-id="stem-cells">🐭 Stem cells</h2>
+<section id="import-2" class="level3">
+<h3 class="anchored" data-anchor-id="import-2">Import</h3>
 <p>Import the data for the HSPC and the Progenitor cells.</p>
 <p>🎬 Import <a href="data-raw/secretome_hspc.csv">secretome_hspc.csv</a> and <a href="data-raw/secretome_prog.csv">secretome_prog.csv</a></p>
 <div class="cell" data-cache.extra="secretome">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 🐭 import the hspc and prog data</span></span>
-<span><span class="va">hspc</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data-raw/secretome_hspc.csv"</span><span class="op">)</span></span>
-<span><span class="va">prog</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data-raw/secretome_prog.csv"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 🐭 import the hspc and prog data</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>hspc  <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-raw/secretome_hspc.csv"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>prog  <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-raw/secretome_prog.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We will need to combine the two sets of columns (datasets) so we can compare the two stages. We will join them using <code>ensembl_gene_id</code> to match the rows. The column names differ so we don’t need to worry about renaming any of them.</p>
 <p>🎬 Combine the two datasets by <code>ensembl_gene_id</code> and save the result as <code>hspc_prog</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#  combine the two datasets</span></span>
-<span><span class="va">hspc_prog</span> <span class="op">&lt;-</span> <span class="va">hspc</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">prog</span>, </span>
-<span>            by <span class="op">=</span> <span class="st">"ensembl_gene_id"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  combine the two datasets</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>hspc_prog <span class="ot">&lt;-</span> hspc <span class="sc">|&gt;</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(prog, </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="st">"ensembl_gene_id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>🎬 Check the dataframe has the number of rows and columns you were expecting and that column types and names are as expected.</p>
-</section><section id="distribution-of-values-across-all-the-data-in-the-file-2" class="level3"><h3 class="anchored" data-anchor-id="distribution-of-values-across-all-the-data-in-the-file-2">Distribution of values across all the data in the file</h3>
-<p>The values are spread over multiple columns so in order to plot the distribution as a whole, we will need to first use <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code> to put the data in <a href="https://3mmarand.github.io/R4BABS/r4babs1/week-9/workshop.html#tidying-data">‘tidy’ format</a> <span class="citation" data-cites="wickham2014">(<a href="#ref-wickham2014" role="doc-biblioref">Wickham 2014</a>)</span> by stacking the columns. We <em>could</em> save a copy of the stacked data and then plot it, but here, I have just piped the stacked data straight into <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code>. This helps me avoid cluttering my R environment with temporary objects.</p>
-<p>🎬 Pivot the counts (stack the columns) so all the counts are in a single column (<code>expr</code>) labelled in <code>cell</code> by the column it came from and pipe into <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> to create a histogram:</p>
+</section>
+<section id="distribution-of-values-across-all-the-data-in-the-file-2" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-of-values-across-all-the-data-in-the-file-2">Distribution of values across all the data in the file</h3>
+<p>The values are spread over multiple columns so in order to plot the distribution as a whole, we will need to first use <code>pivot_longer()</code> to put the data in <a href="https://3mmarand.github.io/R4BABS/r4babs1/week-9/workshop.html#tidying-data">‘tidy’ format</a> <span class="citation" data-cites="wickham2014">(<a href="#ref-wickham2014" role="doc-biblioref">Wickham 2014</a>)</span> by stacking the columns. We <em>could</em> save a copy of the stacked data and then plot it, but here, I have just piped the stacked data straight into <code>ggplot()</code>. This helps me avoid cluttering my R environment with temporary objects.</p>
+<p>🎬 Pivot the counts (stack the columns) so all the counts are in a single column (<code>expr</code>) labelled in <code>cell</code> by the column it came from and pipe into <code>ggplot()</code> to create a histogram:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">hspc_prog</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="op">-</span><span class="va">ensembl_gene_id</span>,</span>
-<span>               names_to <span class="op">=</span> <span class="st">"cell"</span>,</span>
-<span>               values_to <span class="op">=</span> <span class="st">"expr"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">expr</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>hspc_prog <span class="sc">|&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>ensembl_gene_id,</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"cell"</span>,</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"expr"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> expr)) <span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="workshop_files/figure-html/unnamed-chunk-26-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="workshop_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="workshop_files/figure-html/unnamed-chunk-26-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="workshop_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1120,25 +1180,27 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <p>This is a very striking distribution. Is it what we are expecting? Notice we have a peak at zero indicating there are low values zeros. This inflation of low values suggests some are anomalous - they will have been derived from low counts which are likely false positives. As inaccurate measures, we will want to exclude expression values below (about) 1. We will revisit this after we have considered the distribution of expression across cells and genes.</p>
 <p>What about the bimodal appearance of the the ‘real’ values? If we had the whole transcriptome we would <em>not</em> expect to see such a pattern - we’d expect to see a roughly normal distribution<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. However, this is a <em>subset</em> of the genome and the nature of the subsetting has had an influence here. These are a subset of cell surface proteins that show a significant difference between at least two of twelve cell subtypes. That is, all of these genes are either “high” or “low” leading to a bimodal distribution.</p>
 <p>Unlike the other three datasets, which count raw counts, these data are normalised and log<sub>2</sub> transformed. We do not need to plot the log of the values to see the distribution - they are already logged.</p>
-</section><section id="distribution-of-values-across-the-samples-2" class="level3"><h3 class="anchored" data-anchor-id="distribution-of-values-across-the-samples-2">Distribution of values across the samples</h3>
-<p>For the other three datasets, we used the <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> function to get an overview of the columns. This works well when you have upto about 25 columns but it is not helpful here because we have a lot of cells! Feel free to try it!</p>
-<p>In this data set, there is even more of an advantage of using the <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> approach. We will be able to open the dataframe in the Viewer and make plots to examine whether the distributions are similar across cells. The mean and the standard deviation are useful to see the distributions across cells in a plot but we will also examine the interquartile values, maximums and the number of non-zero values.</p>
+</section>
+<section id="distribution-of-values-across-the-samples-2" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-of-values-across-the-samples-2">Distribution of values across the samples</h3>
+<p>For the other three datasets, we used the <code>summary()</code> function to get an overview of the columns. This works well when you have upto about 25 columns but it is not helpful here because we have a lot of cells! Feel free to try it!</p>
+<p>In this data set, there is even more of an advantage of using the <code>pivot_longer()</code>, <code>group_by()</code> and <code>summarise()</code> approach. We will be able to open the dataframe in the Viewer and make plots to examine whether the distributions are similar across cells. The mean and the standard deviation are useful to see the distributions across cells in a plot but we will also examine the interquartile values, maximums and the number of non-zero values.</p>
 <p>🎬 Summarise all the cells:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">hspc_prog_summary_cell</span> <span class="op">&lt;-</span> <span class="va">hspc_prog</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="op">-</span><span class="va">ensembl_gene_id</span>,</span>
-<span>               names_to <span class="op">=</span> <span class="st">"cell"</span>,</span>
-<span>               values_to <span class="op">=</span> <span class="st">"expr"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">cell</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>min <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">expr</span><span class="op">)</span>,</span>
-<span>            lowerq <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">expr</span>, <span class="fl">0.25</span><span class="op">)</span>,</span>
-<span>            sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">expr</span><span class="op">)</span>,</span>
-<span>            mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">expr</span><span class="op">)</span>,</span>
-<span>            median <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">expr</span><span class="op">)</span>,</span>
-<span>            upperq <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">expr</span>, <span class="fl">0.75</span><span class="op">)</span>,</span>
-<span>            max <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">expr</span><span class="op">)</span>,</span>
-<span>            total <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">expr</span><span class="op">)</span>,</span>
-<span>            n_above_zero <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">expr</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>hspc_prog_summary_cell <span class="ot">&lt;-</span> hspc_prog <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>ensembl_gene_id,</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"cell"</span>,</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"expr"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cell) <span class="sc">|&gt;</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(expr),</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">lowerq =</span> <span class="fu">quantile</span>(expr, <span class="fl">0.25</span>),</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(expr),</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean =</span> <span class="fu">mean</span>(expr),</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">median =</span> <span class="fu">median</span>(expr),</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">upperq =</span> <span class="fu">quantile</span>(expr, <span class="fl">0.75</span>),</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">max =</span> <span class="fu">max</span>(expr),</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">total =</span> <span class="fu">sum</span>(expr),</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">n_above_zero =</span> <span class="fu">sum</span>(expr <span class="sc">&gt;</span> <span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>🎬 View the <code>hspc_prog_summary_cell</code> dataframe (click on it in the environment).</p>
 <p>Notice that: - a minimum value of 0 appears in all 1499 cells - the lower quartiles are all zero and so are many of the medians - there are no cells with above 0 expression in all 423 of the gene subset - the highest number of genes expressed is 287, the lowest is 139</p>
@@ -1146,14 +1208,15 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <p>To get a better understanding of the distribution of expressions in cells we can create a ggplot using the pointrange geom. Pointrange puts a dot at the mean and a line between a minimum and a maximum such as +/- one standard deviation. Not unlike a boxplot, but when you need the boxes too be very narrow!</p>
 <p>🎬 Create a pointrange plot.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">hspc_prog_summary_cell</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cell</span>, y <span class="op">=</span> <span class="va">mean</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_pointrange</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>ymin <span class="op">=</span> <span class="va">mean</span> <span class="op">-</span> <span class="va">sd</span>, </span>
-<span>                      ymax <span class="op">=</span> <span class="va">mean</span> <span class="op">+</span> <span class="va">sd</span> <span class="op">)</span>,</span>
-<span>                  size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>hspc_prog_summary_cell <span class="sc">|&gt;</span> </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> cell, <span class="at">y =</span> mean)) <span class="sc">+</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> sd, </span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ymax =</span> mean <span class="sc">+</span> sd ),</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="workshop_files/figure-html/unnamed-chunk-28-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="workshop_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="workshop_files/figure-html/unnamed-chunk-28-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="workshop_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1167,21 +1230,24 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <p>The default order of <code>cell</code> is alphabetical. It can be easier to judge if there are unusual cells if we order the lines by the size of the mean.</p>
 <p>🎬 Order a pointrange plot with <code>reorder(variable_to_order, order_by)</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">hspc_prog_summary_cell</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">cell</span>, <span class="va">mean</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">mean</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_pointrange</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>ymin <span class="op">=</span> <span class="va">mean</span> <span class="op">-</span> <span class="va">sd</span>, </span>
-<span>                      ymax <span class="op">=</span> <span class="va">mean</span> <span class="op">+</span> <span class="va">sd</span> <span class="op">)</span>,</span>
-<span>                  size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>hspc_prog_summary_cell <span class="sc">|&gt;</span> </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(cell, mean), <span class="at">y =</span> mean)) <span class="sc">+</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> sd, </span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ymax =</span> mean <span class="sc">+</span> sd ),</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="workshop_files/figure-html/unnamed-chunk-29-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="workshop_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="workshop_files/figure-html/unnamed-chunk-29-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="workshop_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<p><code><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder()</a></code> arranges <code>cell</code> in increasing size of <code>mean</code></p>
+<p><code>reorder()</code> arranges <code>cell</code> in increasing size of <code>mean</code></p>
 <p>As we thought, the distributions are similar across cells - there are not any cells that are obviously different from the others (only incrementally).</p>
-</section><section id="distribution-of-values-across-the-genes-2" class="level3"><h3 class="anchored" data-anchor-id="distribution-of-values-across-the-genes-2">Distribution of values across the genes</h3>
+</section>
+<section id="distribution-of-values-across-the-genes-2" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-of-values-across-the-genes-2">Distribution of values across the genes</h3>
 <p>We will use the same approach to summarise the genes.</p>
 <p>🎬 Summarise the expression for each gene and save the result as <code>hspc_prog_summary_gene</code>. Include the same columns as we had in the by cell summary (<code>hspc_prog_summary_cell</code>) and an additional column, <code>total</code> for the total expression for each gene.</p>
 <p>🎬 View the <code>hspc_prog_summary_gene</code> dataframe. Remember these are normalised and logged (base 2) so we should not see very large values.</p>
@@ -1192,32 +1258,37 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <li>no genes have zeros in every cell - the lowest number of cells is is 8</li>
 </ul>
 <p>It is again helpful to plot the ordered mean expression with pointrange to get an overview.</p>
-<p>🎬 Plot the logged mean counts for each gene in order of size using <code><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_pointrange()</a></code>:</p>
+<p>🎬 Plot the logged mean counts for each gene in order of size using <code>geom_pointrange()</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">hspc_prog_summary_gene</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">ensembl_gene_id</span>, <span class="va">mean</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">mean</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_pointrange</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>ymin <span class="op">=</span> <span class="va">mean</span> <span class="op">-</span> <span class="va">sd</span>, </span>
-<span>                      ymax <span class="op">=</span> <span class="va">mean</span> <span class="op">+</span> <span class="va">sd</span><span class="op">)</span>,</span>
-<span>                  size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>hspc_prog_summary_gene <span class="sc">|&gt;</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(ensembl_gene_id, mean), <span class="at">y =</span> mean)) <span class="sc">+</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> sd, </span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ymax =</span> mean <span class="sc">+</span> sd),</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="workshop_files/figure-html/unnamed-chunk-31-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="workshop_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="workshop_files/figure-html/unnamed-chunk-31-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="workshop_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Note that the variability between genes (average expression between 0.0074 and 11.1016) is greater than between cells (average expression between 1.4083 and 3.4678) which is just what we would expect.</p>
 <p>Now go to <a href="#stem-cells-filterqc">Filtering for QC</a>.</p>
-</section></section></section><section id="filtering-for-qc" class="level1"><h1>Filtering for QC</h1>
-<section id="arabidopsis-filterqc" class="level2"><h2 class="anchored" data-anchor-id="arabidopsis-filterqc">🎄 <em>Arabidopsis</em>
-</h2>
+</section>
+</section>
+</section>
+<section id="filtering-for-qc" class="level1">
+<h1>Filtering for QC</h1>
+<section id="arabidopsis-filterqc" class="level2">
+<h2 class="anchored" data-anchor-id="arabidopsis-filterqc">🎄 <em>Arabidopsis</em></h2>
 <p>Our samples look to be similarly well sequenced although this is difficult to determine with only two replicates. However, some genes are not expressed or the expression values are so low in for a gene that they are uninformative. We will filter the <code>root_summary_gene</code> dataframe to obtain a list of <code>gene_id</code> we can use to filter <code>root</code>.</p>
 <p>My suggestion is to include only the genes with counts in at least 6 samples, and those with total counts above 20. I chose 6 because that would keep genes expressed only in one treatment. I chose 20 based on</p>
 <p>🎬 Filter the summary by gene dataframe:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">root_summary_gene_filtered</span> <span class="op">&lt;-</span> <span class="va">root_summary_gene</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">total</span> <span class="op">&gt;</span> <span class="fl">20</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">n_above_zero</span> <span class="op">&gt;=</span> <span class="fl">6</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>root_summary_gene_filtered <span class="ot">&lt;-</span> root_summary_gene <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(total <span class="sc">&gt;</span> <span class="dv">20</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_above_zero <span class="sc">&gt;=</span> <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>❓ How many genes do you have left</p>
 <!-- #---THINKING ANSWER--- -->
@@ -1225,24 +1296,25 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <!-- have counts in fewer the 6 samples. -->
 <p>🎬 Use the list of <code>gene_id</code> in the filtered summary to filter the original dataset:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">root_filtered</span> <span class="op">&lt;-</span> <span class="va">root</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gene_id</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span>  <span class="va">root_summary_gene_filtered</span><span class="op">$</span><span class="va">gene_id</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>root_filtered <span class="ot">&lt;-</span> root <span class="sc">|&gt;</span> </span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gene_id <span class="sc">%in%</span>  root_summary_gene_filtered<span class="sc">$</span>gene_id)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>🎬 Write the filtered data to file:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">root_filtered</span>, </span>
-<span>          file <span class="op">=</span> <span class="st">"data-processed/root_filtered.csv"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(root_filtered, </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"data-processed/root_filtered.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now go to <a href="#arabidopsis-and-future-you">Look after future you</a></p>
-</section><section id="leishmania-filterqc" class="level2"><h2 class="anchored" data-anchor-id="leishmania-filterqc">💉 <em>Leishmania</em>
-</h2>
+</section>
+<section id="leishmania-filterqc" class="level2">
+<h2 class="anchored" data-anchor-id="leishmania-filterqc">💉 <em>Leishmania</em></h2>
 <p>Our samples look to be similarly well sequenced. There are no samples we should remove. However, some genes are not expressed or the expression values are so low in for a gene that they are uninformative. We will filter the <code>pro_meta_summary_gene</code> dataframe to obtain a list of <code>gene_id</code> we can use to filter <code>pro_meta</code>.</p>
 <p>My suggestion is to include only the genes with counts in at least 3 samples and those with total counts above 20. I chose 3 because that would keep genes expressed only in one treatment: [0, 0, 0] [#,#,#]. This is a difference we cannot test statistically, but which matters biologically.</p>
 <p>🎬 Filter the summary by gene dataframe:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pro_meta_summary_gene_filtered</span> <span class="op">&lt;-</span> <span class="va">pro_meta_summary_gene</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">total</span> <span class="op">&gt;</span> <span class="fl">20</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">n_above_zero</span> <span class="op">&gt;=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>pro_meta_summary_gene_filtered <span class="ot">&lt;-</span> pro_meta_summary_gene <span class="sc">|&gt;</span> </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(total <span class="sc">&gt;</span> <span class="dv">20</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_above_zero <span class="sc">&gt;=</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>❓ How many genes do you have left</p>
 <!-- #---THINKING ANSWER--- -->
@@ -1250,23 +1322,25 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <!-- have counts in fewer than 3 samples. -->
 <p>🎬 Use the list of <code>gene_id</code> in the filtered summary to filter the original dataset:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pro_meta_filtered</span> <span class="op">&lt;-</span> <span class="va">pro_meta</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gene_id</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span>  <span class="va">pro_meta_summary_gene_filtered</span><span class="op">$</span><span class="va">gene_id</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>pro_meta_filtered <span class="ot">&lt;-</span> pro_meta <span class="sc">|&gt;</span> </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gene_id <span class="sc">%in%</span>  pro_meta_summary_gene_filtered<span class="sc">$</span>gene_id)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>🎬 Write the filtered data to file:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">pro_meta_filtered</span>, </span>
-<span>          file <span class="op">=</span> <span class="st">"data-processed/pro_meta_filtered.csv"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(pro_meta_filtered, </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"data-processed/pro_meta_filtered.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now go to <a href="#leishmania-and-future-you">Look after future you</a></p>
-</section><section id="stem-cells-filterqc" class="level2"><h2 class="anchored" data-anchor-id="stem-cells-filterqc">🐭 Stem cells</h2>
+</section>
+<section id="stem-cells-filterqc" class="level2">
+<h2 class="anchored" data-anchor-id="stem-cells-filterqc">🐭 Stem cells</h2>
 <p>In this dataset, we will not see and genes that are not expressed in any of the cells because we are using a specific subset of the transcriptome that was deliberately selected. In other words unexpressed genes have already been filtered out. However, it is good practices to verify there are no unexpressed genes before we embark on our analysis.</p>
-<p>Where the sum of all the values in the rows is zero, all the entries must be zero. We can use this to find any the genes that are not expressed in any of the cells. To do row wise aggregates such as the sum across rows we can use the <code><a href="https://dplyr.tidyverse.org/reference/rowwise.html">rowwise()</a></code> function. <code><a href="https://dplyr.tidyverse.org/reference/c_across.html">c_across()</a></code> allows us to use the colon notation to select columns. This is very useful when you have a lot of columns because it would be annoying to have to list all of them <code>HSPC_001:Prog_852</code> means all the columns from <code>HSPC_001</code> to <code>Prog_852</code>.</p>
+<p>Where the sum of all the values in the rows is zero, all the entries must be zero. We can use this to find any the genes that are not expressed in any of the cells. To do row wise aggregates such as the sum across rows we can use the <code>rowwise()</code> function. <code>c_across()</code> allows us to use the colon notation to select columns. This is very useful when you have a lot of columns because it would be annoying to have to list all of them <code>HSPC_001:Prog_852</code> means all the columns from <code>HSPC_001</code> to <code>Prog_852</code>.</p>
 <p>🎬 Find the genes that are 0 in every column of the hspc_prog dataframe:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">hspc_prog</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rowwise.html">rowwise</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/c_across.html">c_across</a></span><span class="op">(</span><span class="va">HSPC_001</span><span class="op">:</span><span class="va">Prog_852</span><span class="op">)</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>hspc_prog <span class="sc">|&gt;</span> </span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">sum</span>(<span class="fu">c_across</span>(HSPC_001<span class="sc">:</span>Prog_852)) <span class="sc">==</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 0 × 1,500
 # Rowwise: 
@@ -1286,63 +1360,86 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <!-- this set of genes -->
 <p>🎬 Write combined data to file:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">hspc_prog</span>, </span>
-<span>          file <span class="op">=</span> <span class="st">"data-processed/hspc_prog.csv"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(hspc_prog, </span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"data-processed/hspc_prog.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now go to <a href="#stem-cells-and-future-you">Look after future you</a></p>
-</section></section><section id="look-after-future-you" class="level1"><h1>🤗 Look after future you!</h1>
+</section>
+</section>
+<section id="look-after-future-you" class="level1">
+<h1>🤗 Look after future you!</h1>
 <p>You need only do the section for your own project data but <strong>completing this step is important</strong>.</p>
-<section id="arabidopsis-and-future-you" class="level2"><h2 class="anchored" data-anchor-id="arabidopsis-and-future-you">🎄 <em>Arabidopsis</em> and future you</h2>
+<section id="arabidopsis-and-future-you" class="level2">
+<h2 class="anchored" data-anchor-id="arabidopsis-and-future-you">🎄 <em>Arabidopsis</em> and future you</h2>
 <p>🎬 Create a new Project, <code>arab-88H</code>, populated with folders and your data. Make a script file called <code>cont-low-root.R</code>. This will a be commented analysis of comparison between control and low Ni root tissue. You will build on this each workshop and be able to use it as a template to examine other comparisons. Copy in the <em>appropriate code and comments</em> from <code>workshop-1.R</code>. Edit to improve your comments where your understanding has developed since you made them. Make sure you can close down RStudio, reopen it and run your whole script again.</p>
-</section><section id="leishmania-and-future-you" class="level2"><h2 class="anchored" data-anchor-id="leishmania-and-future-you">💉 <em>Leishmania</em> and future you</h2>
+</section>
+<section id="leishmania-and-future-you" class="level2">
+<h2 class="anchored" data-anchor-id="leishmania-and-future-you">💉 <em>Leishmania</em> and future you</h2>
 <p>🎬 Create a new Project, <code>leish-88H</code>, populated with folders and your data. Make a script file called <code>pro_meta.R</code>. This will a be commented analysis of comparison procyclic promastigote and metacyclic promastigotes. You will build on this each workshop and be able to use it as a template to examine other comparisons. Copy in the <em>appropriate code and comments</em> from <code>workshop-1.R</code>. Edit to improve your comments where your understanding has developed since you made them. Make sure you can close down RStudio, reopen it and run your whole script again.</p>
-</section><section id="stem-cells-and-future-you" class="level2"><h2 class="anchored" data-anchor-id="stem-cells-and-future-you">🐭 Stem cells and future you</h2>
+</section>
+<section id="stem-cells-and-future-you" class="level2">
+<h2 class="anchored" data-anchor-id="stem-cells-and-future-you">🐭 Stem cells and future you</h2>
 <p>🎬 Create a new Project, <code>mice-88H</code>, populated with folders and your data. Make a script file called <code>hspc-prog.R</code>. This will a be commented analysis of the hspc cells vs the prog cells. You will build on this each workshop and be able to use it as a template to examine other comparisons. Copy in the <em>appropriate code and comments</em> from <code>workshop-1.R</code>. Edit to improve your comments where your understanding has developed since you made them. Make sure you can close down RStudio, reopen it and run your whole script again.</p>
-</section></section><section id="finished" class="level1"><h1>🥳 Finished</h1>
+</section>
+</section>
+<section id="finished" class="level1">
+<h1>🥳 Finished</h1>
 <p>Well Done!</p>
-</section><section id="independent-study-following-the-workshop" class="level1"><h1>Independent study following the workshop</h1>
+</section>
+<section id="independent-study-following-the-workshop" class="level1">
+<h1>Independent study following the workshop</h1>
 <p><a href="../../transcriptomics/week-3/study_after_workshop.html">Consolidate</a></p>
-</section><section id="the-code-file" class="level1"><h1>The Code file</h1>
+</section>
+<section id="the-code-file" class="level1">
+<h1>The Code file</h1>
 <p>These contain all the code needed in the workshop even where it is not visible on the webpage.</p>
 <p>The <a href="../../transcriptomics/week-3/workshop.html">workshop.qmd</a> file is the file I use to compile the practical. Qmd stands for Quarto markdown. It allows code and ordinary text to be interleaved to produce well-formatted reports including webpages. Right-click on the link and choose View the source code for this workshop using the <code>&lt;/&gt; Code</code> button at the top of the page. Coding and thinking answers are marked with <code>#---CODING ANSWER---</code> and <code>#---THINKING ANSWER---</code></p>
 <p>Pages made with R <span class="citation" data-cites="R-core">(<a href="#ref-R-core" role="doc-biblioref">R Core Team 2024</a>)</span>, Quarto <span class="citation" data-cites="Allaire_Quarto_2024">(<a href="#ref-Allaire_Quarto_2024" role="doc-biblioref">Allaire et al. 2024</a>)</span>, <code>knitr</code> <span class="citation" data-cites="knitr1 knitr2 knitr3">(<a href="#ref-knitr1" role="doc-biblioref">Xie 2024</a>, <a href="#ref-knitr2" role="doc-biblioref">2015</a>, <a href="#ref-knitr3" role="doc-biblioref">2014</a>)</span>, <code>kableExtra</code> <span class="citation" data-cites="kableExtra">(<a href="#ref-kableExtra" role="doc-biblioref">Zhu 2021</a>)</span></p>
-</section><section id="references" class="level1">
+</section>
+<section id="references" class="level1">
+
 
 
 <!-- -->
 
 
-</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-Allaire_Quarto_2024" class="csl-entry" role="listitem">
-Allaire, J. J., Charles Teague, Carlos Scheidegger, Yihui Xie, and Christophe Dervieux. 2024. <span>“<span>Quarto</span>.”</span> <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>.
+Allaire, J. J., Charles Teague, Carlos Scheidegger, Yihui Xie, and Christophe Dervieux. 2024. <em><span>Quarto</span></em>. V. 1.4. Released February. <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>.
 </div>
 <div id="ref-R-core" class="csl-entry" role="listitem">
-R Core Team. 2024. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+R Core Team. 2024. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 <div id="ref-wickham2014" class="csl-entry" role="listitem">
 Wickham, Hadley. 2014. <span>“Tidy Data.”</span> <em>Journal of Statistical Software, Articles</em> 59 (10): 1–23. <a href="https://vita.had.co.nz/papers/tidy-data.pdf">https://vita.had.co.nz/papers/tidy-data.pdf</a>.
 </div>
 <div id="ref-tidyverse" class="csl-entry" role="listitem">
-Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
+Wickham, Hadley, Mara Averick, Jennifer Bryan, et al. 2019. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
 </div>
 <div id="ref-knitr3" class="csl-entry" role="listitem">
 Xie, Yihui. 2014. <span>“Knitr: A Comprehensive Tool for Reproducible Research in <span>R</span>.”</span> In <em>Implementing Reproducible Computational Research</em>, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC.
 </div>
 <div id="ref-knitr2" class="csl-entry" role="listitem">
-———. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 <div id="ref-knitr1" class="csl-entry" role="listitem">
-———. 2024. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+Xie, Yihui. 2024. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 <div id="ref-kableExtra" class="csl-entry" role="listitem">
-Zhu, Hao. 2021. <span>“kableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax.”</span> <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.
+Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax</em>. <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
 <ol>
 <li id="fn1"><p>This a result of the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Central limit theorem</a>,one consequence of which is that adding together lots of distributions - whatever distributions they are - will tend to a normal distribution.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>This a result of the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Central limit theorem</a>,one consequence of which is that adding together lots of distributions - whatever distributions they are - will tend to a normal distribution.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>This a result of the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Central limit theorem</a>,one consequence of which is that adding together lots of distributions - whatever distributions they are - will tend to a normal distribution.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1447,16 +1544,16 @@ Zhu, Hao. 2021. <span>“kableExtra: Construct Complex Table with ’Kable’ an
     }
     function toggleCodeHandler(show) {
       return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
           if (show) {
             details.open = true;
           } else {
             details.removeAttribute("open");
           }
         }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
         const fromCls = show ? "hidden" : "unhidden";
         const toCls = show ? "unhidden" : "hidden";
         for (let i=0; i<cellCodeDivs.length; i++) {
@@ -3039,7 +3136,8 @@ Zhu, Hao. 2021. <span>“kableExtra: Construct Complex Table with ’Kable’ an
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>Rand E (2025). Data Analysis for Group Project. <a href="https://3mmarand.github.io/BIO00088H-data/" class="uri">https://3mmarand.github.io/BIO00088H-data/</a>.</p>
 </div>   
@@ -3048,15 +3146,16 @@ Zhu, Hao. 2021. <span>“kableExtra: Construct Complex Table with ’Kable’ an
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/3mmaRand/BIO00088H-data/edit/main/transcriptomics/week-3/workshop.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-<li class="nav-item">
+    <li class="nav-item">
     <a class="nav-link" href="https://github.com/3mmaRand">
 <p>Emma on GitHub</p>
 </a>
   </li>  
 </ul>
-</div>
+    </div>
   </div>
-</footer><script>
+</footer>
+<script>
 document.addEventListener("DOMContentLoaded", function() {
   // grab all links under “Other Links” in the right-hand TOC
   const links = document.querySelectorAll('.quarto-other-links ul li a');
@@ -3072,7 +3171,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
-</script><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
@@ -3104,6 +3204,8 @@ document.addEventListener("DOMContentLoaded", function() {
   
 })();
           </script>
+
+
 
 
 </body></html>

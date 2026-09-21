@@ -6,21 +6,27 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
-<meta name="author" content="Emma Rand">
-<title>Data Analysis for Group Project – Independent Study to prepare for workshop</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
-<style>
-    code{white-space: pre-wrap;}
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <meta name="author" content="Emma Rand">
+  <title>Data Analysis for Group Project – Independent Study to prepare for workshop</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -98,7 +104,6 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
-      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -115,20 +120,23 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-<link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TVF95J593T"></script><script type="text/javascript">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TVF95J593T"></script>
+
+  <script type="text/javascript">
 
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
-  </script><link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-<link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-<link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  </script>
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -220,35 +228,42 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Independent Study to prepare for workshop</h1>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Independent Study to prepare for workshop</h1>
   <p class="subtitle">Transcriptomics 2: Statistical Analysis</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Emma Rand 
+Emma Rand
 </div>
 </div>
 </div>
 
-  <p class="date">3 December, 2025</p>
-</section><section id="overview" class="slide level2"><h2>Overview</h2>
+  <p class="date">21 September, 2026</p>
+</section>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
 <p>In these slides we will:</p>
 <ul>
 <li class="fragment"><p>Check where you are following week 3</p></li>
-<li class="fragment">
-<p>learn some concepts in differential expression</p>
+<li class="fragment"><p>learn some concepts in differential expression</p>
 <ul>
 <li class="fragment">log<sub>2</sub> fold changes</li>
 <li class="fragment">Multiple correction</li>
 <li class="fragment">normalisation</li>
 <li class="fragment">statistical model</li>
-</ul>
-</li>
+</ul></li>
 <li class="fragment"><p>Find out what packages we will use</p></li>
-</ul></section><section><section id="where-should-you-be" class="title-slide slide level1 center"><h1>Where should you be?</h1>
+</ul>
+</section>
+<section>
+<section id="where-should-you-be" class="title-slide slide level1 center">
+<h1>Where should you be?</h1>
 
-</section><section id="what-we-did-in-transcriptomics-1-hello-data" class="slide level2"><h2>What we did in Transcriptomics 1: 👋 Hello data!</h2>
+</section>
+<section id="what-we-did-in-transcriptomics-1-hello-data" class="slide level2">
+<h2>What we did in Transcriptomics 1: 👋 Hello data!</h2>
 <div style="font-size: 90%;">
 <ul>
 <li class="fragment">Discovered how many rows and columns we had in our datasets and what these were.</li>
@@ -257,150 +272,206 @@ Emma Rand
 <li class="fragment">across the whole dataset</li>
 <li class="fragment">across the samples/cells (i.e., averaged over genes) to see variation between samples/cells</li>
 <li class="fragment">across the genes (i.e., averaged over samples/cells) to see variation between genes</li>
-</ul>
-</li>
+</ul></li>
 <li class="fragment">Filtered data for quality control and wrote to file (except 🐭)</li>
 </ul>
 </div>
-</section><section id="where-should-you-be-1" class="slide level2"><h2>Where should you be?</h2>
+</section>
+<section id="where-should-you-be-1" class="slide level2">
+<h2>Where should you be?</h2>
 <p>After the <a href="../week-3/workshop.html">Transcriptomics 1: 👋 Hello data! Workshop</a> including:</p>
 <ul>
 <li><p><a href="../week-3/workshop.html#look-after-future-you">🤗 Look after future you!</a> and</p></li>
 <li><p>the <a href="../week-3/study_after_workshop.html">Independent Study to consolidate</a>, you should have:</p></li>
-</ul></section><section id="arabidopsis" class="slide level2"><h2>🎄 <em>Arabidopsis</em>
-</h2>
+</ul>
+</section>
+<section id="arabidopsis" class="slide level2">
+<h2>🎄 <em>Arabidopsis</em></h2>
 <p>An RStudio Project called <code>arab-88H</code> which contains:</p>
 <ul>
 <li><p>data-raw: <code>arabidopsis-root.csv</code>, <code>arabidopsis-aerial.csv</code></p></li>
 <li><p>data-processed: <code>root_filtered.csv</code>, <code>aerial_filtered.csv</code></p></li>
 <li><p>Two scripts: <code>cont-low-root.R</code>, <code>cont-low-aerial.R</code></p></li>
-</ul></section><section id="leishmania" class="slide level2"><h2>💉 <em>Leishmania</em>
-</h2>
+</ul>
+</section>
+<section id="leishmania" class="slide level2">
+<h2>💉 <em>Leishmania</em></h2>
 <p>An RStudio Project called <code>leish-88H</code> which contains:</p>
 <ul>
 <li><p>data-raw: <code>leishmania-mex-ama.csv</code>, <code>leishmania-mex-pro.csv</code>, <code>leishmania-mex-meta.csv</code></p></li>
 <li><p>data-processed: <code>pro_meta_filtered.csv</code>, <code>pro_ama_filtered.csv</code></p></li>
 <li><p>Two scripts: <code>pro_meta.R</code>, <code>pro_ama.R</code></p></li>
-</ul></section><section id="stem-cells" class="slide level2"><h2>🐭 Stem cells</h2>
+</ul>
+</section>
+<section id="stem-cells" class="slide level2">
+<h2>🐭 Stem cells</h2>
 <p>An RStudio Project called <code>mice-88H</code> which contains</p>
 <ul>
-<li>data-raw: <code>secretome_hspc.csv</code>, <code>secretome_prog.csv</code>, <code>secretome_lthsc.csv</code>
-</li>
+<li>data-raw: <code>secretome_hspc.csv</code>, <code>secretome_prog.csv</code>, <code>secretome_lthsc.csv</code></li>
 </ul>
 <ul>
-<li>data-processed: <code>hspc_prog.csv</code>, <code>hspc_lthsc.csv</code>
-</li>
-<li>Two scripts: <code>hspc-prog.R</code>, <code>hspc-lthsc.R</code>
-</li>
-</ul></section><section id="additionally" class="slide level2"><h2>Additionally…</h2>
+<li>data-processed: <code>hspc_prog.csv</code>, <code>hspc_lthsc.csv</code></li>
+<li>Two scripts: <code>hspc-prog.R</code>, <code>hspc-lthsc.R</code></li>
+</ul>
+</section>
+<section id="additionally" class="slide level2">
+<h2>Additionally…</h2>
 <p>Files should be organised into folders. Code should well commented and easy to read. You should have curated your code to remove unnecessary commands that were useful to troubleshoot or understand objects in your environment but which are not needed for the final analysis.</p>
 <p>If you are missing files, go through:</p>
 <ul>
 <li><p><a href="../week-3/workshop.html">Transcriptomics 1: 👋 Hello data! Workshop</a> including:</p></li>
 <li><p><a href="../week-3/workshop.html#look-after-future-you">🤗 Look after future you!</a> and</p></li>
 <li><p>the <a href="../week-3/study_after_workshop.html">Independent Study to consolidate</a></p></li>
-</ul></section></section><section><section id="differential-expression" class="title-slide slide level1 center"><h1>Differential expression</h1>
+</ul>
+</section></section>
+<section>
+<section id="differential-expression" class="title-slide slide level1 center">
+<h1>Differential expression</h1>
 
-</section><section id="differential-expression-1" class="slide level2"><h2>Differential expression</h2>
+</section>
+<section id="differential-expression-1" class="slide level2">
+<h2>Differential expression</h2>
 <ul>
 <li class="fragment"><p>The goal of differential expression is to test whether there is a significant difference in gene expression between groups.</p></li>
 <li class="fragment"><p>A large number of computational methods have been developed for differential expression analysis</p></li>
 <li class="fragment"><p>R is the leading language for differential expression analysis</p></li>
-</ul></section><section id="differential-expression-2" class="slide level2"><h2>Differential expression</h2>
+</ul>
+</section>
+<section id="differential-expression-2" class="slide level2">
+<h2>Differential expression</h2>
 <ul>
 <li class="fragment"><p>the statistical concepts are very similar to those you have already encountered in stages 1 and 2</p></li>
 <li class="fragment"><p>you are essentially doing two-sample tests (independent samples)</p></li>
 <li class="fragment"><p>but you are doing a lot of them! One for every gene</p></li>
 <li class="fragment"><p>data need normalisation before comparison</p></li>
-</ul></section><section id="statistical-concepts" class="slide level2"><h2>Statistical concepts</h2>
+</ul>
+</section>
+<section id="statistical-concepts" class="slide level2">
+<h2>Statistical concepts</h2>
 <p>Like familiar tests:</p>
 <ul>
 <li class="fragment"><p>the type of test (the function) you use depends on the type of data you have and the type of assumptions you want to make</p></li>
 <li class="fragment"><p>the tests work by comparing the variation between groups to the variation within groups.</p></li>
 <li class="fragment"><p>you will get: the difference between groups, a test statistic, and a <em>p</em>-value</p></li>
 <li class="fragment"><p>you also get an <strong>adjusted <em>p</em>-value</strong> which is the ‘correction’ for multiple testing</p></li>
-</ul></section><section id="the-difference-between-groups" class="slide level2"><h2>The difference between groups</h2>
+</ul>
+</section>
+<section id="the-difference-between-groups" class="slide level2">
+<h2>The difference between groups</h2>
 <ul>
 <li class="fragment"><p>The difference between groups is given as the log<sub>2</sub> fold change in expression between groups</p></li>
 <li class="fragment"><p>A fold change is the expression in one group divided by the expression in the other group: <span class="math inline">\(\frac{A}{B}\)</span></p></li>
 <li class="fragment"><p>we use fold changes because the absolute expression values may not be accurate and relative changes are what matters</p></li>
 <li class="fragment"><p>we use log<sub>2</sub> fold changes because they are symmetrical around 0</p></li>
-</ul></section><section id="why-log2-fold-change" class="slide level2"><h2>Why log<sub>2</sub> fold change?</h2>
+</ul>
+</section>
+<section id="why-log2-fold-change" class="slide level2">
+<h2>Why log<sub>2</sub> fold change?</h2>
 <ul>
 <li class="fragment"><p>log<sub>2</sub> means log to the base 2</p></li>
 <li class="fragment"><p>Suppose the expression in group A is 5 and the expression in group B is 8</p></li>
 <li class="fragment"><p><span class="math inline">\(\frac{A}{B} = \frac{5}{8}\)</span> = 0.625 and <span class="math inline">\(\frac{B}{A} = \frac{8}{5}\)</span> = 1.6</p></li>
 <li class="fragment"><p>If B &gt; A the range of <span class="math inline">\(\frac{A}{B}\)</span> is 0 - 1 but the range of <span class="math inline">\(\frac{B}{A}\)</span> is 1 - <span class="math inline">\(\infty\)</span></p></li>
 <li class="fragment"><p>However, if we take the log<sub>2</sub> of <span class="math inline">\(\frac{A}{B}\)</span> we get -0.678 and the log<sub>2</sub> of <span class="math inline">\(\frac{B}{A}\)</span> is 0.678.</p></li>
-</ul></section><section id="adjusted-p-value" class="slide level2"><h2>Adjusted <em>p</em>-value</h2>
+</ul>
+</section>
+<section id="adjusted-p-value" class="slide level2">
+<h2>Adjusted <em>p</em>-value</h2>
 <ul>
 <li class="fragment"><p>The <em>p</em>-value has to be adjusted because of the number of tested being done</p></li>
 <li class="fragment"><p>Previously we have used Tukey’s HSD to adjust for multiple testing following a significant ANOVA (using the <strong><code>emmeans</code></strong> package) and Dunn’s test of multiple comparisons following a significant Kruskal-Wallis test</p></li>
 <li class="fragment"><p>Here the Benjamini-Hochberg procedure <span class="citation" data-cites="benjamini1995">(<a href="#/references" role="doc-biblioref" onclick="">Benjamini and Hochberg 1995</a>)</span> is used to adjust for multiple testing</p></li>
 <li class="fragment"><p>BH controls the <a href="https://en.wikipedia.org/wiki/False_discovery_rate">False Discovery Rate</a> (FDR)</p></li>
 <li class="fragment"><p>The FDR is the proportion of false positives among the genes called significant</p></li>
-</ul></section><section id="normalisation" class="slide level2"><h2>Normalisation</h2>
+</ul>
+</section>
+<section id="normalisation" class="slide level2">
+<h2>Normalisation</h2>
 <ul>
 <li class="fragment"><p>Normalisation adjusts raw counts to account for factors that prevent direct comparisons</p></li>
 <li class="fragment"><p>Normalisation usually influences the experimental design as well as the analysis</p></li>
-</ul></section><section id="normalisation-1" class="slide level2"><h2>Normalisation</h2>
+</ul>
+</section>
+<section id="normalisation-1" class="slide level2">
+<h2>Normalisation</h2>
 <ul>
 <li class="fragment"><p>🐭 mice data are normalised</p></li>
 <li class="fragment"><p>🎄 Arabidopisis and 💉 Leishmania data are raw counts (not normalised) because the differential expression method will do this.</p></li>
-<li class="fragment"><p>Normalisation is a big topic. See <span class="citation" data-cites="düren2022">Düren, Lederer, and Qin (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span>; <span class="citation" data-cites="bullard2010">Bullard et al. (<a href="#/references" role="doc-biblioref" onclick="">2010</a>)</span>; <span class="citation" data-cites="lytal2020">Lytal, Ran, and An (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>; <span class="citation" data-cites="abrams2019">Abrams et al. (<a href="#/references" role="doc-biblioref" onclick="">2019</a>)</span>; <span class="citation" data-cites="vallejos2017">Vallejos et al. (<a href="#/references" role="doc-biblioref" onclick="">2017</a>)</span>; <span class="citation" data-cites="evans2017">Evans, Hardin, and Stoebel (<a href="#/references" role="doc-biblioref" onclick="">2017</a>)</span></p></li>
-</ul></section><section id="type-of-de-tests" class="slide level2"><h2>Type of DE tests</h2>
+<li class="fragment"><p>Normalisation is a big topic. See <span class="citation" data-cites="düren2022">Düren et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span>; <span class="citation" data-cites="bullard2010">Bullard et al. (<a href="#/references" role="doc-biblioref" onclick="">2010</a>)</span>; <span class="citation" data-cites="lytal2020">Lytal et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>; <span class="citation" data-cites="abrams2019">Abrams et al. (<a href="#/references" role="doc-biblioref" onclick="">2019</a>)</span>; <span class="citation" data-cites="vallejos2017">Vallejos et al. (<a href="#/references" role="doc-biblioref" onclick="">2017</a>)</span>; <span class="citation" data-cites="evans2017">Evans et al. (<a href="#/references" role="doc-biblioref" onclick="">2017</a>)</span></p></li>
+</ul>
+</section>
+<section id="type-of-de-tests" class="slide level2">
+<h2>Type of DE tests</h2>
 <ul>
 <li class="fragment"><p>A large number of computational methods have been developed for differential expression analysis</p></li>
 <li class="fragment"><p>Methods vary in the types of normalisation they do, the statistical model they use, and the assumptions they make</p></li>
-<li class="fragment"><p>Some of the most well-known methods are provided by: <strong><code>DESeq2</code></strong> <span class="citation" data-cites="DESeq2">(<a href="#/references" role="doc-biblioref" onclick="">Love, Huber, and Anders 2014</a>)</span>, <strong><code>edgeR</code></strong> <span class="citation" data-cites="robinson2010 mccarthy2012 chen2016">(<a href="#/references" role="doc-biblioref" onclick="">Robinson, McCarthy, and Smyth 2010</a>; <a href="#/references" role="doc-biblioref" onclick="">McCarthy, Chen, and Smyth 2012</a>; <a href="#/references" role="doc-biblioref" onclick="">Chen, Lun, and Smyth 2016</a>)</span>, <strong><code>limma</code></strong> <span class="citation" data-cites="ritchie2015">(<a href="#/references" role="doc-biblioref" onclick="">Ritchie et al. 2015</a>)</span> and <strong><code>scran</code></strong> <span class="citation" data-cites="scran">(<a href="#/references" role="doc-biblioref" onclick="">Lun, McCarthy, and Marioni 2016</a>)</span></p></li>
-</ul></section><section id="type-of-test-the-function" class="slide level2"><h2>Type of test (the function)</h2>
+<li class="fragment"><p>Some of the most well-known methods are provided by: <strong><code>DESeq2</code></strong> <span class="citation" data-cites="DESeq2">(<a href="#/references" role="doc-biblioref" onclick="">Love et al. 2014</a>)</span>, <strong><code>edgeR</code></strong> <span class="citation" data-cites="robinson2010 mccarthy2012 chen2016">(<a href="#/references" role="doc-biblioref" onclick="">Robinson et al. 2010</a>; <a href="#/references" role="doc-biblioref" onclick="">McCarthy et al. 2012</a>; <a href="#/references" role="doc-biblioref" onclick="">Chen et al. 2016</a>)</span>, <strong><code>limma</code></strong> <span class="citation" data-cites="ritchie2015">(<a href="#/references" role="doc-biblioref" onclick="">Ritchie et al. 2015</a>)</span> and <strong><code>scran</code></strong> <span class="citation" data-cites="scran">(<a href="#/references" role="doc-biblioref" onclick="">Lun et al. 2016</a>)</span></p></li>
+</ul>
+</section>
+<section id="type-of-test-the-function" class="slide level2">
+<h2>Type of test (the function)</h2>
 <ul>
-<li class="fragment">
-<strong><code>DESeq2</code></strong> and <strong><code>edgeR</code></strong>
+<li class="fragment"><strong><code>DESeq2</code></strong> and <strong><code>edgeR</code></strong>
 <ul>
 <li class="fragment">both require raw counts as input</li>
 <li class="fragment">both assume that most genes are not DE</li>
 <li class="fragment">both use a negative binomial distribution<sup>1</sup> to model the data</li>
 <li class="fragment">use slightly different normalisation methods: <strong><code>DESeq2</code></strong> uses the median of ratios method; <strong><code>edgeR</code></strong> uses the trimmed mean of M values (TMM) method</li>
+</ul></li>
 </ul>
-</li>
-</ul><aside><ol class="aside-footnotes"><li id="fn1"><p>A discrete distribution for counts, similar to the Poisson distribution</p></li></ol></aside></section><section id="type-of-test-the-function-1" class="slide level2"><h2>Type of test (the function)</h2>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>A discrete distribution for counts, similar to the Poisson distribution</p></li></ol></aside></section>
+<section id="type-of-test-the-function-1" class="slide level2">
+<h2>Type of test (the function)</h2>
 <ul>
-<li>
-<strong><code>scran</code></strong>
+<li><strong><code>scran</code></strong>
 <ul>
 <li>works on normalized log-expression values</li>
 <li>performs Welch t-tests</li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="meta-data" class="slide level2"><h2>Meta data</h2>
+</section>
+<section id="meta-data" class="slide level2">
+<h2>Meta data</h2>
 <ul>
 <li class="fragment"><p>DE methods require two types of data: the expression data and the meta data</p></li>
 <li class="fragment"><p>The meta data gives the information about the samples</p></li>
 <li class="fragment"><p>It says which samples (which columns of data) are in which treatment group (s)</p></li>
 <li class="fragment"><p>Meta data is usually stored in a separate file</p></li>
-</ul></section><section id="arabidopisis" class="slide level2"><h2>🎄 <em>Arabidopisis</em>
-</h2>
+</ul>
+</section>
+<section id="arabidopisis" class="slide level2">
+<h2>🎄 <em>Arabidopisis</em></h2>
 <ul>
 <li><p>Expression for the whole transcriptome <a href="https://plants.ensembl.org/Arabidopsis_thaliana/Info/Index">ENSEMBL <em>Arabidopsis</em> TAIR10</a><span class="citation" data-cites="yates_ensembl_2022">(<a href="#/references" role="doc-biblioref" onclick="">Yates et al. 2022</a>)</span></p></li>
 <li><p>Values are raw counts</p></li>
 <li><p>The statistical analysis method we will use is <strong><code>DESeq2</code></strong> which requires raw counts and performs the normalisation as part of the analysis.</p></li>
-</ul></section><section id="leishmania-1" class="slide level2"><h2>💉 <em>Leishmania</em>
-</h2>
+</ul>
+</section>
+<section id="leishmania-1" class="slide level2">
+<h2>💉 <em>Leishmania</em></h2>
 <ul>
 <li><p>Expression for the whole transcriptome <a href="https://tritrypdb.org/tritrypdb/app/record/dataset/DS_e318592c8e"><em>L. mexicana</em> MHOM/GT/2001/U1103</a><span class="citation" data-cites="rogers_chromosome_2011">(<a href="#/references" role="doc-biblioref" onclick="">Rogers et al. 2011</a>)</span></p></li>
 <li><p>Values are raw counts</p></li>
 <li><p>The statistical analysis method we will use is <strong><code>DESeq2</code></strong> which requires raw counts and performs the normalisation as part of the analysis.</p></li>
-</ul></section><section id="stem-cells-1" class="slide level2"><h2>🐭 Stem cells</h2>
+</ul>
+</section>
+<section id="stem-cells-1" class="slide level2">
+<h2>🐭 Stem cells</h2>
 <ul>
 <li>Expression for a <em>subset</em> of the transcriptome, the secretome</li>
 </ul>
 <ul>
 <li><p>Values are log2 normalised values</p></li>
-<li><p>The statistical analysis method we will use <strong><code>scran</code></strong> <span class="citation" data-cites="scran">(<a href="#/references" role="doc-biblioref" onclick="">Lun, McCarthy, and Marioni 2016</a>)</span> requires normalised values</p></li>
-</ul></section></section><section><section id="adding-gene-information" class="title-slide slide level1 center"><h1>Adding gene information</h1>
+<li><p>The statistical analysis method we will use <strong><code>scran</code></strong> <span class="citation" data-cites="scran">(<a href="#/references" role="doc-biblioref" onclick="">Lun et al. 2016</a>)</span> requires normalised values</p></li>
+</ul>
+</section></section>
+<section>
+<section id="adding-gene-information" class="title-slide slide level1 center">
+<h1>Adding gene information</h1>
 
-</section><section id="adding-gene-information-1" class="slide level2"><h2>Adding gene information</h2>
+</section>
+<section id="adding-gene-information-1" class="slide level2">
+<h2>Adding gene information</h2>
 <ul>
 <li class="fragment"><p>The gene id is difficult to interpret</p></li>
 <li class="fragment"><p>Therefore we need to add information such as the gene name and a description to the results</p></li>
@@ -412,13 +483,18 @@ Emma Rand
 <li class="fragment"><p>🐭 Stem cell information comes from Ensembl <span class="citation" data-cites="birney2004">(<a href="#/references" role="doc-biblioref" onclick="">Birney et al. 2004</a>)</span></p></li>
 </ul>
 </div>
-</section><section id="tair10-through-ensembl" class="slide level2"><h2>🎄 TAIR10 through Ensembl</h2>
+</section>
+<section id="tair10-through-ensembl" class="slide level2">
+<h2>🎄 TAIR10 through Ensembl</h2>
 <ul>
 <li class="fragment"><p><a href="https://www.ensembl.org/index.html">Ensembl</a> creates, integrates and distributes reference datasets and analysis tools that enable genomics</p></li>
 <li class="fragment"><p><a href="https://grch37.ensembl.org/info/data/biomart/index.html">BioMart</a> <span class="citation" data-cites="smedley2009">(<a href="#/references" role="doc-biblioref" onclick="">Smedley et al. 2009</a>)</span> provides uniform access to these large datasets</p></li>
 <li class="fragment"><p><strong><code>biomaRt</code></strong> <span class="citation" data-cites="biomaRt1 biomaRt2">(<a href="#/references" role="doc-biblioref" onclick="">Durinck et al. 2009</a>, <a href="#/references" role="doc-biblioref" onclick="">2005</a>)</span> is a Bioconductor package gives you programmatic access to BioMart.</p></li>
 <li class="fragment"><p>In the workshop you use this package to get information you can merge with the results file</p></li>
-</ul></section><section id="tritrypdb" class="slide level2"><h2>💉 TriTrypDB</h2>
+</ul>
+</section>
+<section id="tritrypdb" class="slide level2">
+<h2>💉 TriTrypDB</h2>
 <div style="font-size: 80%;">
 <ul>
 <li class="fragment"><p>I got the information from <a href="https://tritrypdb.org/tritrypdb/app/">TriTrypDB</a><br>
@@ -428,68 +504,81 @@ which is a functional genomic resource for the Trypanosomatidae and Plasmodidae<
 <li class="fragment"><p>In the workshop you will import this file and merge the information with the results file</p></li>
 </ul>
 </div>
-</section><section id="ensembl" class="slide level2"><h2>🐭 Ensembl</h2>
+</section>
+<section id="ensembl" class="slide level2">
+<h2>🐭 Ensembl</h2>
 <ul>
 <li class="fragment"><p><a href="https://www.ensembl.org/index.html">Ensembl</a> creates, integrates and distributes reference datasets and analysis tools that enable genomics</p></li>
 <li class="fragment"><p><a href="https://grch37.ensembl.org/info/data/biomart/index.html">BioMart</a> <span class="citation" data-cites="smedley2009">(<a href="#/references" role="doc-biblioref" onclick="">Smedley et al. 2009</a>)</span> provides uniform access to these large datasets</p></li>
 <li class="fragment"><p><strong><code>biomaRt</code></strong> <span class="citation" data-cites="biomaRt1 biomaRt2">(<a href="#/references" role="doc-biblioref" onclick="">Durinck et al. 2009</a>, <a href="#/references" role="doc-biblioref" onclick="">2005</a>)</span> is a Bioconductor package gives you programmatic access to BioMart.</p></li>
 <li class="fragment"><p>In the workshop you use this package to get information you can merge with the results file</p></li>
-</ul></section><section id="packages" class="slide level2"><h2>Packages</h2>
+</ul>
+</section>
+<section id="packages" class="slide level2">
+<h2>Packages</h2>
 <p>These packages are all on the University computers which you can access on campus or <a href="https://www.york.ac.uk/it-services/tools/vds/">remotely using the VDS</a></p>
 <p>If you want to use your own machine you will need to install the packages.</p>
 <div style="font-size: 60%;">
 <p>Install <strong><code>BiocManager</code></strong> from CRAN in the the normal way:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"BiocManager"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Install <strong><code>DESeq2</code></strong> from Bioconductor using BiocManager:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://bioconductor.github.io/BiocManager/reference/install.html">install</a></span><span class="op">(</span><span class="st">"DESeq2"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"DESeq2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Install <strong><code>scran</code></strong> from Bioconductor using BiocManager:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://bioconductor.github.io/BiocManager/reference/install.html">install</a></span><span class="op">(</span><span class="st">"scran"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"scran"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Install <strong><code>biomaRt</code></strong> from Bioconductor using BiocManager:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://bioconductor.github.io/BiocManager/reference/install.html">install</a></span><span class="op">(</span><span class="st">"biomaRt"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"biomaRt"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-</section></section><section><section id="workshops" class="title-slide slide level1 center"><h1>Workshops</h1>
+</section></section>
+<section>
+<section id="workshops" class="title-slide slide level1 center">
+<h1>Workshops</h1>
 
-</section><section id="workshops-1" class="slide level2"><h2>Workshops</h2>
+</section>
+<section id="workshops-1" class="slide level2">
+<h2>Workshops</h2>
 <ul>
 <li><p>Transcriptomics 1: Hello data. Getting to know the data. Checking the distributions of values overall, across rows and columns to check things are as we expect and detect rows/columns that need to be removed</p></li>
 <li><p>Transcriptomics 2: Statistical Analysis. Identifying which genes are differentially expressed between treatments. This is the main analysis step. We will use different methods for bulk and single cell data.</p></li>
 <li><p>Transcriptomics 3: Visualising. Principal Component Analysis (PCA) volcano plots to visualise the results of the</p></li>
-</ul></section><section id="references" class="slide level2 smaller scrollable"><h2>References</h2>
+</ul>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
 <p>Pages made with R <span class="citation" data-cites="R-core">(<a href="#/references" role="doc-biblioref" onclick="">R Core Team 2024</a>)</span>, Quarto <span class="citation" data-cites="Allaire_Quarto_2024">(<a href="#/references" role="doc-biblioref" onclick="">Allaire et al. 2024</a>)</span>, <code>knitr</code> <span class="citation" data-cites="knitr1 knitr2 knitr3">(<a href="#/references" role="doc-biblioref" onclick="">Xie 2024</a>, <a href="#/references" role="doc-biblioref" onclick="">2015</a>, <a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span>, <code>kableExtra</code> <span class="citation" data-cites="kableExtra">(<a href="#/references" role="doc-biblioref" onclick="">Zhu 2021</a>)</span></p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-abrams2019" class="csl-entry" role="listitem">
 Abrams, Zachary B., Travis S. Johnson, Kun Huang, Philip R. O. Payne, and Kevin Coombes. 2019. <span>“A Protocol to Evaluate RNA Sequencing Normalization Methods.”</span> <em>BMC Bioinformatics</em> 20 (24): 679. <a href="https://doi.org/10.1186/s12859-019-3247-x">https://doi.org/10.1186/s12859-019-3247-x</a>.
 </div>
 <div id="ref-Allaire_Quarto_2024" class="csl-entry" role="listitem">
-Allaire, J. J., Charles Teague, Carlos Scheidegger, Yihui Xie, and Christophe Dervieux. 2024. <span>“<span>Quarto</span>.”</span> <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>.
+Allaire, J. J., Charles Teague, Carlos Scheidegger, Yihui Xie, and Christophe Dervieux. 2024. <em><span>Quarto</span></em>. V. 1.4. Released February. <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>.
 </div>
 <div id="ref-benjamini1995" class="csl-entry" role="listitem">
 Benjamini, Yoav, and Yosef Hochberg. 1995. <span>“Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing.”</span> <em>J. R. Stat. Soc. Series B Stat. Methodol.</em> 57 (1): 289–300. <a href="http://www.jstor.org/stable/2346101">http://www.jstor.org/stable/2346101</a>.
 </div>
 <div id="ref-birney2004" class="csl-entry" role="listitem">
-Birney, Ewan, T. Daniel Andrews, Paul Bevan, Mario Caccamo, Yuan Chen, Laura Clarke, Guy Coates, et al. 2004. <span>“An Overview of Ensembl.”</span> <em>Genome Research</em> 14 (5): 925–28. <a href="https://doi.org/10.1101/gr.1860604">https://doi.org/10.1101/gr.1860604</a>.
+Birney, Ewan, T. Daniel Andrews, Paul Bevan, et al. 2004. <span>“An Overview of Ensembl.”</span> <em>Genome Research</em> 14 (5): 925–28. <a href="https://doi.org/10.1101/gr.1860604">https://doi.org/10.1101/gr.1860604</a>.
 </div>
 <div id="ref-bullard2010" class="csl-entry" role="listitem">
 Bullard, James H., Elizabeth Purdom, Kasper D. Hansen, and Sandrine Dudoit. 2010. <span>“Evaluation of Statistical Methods for Normalization and Differential Expression in mRNA-Seq Experiments.”</span> <em>BMC Bioinformatics</em> 11 (1): 94. <a href="https://doi.org/10.1186/1471-2105-11-94">https://doi.org/10.1186/1471-2105-11-94</a>.
 </div>
 <div id="ref-chen2016" class="csl-entry" role="listitem">
-Chen, Yunshun, Aaron T. L. Lun, and Gordon K. Smyth. 2016. <span>“From Reads to Genes to Pathways: Differential Expression Analysis of RNA-Seq Experiments Using Rsubread and the edgeR Quasi-Likelihood Pipeline.”</span> <a href="https://doi.org/10.12688/f1000research.8987.2">https://doi.org/10.12688/f1000research.8987.2</a>.
+Chen, Yunshun, Aaron T. L. Lun, and Gordon K. Smyth. 2016. <em>From Reads to Genes to Pathways: Differential Expression Analysis of RNA-Seq Experiments Using Rsubread and the edgeR Quasi-Likelihood Pipeline</em>. <a href="https://doi.org/10.12688/f1000research.8987.2">https://doi.org/10.12688/f1000research.8987.2</a>.
 </div>
 <div id="ref-düren2022" class="csl-entry" role="listitem">
 Düren, Yannick, Johannes Lederer, and Li-Xuan Qin. 2022. <span>“Depth Normalization of Small RNA Sequencing: Using Data and Biology to Select a Suitable Method.”</span> <em>Nucleic Acids Research</em> 50 (10): e56. <a href="https://doi.org/10.1093/nar/gkac064">https://doi.org/10.1093/nar/gkac064</a>.
 </div>
 <div id="ref-biomaRt2" class="csl-entry" role="listitem">
-Durinck, Steffen, Yves Moreau, Arek Kasprzyk, Sean Davis, Bart De Moor, Alvis Brazma, and Wolfgang Huber. 2005. <span>“BioMart and Bioconductor: A Powerful Link Between Biological Databases and Microarray Data Analysis.”</span> <em>Bioinformatics</em> 21: 3439–40.
+Durinck, Steffen, Yves Moreau, Arek Kasprzyk, et al. 2005. <span>“BioMart and Bioconductor: A Powerful Link Between Biological Databases and Microarray Data Analysis.”</span> <em>Bioinformatics</em> 21: 3439–40.
 </div>
 <div id="ref-biomaRt1" class="csl-entry" role="listitem">
 Durinck, Steffen, Paul T. Spellman, Ewan Birney, and Wolfgang Huber. 2009. <span>“Mapping Identifiers for the Integration of Genomic Datasets with the r/Bioconductor Package biomaRt.”</span> <em>Nature Protocols</em> 4: 1184–91.
@@ -510,19 +599,19 @@ Lytal, Nicholas, Di Ran, and Lingling An. 2020. <span>“Normalization Methods o
 McCarthy, Davis J., Yunshun Chen, and Gordon K. Smyth. 2012. <span>“Differential Expression Analysis of Multifactor RNA-Seq Experiments with Respect to Biological Variation.”</span> <em>Nucleic Acids Research</em> 40 (10): 4288–97. <a href="https://doi.org/10.1093/nar/gks042">https://doi.org/10.1093/nar/gks042</a>.
 </div>
 <div id="ref-R-core" class="csl-entry" role="listitem">
-R Core Team. 2024. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+R Core Team. 2024. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 <div id="ref-ritchie2015" class="csl-entry" role="listitem">
-Ritchie, Matthew E., Belinda Phipson, Di Wu, Yifang Hu, Charity W. Law, Wei Shi, and Gordon K. Smyth. 2015. <span>“Limma Powers Differential Expression Analyses for RNA-Sequencing and Microarray Studies.”</span> <em>Nucleic Acids Research</em> 43 (7): e47. <a href="https://doi.org/10.1093/nar/gkv007">https://doi.org/10.1093/nar/gkv007</a>.
+Ritchie, Matthew E., Belinda Phipson, Di Wu, et al. 2015. <span>“Limma Powers Differential Expression Analyses for RNA-Sequencing and Microarray Studies.”</span> <em>Nucleic Acids Research</em> 43 (7): e47. <a href="https://doi.org/10.1093/nar/gkv007">https://doi.org/10.1093/nar/gkv007</a>.
 </div>
 <div id="ref-robinson2010" class="csl-entry" role="listitem">
 Robinson, Mark D., Davis J. McCarthy, and Gordon K. Smyth. 2010. <span>“edgeR: A Bioconductor Package for Differential Expression Analysis of Digital Gene Expression Data.”</span> <em>Bioinformatics</em> 26 (1): 139–40. <a href="https://doi.org/10.1093/bioinformatics/btp616">https://doi.org/10.1093/bioinformatics/btp616</a>.
 </div>
 <div id="ref-rogers_chromosome_2011" class="csl-entry" role="listitem">
-Rogers, Matthew B., James D. Hilley, Nicholas J. Dickens, Jon Wilkes, Paul A. Bates, Daniel P. Depledge, David Harris, et al. 2011. <span>“Chromosome and Gene Copy Number Variation Allow Major Structural Change Between Species and Strains of <span>Leishmania</span>.”</span> <em>Genome Research</em> 21 (12): 2129–42. <a href="https://doi.org/10.1101/gr.122945.111">https://doi.org/10.1101/gr.122945.111</a>.
+Rogers, Matthew B., James D. Hilley, Nicholas J. Dickens, et al. 2011. <span>“Chromosome and Gene Copy Number Variation Allow Major Structural Change Between Species and Strains of <span>Leishmania</span>.”</span> <em>Genome Research</em> 21 (12): 2129–42. <a href="https://doi.org/10.1101/gr.122945.111">https://doi.org/10.1101/gr.122945.111</a>.
 </div>
 <div id="ref-smedley2009" class="csl-entry" role="listitem">
-Smedley, Damian, Syed Haider, Benoit Ballester, Richard Holland, Darin London, Gudmundur Thorisson, and Arek Kasprzyk. 2009. <span>“BioMart <span></span> Biological Queries Made Easy.”</span> <em>BMC Genomics</em> 10 (1): 22. <a href="https://doi.org/10.1186/1471-2164-10-22">https://doi.org/10.1186/1471-2164-10-22</a>.
+Smedley, Damian, Syed Haider, Benoit Ballester, et al. 2009. <span>“BioMart <span></span> Biological Queries Made Easy.”</span> <em>BMC Genomics</em> 10 (1): 22. <a href="https://doi.org/10.1186/1471-2164-10-22">https://doi.org/10.1186/1471-2164-10-22</a>.
 </div>
 <div id="ref-vallejos2017" class="csl-entry" role="listitem">
 Vallejos, Catalina A., Davide Risso, Antonio Scialdone, Sandrine Dudoit, and John C. Marioni. 2017. <span>“Normalizing Single-Cell RNA Sequencing Data: Challenges and Opportunities.”</span> <em>Nature Methods</em> 14 (6): 565–71. <a href="https://doi.org/10.1038/nmeth.4292">https://doi.org/10.1038/nmeth.4292</a>.
@@ -531,27 +620,45 @@ Vallejos, Catalina A., Davide Risso, Antonio Scialdone, Sandrine Dudoit, and Joh
 Xie, Yihui. 2014. <span>“Knitr: A Comprehensive Tool for Reproducible Research in <span>R</span>.”</span> In <em>Implementing Reproducible Computational Research</em>, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC.
 </div>
 <div id="ref-knitr2" class="csl-entry" role="listitem">
-———. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 <div id="ref-knitr1" class="csl-entry" role="listitem">
-———. 2024. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+Xie, Yihui. 2024. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 <div id="ref-yates_ensembl_2022" class="csl-entry" role="listitem">
-Yates, Andrew D, James Allen, Ridwan M Amode, Andrey G Azov, Matthieu Barba, Andrés Becerra, Jyothish Bhai, et al. 2022. <span>“Ensembl <span>Genomes</span> 2022: An Expanding Genome Resource for Non-Vertebrates.”</span> <em>Nucleic Acids Research</em> 50 (D1): D996–1003. <a href="https://doi.org/10.1093/nar/gkab1007">https://doi.org/10.1093/nar/gkab1007</a>.
+Yates, Andrew D, James Allen, Ridwan M Amode, et al. 2022. <span>“Ensembl <span>Genomes</span> 2022: An Expanding Genome Resource for Non-Vertebrates.”</span> <em>Nucleic Acids Research</em> 50 (D1): D996–1003. <a href="https://doi.org/10.1093/nar/gkab1007">https://doi.org/10.1093/nar/gkab1007</a>.
 </div>
 <div id="ref-kableExtra" class="csl-entry" role="listitem">
-Zhu, Hao. 2021. <span>“kableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax.”</span> <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.
+Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax</em>. <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.
 </div>
 </div>
 </section></section>
-</div>
+
+    </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
 <p>🔗 <a href="https://3mmarand.github.io/BIO00088H-data/transcriptomics/week-4/overview.html">About Transcriptomics 2: Statistical Analysis</a></p>
 </div>
 </div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script><script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../../site_libs/revealjs/plugin/search/search.js"></script><script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -743,7 +850,9 @@ Zhu, Hao. 2021. <span>“kableExtra: Construct Complex Table with ’Kable’ an
           RevealZoom
         ]
       });
-    </script><script>
+    </script>
+    
+    <script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -778,7 +887,9 @@ Zhu, Hao. 2021. <span>“kableExtra: Construct Complex Table with ’Kable’ an
         }
 
       })();
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
         tabsets.forEach(function(tabset) {
@@ -946,6 +1057,6 @@ Zhu, Hao. 2021. <span>“kableExtra: Construct Complex Table with ’Kable’ an
         }
       });
       </script>
-
+    
 
 </body></html>

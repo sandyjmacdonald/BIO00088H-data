@@ -6,21 +6,27 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
-<meta name="author" content="Emma Rand">
-<title>Data Analysis for Group Project – Workshop</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
-<style>
-    code{white-space: pre-wrap;}
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <meta name="author" content="Emma Rand">
+  <title>Data Analysis for Group Project – Workshop</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -98,7 +104,6 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
-      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -115,21 +120,24 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-<link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
-<link rel="stylesheet" href="styles.css">
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TVF95J593T"></script><script type="text/javascript">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link rel="stylesheet" href="styles.css">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TVF95J593T"></script>
+
+  <script type="text/javascript">
 
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
-  </script><link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-<link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-<link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  </script>
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -216,27 +224,33 @@
       margin-right: 0; 
     }
   </style>
-<script src="../../site_libs/twitter-widget-0.0.1/widgets.js"></script>
+  <script src="../../site_libs/twitter-widget-0.0.1/widgets.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Workshop</h1>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Workshop</h1>
   <p class="subtitle">Supporting Information 1 Organising Reproducible Data Analyses</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Emma Rand 
+Emma Rand
 </div>
 </div>
 </div>
 
-  <p class="date">3 December, 2025</p>
-</section><section><section id="introduction" class="title-slide slide level1 center"><h1>Introduction</h1>
+  <p class="date">21 September, 2026</p>
+</section>
+<section>
+<section id="introduction" class="title-slide slide level1 center">
+<h1>Introduction</h1>
 
-</section><section id="session-overview" class="slide level2"><h2>Session overview</h2>
+</section>
+<section id="session-overview" class="slide level2">
+<h2>Session overview</h2>
 <p>In this workshop we will discuss why reproducibility matters and how to organise your work to make it reproducible. We will cover:</p>
 <div style="font-size: 70%;">
 <ul>
@@ -250,45 +264,76 @@ Emma Rand
 <li>And some handy workflow tips</li>
 </ul>
 </div>
-</section></section><section id="slide-navigation" class="title-slide slide level1 center"><h1>Slide navigation</h1>
+</section></section>
+<section id="slide-navigation" class="title-slide slide level1 center">
+<h1>Slide navigation</h1>
 
-</section><section><section id="reproducibility" class="title-slide slide level1 center"><h1>Reproducibility</h1>
+</section>
 
-</section><section id="what-is-reproducibility" class="slide level2"><h2>What is reproducibility?</h2>
+<section>
+<section id="reproducibility" class="title-slide slide level1 center">
+<h1>Reproducibility</h1>
+
+</section>
+<section id="what-is-reproducibility" class="slide level2">
+<h2>What is reproducibility?</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions#rr-overview-definitions"><img data-src="images/reproducible-matrix.jpg" alt="Two by Two cell matrix. Columns are Data, either same or different. Rows are Analysis either same or different. Each of cells contain one of the definitions for reproducibility"></a></p>
-<figcaption>The Turing Way’s definitions of reproducible research</figcaption></figure>
+<figure>
+<p><a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions#rr-overview-definitions"><img data-src="images/reproducible-matrix.jpg" alt="Two by Two cell matrix. Columns are Data, either same or different. Rows are Analysis either same or different. Each of cells contain one of the definitions for reproducibility"></a></p>
+<figcaption>The Turing Way’s definitions of reproducible research</figcaption>
+</figure>
 </div>
-</section><section id="definitions" class="slide level2"><h2>Definitions</h2>
+</section>
+<section id="definitions" class="slide level2">
+<h2>Definitions</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions#rr-overview-definitions"><img data-src="images/reproducible-matrix.jpg" alt="Two by Two cell matrix. Columns are Data, either same or different. Rows are Analysis either same or different. Each of cells contain one of the definitions for reproducibility" width="350"></a></p>
-<figcaption>The Turing Way’s definitions of reproducible research</figcaption></figure>
+<figure>
+<p><a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions#rr-overview-definitions"><img data-src="images/reproducible-matrix.jpg" alt="Two by Two cell matrix. Columns are Data, either same or different. Rows are Analysis either same or different. Each of cells contain one of the definitions for reproducibility" width="350"></a></p>
+<figcaption>The Turing Way’s definitions of reproducible research</figcaption>
+</figure>
 </div>
 <p><strong>Reproducible: Same data + same analysis = identical results</strong>. <em>“… obtaining consistent results using the same input data; computational steps, methods, and code; and conditions of analysis. This definition is synonymous with”computational reproducibility”</em> <span class="citation" data-cites="nationalacademiesofsciences2019">(<a href="#/references" role="doc-biblioref" onclick="">National Academies of Sciences et al. 2019</a>)</span>. This is what we are concentrating on in the Supporting Information.</p>
-</section><section id="definitions-1" class="slide level2"><h2>Definitions</h2>
+</section>
+<section id="definitions-1" class="slide level2">
+<h2>Definitions</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions#rr-overview-definitions"><img data-src="images/reproducible-matrix.jpg" alt="Two by Two cell matrix. Columns are Data, either same or different. Rows are Analysis either same or different. Each of cells contain one of the definitions for reproducibility" width="350"></a></p>
-<figcaption>The Turing Way’s definitions of reproducible research</figcaption></figure>
+<figure>
+<p><a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions#rr-overview-definitions"><img data-src="images/reproducible-matrix.jpg" alt="Two by Two cell matrix. Columns are Data, either same or different. Rows are Analysis either same or different. Each of cells contain one of the definitions for reproducibility" width="350"></a></p>
+<figcaption>The Turing Way’s definitions of reproducible research</figcaption>
+</figure>
 </div>
 <p>Replicable: Different data + same analysis = qualitatively similar results. The work is not dependent on the specificities of the data.</p>
-</section><section id="definitions-2" class="slide level2"><h2>Definitions</h2>
+</section>
+<section id="definitions-2" class="slide level2">
+<h2>Definitions</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions#rr-overview-definitions"><img data-src="images/reproducible-matrix.jpg" alt="Two by Two cell matrix. Columns are Data, either same or different. Rows are Analysis either same or different. Each of cells contain one of the definitions for reproducibility" width="350"></a></p>
-<figcaption>The Turing Way’s definitions of reproducible research</figcaption></figure>
+<figure>
+<p><a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions#rr-overview-definitions"><img data-src="images/reproducible-matrix.jpg" alt="Two by Two cell matrix. Columns are Data, either same or different. Rows are Analysis either same or different. Each of cells contain one of the definitions for reproducibility" width="350"></a></p>
+<figcaption>The Turing Way’s definitions of reproducible research</figcaption>
+</figure>
 </div>
 <p>Robust: Same data + different analysis = qualitatively similar or identical results. The work is not dependent on the specificities of the analysis.</p>
-</section><section id="definitions-3" class="slide level2"><h2>Definitions</h2>
+</section>
+<section id="definitions-3" class="slide level2">
+<h2>Definitions</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure><p><a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions#rr-overview-definitions"><img data-src="images/reproducible-matrix.jpg" alt="Two by Two cell matrix. Columns are Data, either same or different. Rows are Analysis either same or different. Each of cells contain one of the definitions for reproducibility" width="350"></a></p>
-<figcaption>The Turing Way’s definitions of reproducible research</figcaption></figure>
+<figure>
+<p><a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions#rr-overview-definitions"><img data-src="images/reproducible-matrix.jpg" alt="Two by Two cell matrix. Columns are Data, either same or different. Rows are Analysis either same or different. Each of cells contain one of the definitions for reproducibility" width="350"></a></p>
+<figcaption>The Turing Way’s definitions of reproducible research</figcaption>
+</figure>
 </div>
 <p>Generalisable: Different data + different analysis = qualitatively similar results and same conclusions.</p>
-</section><section id="why-does-it-matter" class="slide level2"><h2>Why does it matter?</h2>
+</section>
+<section id="why-does-it-matter" class="slide level2">
+<h2>Why does it matter?</h2>
 <ul>
 <li class="fragment"><p>Many high profile cases of work which did not reproduce e.g.&nbsp;Anil Potti unravelled by <span class="citation" data-cites="baggerly2009">Baggerly and Coombes (<a href="#/references" role="doc-biblioref" onclick="">2009</a>)</span></p></li>
 <li class="fragment"><p>Five selfish reasons to work reproducibly <span class="citation" data-cites="markowetz2015">(<a href="#/references" role="doc-biblioref" onclick="">Markowetz 2015</a>)</span>. Alternatively, see the very entertaining <a href="https://youtu.be/yVT07Sukv9Q">talk</a></p></li>
 <li class="fragment"><p><strong>Will</strong> become standard in Science and publishing e.g OECD Global Science Forum Building digital workforce capacity and skills for data-intensive science <span class="citation" data-cites="oecdglobalscienceforum2020">(<a href="#/references" role="doc-biblioref" onclick="">OECD Global Science Forum 2020</a>)</span></p></li>
-</ul></section><section id="how-to-achieve-reproducibility" class="slide level2"><h2>How to achieve reproducibility</h2>
+</ul>
+</section>
+<section id="how-to-achieve-reproducibility" class="slide level2">
+<h2>How to achieve reproducibility</h2>
 <ul>
 <li><p>Reproducibility is a continuum. Some is better than none!</p></li>
 <li><p>Script <strong>everything</strong></p></li>
@@ -296,22 +341,37 @@ Emma Rand
 <li><p>Code: follow a consistent style, organise into sections and scripts (be modular), Code algorithmically</p></li>
 <li><p>Documentation: Readme files, code comments, metadata,</p></li>
 <li><p>More advanced: version, control, continuous integration and testing (not required for Supporting Information)</p></li>
-</ul></section></section><section><section id="scripting" class="title-slide slide level1 center"><h1>Scripting</h1>
+</ul>
+</section></section>
+<section>
+<section id="scripting" class="title-slide slide level1 center">
+<h1>Scripting</h1>
 
-</section><section id="rationale-for-scripting" class="slide level2"><h2>Rationale for scripting</h2>
+</section>
+<section id="rationale-for-scripting" class="slide level2">
+<h2>Rationale for scripting</h2>
 <ul>
 <li><p>Science is the generation of ideas, designing work to test them and reporting the results.</p></li>
 <li><p>We ensure laboratory and field work is replicable, robust and generalisable by planning and recording in lab books and using standard protocols. Repeating results is still hard.</p></li>
 <li><p>Workflows for computational projects, and the data analysis and reporting of other work can, and should, be 100% reproducible!</p></li>
 <li><p>Scripting is the way to achieve this.</p></li>
-</ul></section></section><section><section id="organisation-of-supporting-information" class="title-slide slide level1 center"><h1>Organisation of Supporting Information</h1>
+</ul>
+</section></section>
+<section>
+<section id="organisation-of-supporting-information" class="title-slide slide level1 center">
+<h1>Organisation of Supporting Information</h1>
 
-</section><section id="project-oriented-workflow" class="slide level2"><h2>Project-oriented workflow</h2>
+</section>
+<section id="project-oriented-workflow" class="slide level2">
+<h2>Project-oriented workflow</h2>
 <ul>
 <li><p>use folders to organise your work</p></li>
 <li><p>you are aiming for structured, systematic and repeatable.</p></li>
 <li><p>inputs and outputs should be clearly identifiable from structure and/or naming</p></li>
-</ul></section><section id="example-si-itself-is-an-rsp" class="slide level2"><h2>Example: SI itself is an RSP</h2>
+</ul>
+</section>
+<section id="example-si-itself-is-an-rsp" class="slide level2">
+<h2>Example: SI itself is an RSP</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">--</span> stem_cell_rna</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>   <span class="kw">|</span><span class="ex">__stem_cell_rna.Rproj</span>   </span>
@@ -327,7 +387,9 @@ Emma Rand
 <span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a>         <span class="kw">|</span><span class="ex">__theme_volcano.R</span></span>
 <span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a>         <span class="kw">|</span><span class="ex">__normalise.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="example-si-includes-an-rsp" class="slide level2"><h2>Example: SI includes an RSP</h2>
+</section>
+<section id="example-si-includes-an-rsp" class="slide level2">
+<h2>Example: SI includes an RSP</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">--</span> stem_cell_rna</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>   <span class="kw">|</span><span class="ex">__data_processing/</span></span>
@@ -348,85 +410,111 @@ Emma Rand
 <span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a>            <span class="kw">|</span><span class="ex">__theme_volcano.R</span></span>
 <span id="cb2-18"><a aria-hidden="true" tabindex="-1"></a>            <span class="kw">|</span><span class="ex">__normalise.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section></section><section><section id="rstudio-projects-revisited" class="title-slide slide level1 center"><h1>RStudio Projects revisited</h1>
+</section></section>
+<section>
+<section id="rstudio-projects-revisited" class="title-slide slide level1 center">
+<h1>RStudio Projects revisited</h1>
 
-</section><section id="rstudio-projects" class="slide level2"><h2>RStudio Projects</h2>
+</section>
+<section id="rstudio-projects" class="slide level2">
+<h2>RStudio Projects</h2>
 <ul>
 <li class="fragment">RStudio Projects make it easy to manage working directories and paths because they set the working directory to the RStudio Projects directory automatically.</li>
-</ul></section><section id="rstudio-projects-1" class="slide level2"><h2>RStudio Projects</h2>
+</ul>
+</section>
+<section id="rstudio-projects-1" class="slide level2">
+<h2>RStudio Projects</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-code-line-numbers="1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="ex">--</span> stem_cell_rna</span>
-<span id="cb3-2"><a></a>   <span class="kw">|</span><span class="ex">__stem_cell_rna.Rproj</span>   </span>
-<span id="cb3-3"><a></a>   <span class="kw">|</span><span class="ex">__raw_</span> data/            </span>
-<span id="cb3-4"><a></a>      <span class="kw">|</span><span class="ex">__2019-03-21_donor_1.csv</span></span>
-<span id="cb3-5"><a></a>   <span class="kw">|</span><span class="ex">__README.</span> md</span>
-<span id="cb3-6"><a></a>   <span class="kw">|</span><span class="ex">__R/</span></span>
-<span id="cb3-7"><a></a>      <span class="kw">|</span><span class="ex">__01_data_processing.R</span></span>
-<span id="cb3-8"><a></a>      <span class="kw">|</span><span class="ex">__02_exploratory.R</span></span>
-<span id="cb3-9"><a></a>      <span class="kw">|</span><span class="ex">__functions/</span></span>
-<span id="cb3-10"><a></a>         <span class="kw">|</span><span class="ex">__theme_volcano.R</span></span>
-<span id="cb3-11"><a></a>         <span class="kw">|</span><span class="ex">__normalise.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-code-line-numbers="1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a aria-label="1"></a><span class="ex">--</span> stem_cell_rna</span>
+<span id="cb3-2"><a aria-label="2"></a>   <span class="kw">|</span><span class="ex">__stem_cell_rna.Rproj</span>   </span>
+<span id="cb3-3"><a aria-label="3"></a>   <span class="kw">|</span><span class="ex">__raw_</span> data/            </span>
+<span id="cb3-4"><a aria-label="4"></a>      <span class="kw">|</span><span class="ex">__2019-03-21_donor_1.csv</span></span>
+<span id="cb3-5"><a aria-label="5"></a>   <span class="kw">|</span><span class="ex">__README.</span> md</span>
+<span id="cb3-6"><a aria-label="6"></a>   <span class="kw">|</span><span class="ex">__R/</span></span>
+<span id="cb3-7"><a aria-label="7"></a>      <span class="kw">|</span><span class="ex">__01_data_processing.R</span></span>
+<span id="cb3-8"><a aria-label="8"></a>      <span class="kw">|</span><span class="ex">__02_exploratory.R</span></span>
+<span id="cb3-9"><a aria-label="9"></a>      <span class="kw">|</span><span class="ex">__functions/</span></span>
+<span id="cb3-10"><a aria-label="10"></a>         <span class="kw">|</span><span class="ex">__theme_volcano.R</span></span>
+<span id="cb3-11"><a aria-label="11"></a>         <span class="kw">|</span><span class="ex">__normalise.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:40%;">
 <p>The project directory is the folder at the top</p>
 </div></div>
-</section><section id="rstudio-projects-2" class="slide level2"><h2>RStudio Projects</h2>
+</section>
+<section id="rstudio-projects-2" class="slide level2">
+<h2>RStudio Projects</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="ex">--</span> stem_cell_rna</span>
-<span id="cb4-2"><a></a>   <span class="kw">|</span><span class="ex">__stem_cell_rna.Rproj</span>   </span>
-<span id="cb4-3"><a></a>   <span class="kw">|</span><span class="ex">__raw_</span> data/            </span>
-<span id="cb4-4"><a></a>      <span class="kw">|</span><span class="ex">__2019-03-21_donor_1.csv</span></span>
-<span id="cb4-5"><a></a>   <span class="kw">|</span><span class="ex">__README.</span> md</span>
-<span id="cb4-6"><a></a>   <span class="kw">|</span><span class="ex">__R/</span></span>
-<span id="cb4-7"><a></a>      <span class="kw">|</span><span class="ex">__01_data_processing.R</span></span>
-<span id="cb4-8"><a></a>      <span class="kw">|</span><span class="ex">__02_exploratory.R</span></span>
-<span id="cb4-9"><a></a>      <span class="kw">|</span><span class="ex">__functions/</span></span>
-<span id="cb4-10"><a></a>         <span class="kw">|</span><span class="ex">__theme_volcano.R</span></span>
-<span id="cb4-11"><a></a>         <span class="kw">|</span><span class="ex">__normalise.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a aria-label="1"></a><span class="ex">--</span> stem_cell_rna</span>
+<span id="cb4-2"><a aria-label="2"></a>   <span class="kw">|</span><span class="ex">__stem_cell_rna.Rproj</span>   </span>
+<span id="cb4-3"><a aria-label="3"></a>   <span class="kw">|</span><span class="ex">__raw_</span> data/            </span>
+<span id="cb4-4"><a aria-label="4"></a>      <span class="kw">|</span><span class="ex">__2019-03-21_donor_1.csv</span></span>
+<span id="cb4-5"><a aria-label="5"></a>   <span class="kw">|</span><span class="ex">__README.</span> md</span>
+<span id="cb4-6"><a aria-label="6"></a>   <span class="kw">|</span><span class="ex">__R/</span></span>
+<span id="cb4-7"><a aria-label="7"></a>      <span class="kw">|</span><span class="ex">__01_data_processing.R</span></span>
+<span id="cb4-8"><a aria-label="8"></a>      <span class="kw">|</span><span class="ex">__02_exploratory.R</span></span>
+<span id="cb4-9"><a aria-label="9"></a>      <span class="kw">|</span><span class="ex">__functions/</span></span>
+<span id="cb4-10"><a aria-label="10"></a>         <span class="kw">|</span><span class="ex">__theme_volcano.R</span></span>
+<span id="cb4-11"><a aria-label="11"></a>         <span class="kw">|</span><span class="ex">__normalise.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:40%;">
 <p>the <code>.RProj</code> file is directly under the project folder<sup>1</sup>. Its presence is what makes the folder an RStudio Project</p>
 </div></div>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Thanks to <a href="https://mastodon.social/@minecr@fosstodon.org">Mine Çetinkaya-Rundel</a> who helped me work out how to highlight a line <a href="https://gist.github.com/mine-cetinkaya-rundel/3af3415eab70a65be3791c3dcff6e2e3" class="uri">https://gist.github.com/mine-cetinkaya-rundel/3af3415eab70a65be3791c3dcff6e2e3</a>. Note to futureself: the <code>engine: knitr</code> matters.</p></li></ol></aside></section><section id="rstudio-projects-3" class="slide level2"><h2>RStudio Projects</h2>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Thanks to <a href="https://mastodon.social/@minecr@fosstodon.org">Mine Çetinkaya-Rundel</a> who helped me work out how to highlight a line <a href="https://gist.github.com/mine-cetinkaya-rundel/3af3415eab70a65be3791c3dcff6e2e3" class="uri">https://gist.github.com/mine-cetinkaya-rundel/3af3415eab70a65be3791c3dcff6e2e3</a>. Note to futureself: the <code>engine: knitr</code> matters.</p></li></ol></aside></section>
+<section id="rstudio-projects-3" class="slide level2">
+<h2>RStudio Projects</h2>
 <ul>
 <li class="fragment"><p>When you open an RStudio Project, the working directory is set to the Project directory (i.e., the location of the <code>.Rproj</code> file).</p></li>
-<li class="fragment"><p>When you use an RStudio Project you do not need to use <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code></p></li>
+<li class="fragment"><p>When you use an RStudio Project you do not need to use <code>setwd()</code></p></li>
 <li class="fragment"><p>When someone, including future you, opens the project on another machine, all the paths just work.</p></li>
-</ul></section><section id="rstudio-projects-4" class="slide level2"><h2>RStudio Projects</h2>
+</ul>
+</section>
+<section id="rstudio-projects-4" class="slide level2">
+<h2>RStudio Projects</h2>
 
 <img data-src="images/JennyBryan.jpg" width="400" class="r-stretch quarto-figure-left"><p class="caption">Jenny Bryan</p><p>In the words of <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/">Jenny Bryan</a>:</p>
 <blockquote>
 <p>“If the first line of your R script is setwd(”C:/Users/jenny/path/that/only/I/have”) I will come into your office and SET YOUR COMPUTER ON FIRE”</p>
 </blockquote>
-</section><section id="creating-an-rstudio-project" class="slide level2"><h2>Creating an RStudio Project</h2>
+</section>
+<section id="creating-an-rstudio-project" class="slide level2">
+<h2>Creating an RStudio Project</h2>
 <p>There are two menus options:</p>
 <ol type="1">
 <li><p>Top left, File menu</p></li>
 <li><p>Top Right, drop-down indicated by the <code>.RProj</code> icon</p></li>
 </ol>
 <p>They both do the same thing.</p>
-</section><section id="creating-an-rstudio-project-1" class="slide level2"><h2>Creating an RStudio Project</h2>
+</section>
+<section id="creating-an-rstudio-project-1" class="slide level2">
+<h2>Creating an RStudio Project</h2>
 <p>Then Choose: New Project | New Directory | New Project</p>
 <p>Make sure you “Browse” to the folder you want to create the project.</p>
 <p>❔ Is your working directory a good place to create a Project folder?</p>
-</section><section id="creating-an-rstudio-project-2" class="slide level2"><h2>Creating an RStudio Project</h2>
+</section>
+<section id="creating-an-rstudio-project-2" class="slide level2">
+<h2>Creating an RStudio Project</h2>
 <p>When you create a new RStudio Project</p>
 <ul>
 <li class="fragment">A folder called <code>bananas/</code> is created</li>
-<li class="fragment">RStudio starts a new session in <code>bananas/</code> i.e., your working directory is now <code>bananas/</code>
-</li>
+<li class="fragment">RStudio starts a new session in <code>bananas/</code> i.e., your working directory is now <code>bananas/</code></li>
 <li class="fragment">A file called <code>bananas.Rproj</code> is created</li>
 <li class="fragment">the <code>.Rproj</code> file is what makes the directory an RStudio Project</li>
-</ul></section><section id="opening-and-closing" class="slide level2"><h2>Opening and closing</h2>
+</ul>
+</section>
+<section id="opening-and-closing" class="slide level2">
+<h2>Opening and closing</h2>
 <p>You can <strong>close</strong> an RStudio Project with ONE of:</p>
 <ol type="1">
 <li>File | Close Project</li>
 <li>Using the drop-down option on the far right of the tool bar where you see the Project name</li>
-</ol></section><section id="opening-and-closing-1" class="slide level2"><h2>Opening and closing</h2>
+</ol>
+</section>
+<section id="opening-and-closing-1" class="slide level2">
+<h2>Opening and closing</h2>
 <p>You can <strong>open</strong> an RStudio Project with ONE of:</p>
 <ol type="1">
 <li>File | Open Project or File | Recent Projects<br>
@@ -436,9 +524,14 @@ Emma Rand
 <li>Double-clicking an .Rproj file from your file explorer/finder</li>
 </ol>
 <p>When you open project, a new R session starts.</p>
-</section></section><section><section id="code-formatting-and-style" class="title-slide slide level1 center"><h1>Code formatting and style</h1>
+</section></section>
+<section>
+<section id="code-formatting-and-style" class="title-slide slide level1 center">
+<h1>Code formatting and style</h1>
 
-</section><section id="code-formatting-and-style-1" class="slide level2"><h2>Code formatting and style</h2>
+</section>
+<section id="code-formatting-and-style-1" class="slide level2">
+<h2>Code formatting and style</h2>
 <blockquote>
 <p>“Good coding style is like correct punctuation: you can manage without it butitsuremakesthingseasiertoread.”</p>
 </blockquote>
@@ -447,18 +540,20 @@ Emma Rand
 <p>Code is not write only.</p>
 <p>Code is communication!</p>
 </div>
-</section><section id="code-formatting-and-style-2" class="slide level2"><h2>Code formatting and style</h2>
+</section>
+<section id="code-formatting-and-style-2" class="slide level2">
+<h2>Code formatting and style</h2>
 <p>We have all written code which is hard to read!</p>
 <p>We all improve over time.</p>
 <div class="cell">
 <div class="cell-output-display">
-<blockquote class="twitter-tweet" data-width="550" data-lang="en" data-dnt="true" data-theme="light">
-<p lang="en" dir="ltr">The only way to write good code is to write tons of shitty code first. Feeling shame about bad code stops you from getting to good code</p>— Hadley Wickham (@hadleywickham) <a href="https://twitter.com/hadleywickham/status/589068687669243905?ref_src=twsrc%5Etfw">April 17, 2015</a>
-</blockquote>
+<blockquote class="twitter-tweet" data-width="550" data-lang="en" data-dnt="true" data-theme="light"><p lang="en" dir="ltr">The only way to write good code is to write tons of shitty code first. Feeling shame about bad code stops you from getting to good code</p>— Hadley Wickham (@hadleywickham) <a href="https://x.com/hadleywickham/status/589068687669243905?ref_src=twsrc%5Etfw">April 17, 2015</a></blockquote>
 
 </div>
 </div>
-</section><section id="code-formatting-and-style-3" class="slide level2"><h2>Code formatting and style</h2>
+</section>
+<section id="code-formatting-and-style-3" class="slide level2">
+<h2>Code formatting and style</h2>
 <p>Some keys points:</p>
 <div style="font-size: 70%;">
 <ul>
@@ -479,19 +574,23 @@ Emma Rand
 <li>space after <code>#</code> for comments</li>
 </ul>
 </div>
-</section><section id="ugly-code" class="slide level2"><h2>😩 Ugly code 😩</h2>
+</section>
+<section id="ugly-code" class="slide level2">
+<h2>😩 Ugly code 😩</h2>
 <div style="font-size: 70%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data</span><span class="op">&lt;-</span><span class="fu">read_csv</span><span class="op">(</span><span class="st">'../data-raw/Y101_Y102_Y201_Y202_Y101-5.csv'</span>,skip<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sfirke/janitor">janitor</a></span><span class="op">)</span>;<span class="va">sol</span><span class="op">&lt;-</span><span class="fu"><a href="https://sfirke.github.io/janitor/reference/clean_names.html">clean_names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
-<span><span class="va">data</span><span class="op">=</span><span class="va">data</span><span class="op">|&gt;</span><span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="fu">str_detect</span><span class="op">(</span><span class="va">description</span>,<span class="st">"OS=Homo sapiens"</span><span class="op">)</span><span class="op">)</span><span class="op">|&gt;</span><span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">x1pep</span><span class="op">==</span><span class="st">'x'</span><span class="op">)</span></span>
-<span><span class="va">data</span><span class="op">=</span><span class="va">data</span><span class="op">|&gt;</span></span>
-<span><span class="fu">mutate</span><span class="op">(</span>g<span class="op">=</span><span class="fu">str_extract</span><span class="op">(</span><span class="va">description</span>,</span>
-<span><span class="st">"GN=[^\\s]+"</span><span class="op">)</span><span class="op">|&gt;</span><span class="fu">str_replace</span><span class="op">(</span><span class="st">"GN="</span>,<span class="st">''</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">data</span><span class="op">&lt;-</span><span class="va">data</span><span class="op">|&gt;</span><span class="fu">mutate</span><span class="op">(</span>id<span class="op">=</span><span class="fu">str_extract</span><span class="op">(</span><span class="va">accession</span>,<span class="st">"1::[^;]+"</span><span class="op">)</span><span class="op">|&gt;</span><span class="fu">str_replace</span><span class="op">(</span><span class="st">"1::"</span>,<span class="st">""</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">'../data-raw/Y101_Y102_Y201_Y202_Y101-5.csv'</span>,<span class="at">skip=</span><span class="dv">2</span>)</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor);sol<span class="ot">&lt;-</span><span class="fu">clean_names</span>(data)</span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span>data<span class="sc">|&gt;</span><span class="fu">filter</span>(<span class="fu">str_detect</span>(description,<span class="st">"OS=Homo sapiens"</span>))<span class="sc">|&gt;</span><span class="fu">filter</span>(x1pep<span class="sc">==</span><span class="st">'x'</span>)</span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span>data<span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">g=</span><span class="fu">str_extract</span>(description,</span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">"GN=[^</span><span class="sc">\\</span><span class="st">s]+"</span>)<span class="sc">|&gt;</span><span class="fu">str_replace</span>(<span class="st">"GN="</span>,<span class="st">''</span>))</span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span>data<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="at">id=</span><span class="fu">str_extract</span>(accession,<span class="st">"1::[^;]+"</span>)<span class="sc">|&gt;</span><span class="fu">str_replace</span>(<span class="st">"1::"</span>,<span class="st">""</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-</section><section id="ugly-code-1" class="slide level2"><h2>😩 Ugly code 😩</h2>
+</section>
+<section id="ugly-code-1" class="slide level2">
+<h2>😩 Ugly code 😩</h2>
 <ul>
 <li>no spacing or indentation</li>
 <li>inconsistent splitting of code blocks over lines</li>
@@ -501,109 +600,138 @@ Emma Rand
 <li>use of <code>=</code> for assignment and inconsistently</li>
 <li>multiple commands on a line</li>
 <li>library statement in the middle of the analysis</li>
-</ul></section><section id="cool-code" class="slide level2"><h2>😎 Cool code 😎</h2>
+</ul>
+</section>
+<section id="cool-code" class="slide level2">
+<h2>😎 Cool code 😎</h2>
 <div style="font-size: 70%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Packages ----------------------------------------------------------------</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sfirke/janitor">janitor</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Import ------------------------------------------------------------------</span></span>
-<span></span>
-<span><span class="co"># define file name</span></span>
-<span><span class="va">file</span> <span class="op">&lt;-</span> <span class="st">"../data-raw/Y101_Y102_Y201_Y202_Y101-5.csv"</span></span>
-<span></span>
-<span><span class="co"># import: column headers and data are from row 3</span></span>
-<span><span class="va">solu_protein</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="va">file</span>, skip <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://sfirke.github.io/janitor/reference/clean_names.html">clean_names</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Tidy data ----------------------------------------------------------------</span></span>
-<span></span>
-<span><span class="co"># filter out the bovine proteins and those proteins </span></span>
-<span><span class="co"># identified from fewer than 2 peptides</span></span>
-<span><span class="va">solu_protein</span> <span class="op">&lt;-</span> <span class="va">solu_protein</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">description</span>, <span class="st">"OS=Homo sapiens"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">x1pep</span> <span class="op">==</span> <span class="st">"x"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Extract the genename from description column to a column</span></span>
-<span><span class="co"># of its own</span></span>
-<span><span class="va">solu_protein</span> <span class="op">&lt;-</span> <span class="va">solu_protein</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>genename <span class="op">=</span>  <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_extract.html">str_extract</a></span><span class="op">(</span><span class="va">description</span>,<span class="st">"GN=[^\\s]+"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>           <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_replace.html">str_replace</a></span><span class="op">(</span><span class="st">"GN="</span>, <span class="st">""</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Extract the top protein identifier from accession column (first</span></span>
-<span><span class="co"># Uniprot ID after "1::") to a column of its own</span></span>
-<span><span class="va">solu_protein</span> <span class="op">&lt;-</span> <span class="va">solu_protein</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>protid <span class="op">=</span>  <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_extract.html">str_extract</a></span><span class="op">(</span><span class="va">accession</span>, <span class="st">"1::[^;]+"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>           <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_replace.html">str_replace</a></span><span class="op">(</span><span class="st">"1::"</span>, <span class="st">""</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Packages ----------------------------------------------------------------</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Import ------------------------------------------------------------------</span></span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a><span class="co"># define file name</span></span>
+<span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a>file <span class="ot">&lt;-</span> <span class="st">"../data-raw/Y101_Y102_Y201_Y202_Y101-5.csv"</span></span>
+<span id="cb6-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a aria-hidden="true" tabindex="-1"></a><span class="co"># import: column headers and data are from row 3</span></span>
+<span id="cb6-11"><a aria-hidden="true" tabindex="-1"></a>solu_protein <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(file, <span class="at">skip =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-12"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb6-13"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Tidy data ----------------------------------------------------------------</span></span>
+<span id="cb6-15"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a aria-hidden="true" tabindex="-1"></a><span class="co"># filter out the bovine proteins and those proteins </span></span>
+<span id="cb6-17"><a aria-hidden="true" tabindex="-1"></a><span class="co"># identified from fewer than 2 peptides</span></span>
+<span id="cb6-18"><a aria-hidden="true" tabindex="-1"></a>solu_protein <span class="ot">&lt;-</span> solu_protein <span class="sc">|&gt;</span></span>
+<span id="cb6-19"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(description, <span class="st">"OS=Homo sapiens"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb6-20"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(x1pep <span class="sc">==</span> <span class="st">"x"</span>)</span>
+<span id="cb6-21"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the genename from description column to a column</span></span>
+<span id="cb6-23"><a aria-hidden="true" tabindex="-1"></a><span class="co"># of its own</span></span>
+<span id="cb6-24"><a aria-hidden="true" tabindex="-1"></a>solu_protein <span class="ot">&lt;-</span> solu_protein <span class="sc">|&gt;</span></span>
+<span id="cb6-25"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">genename =</span>  <span class="fu">str_extract</span>(description,<span class="st">"GN=[^</span><span class="sc">\\</span><span class="st">s]+"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-26"><a aria-hidden="true" tabindex="-1"></a>           <span class="fu">str_replace</span>(<span class="st">"GN="</span>, <span class="st">""</span>))</span>
+<span id="cb6-27"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the top protein identifier from accession column (first</span></span>
+<span id="cb6-29"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Uniprot ID after "1::") to a column of its own</span></span>
+<span id="cb6-30"><a aria-hidden="true" tabindex="-1"></a>solu_protein <span class="ot">&lt;-</span> solu_protein <span class="sc">|&gt;</span></span>
+<span id="cb6-31"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">protid =</span>  <span class="fu">str_extract</span>(accession, <span class="st">"1::[^;]+"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-32"><a aria-hidden="true" tabindex="-1"></a>           <span class="fu">str_replace</span>(<span class="st">"1::"</span>, <span class="st">""</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-</section><section id="cool-code-1" class="slide level2"><h2>😎 Cool code 😎</h2>
+</section>
+<section id="cool-code-1" class="slide level2">
+<h2>😎 Cool code 😎</h2>
 <ul>
-<li><p><code><a href="https://rdrr.io/r/base/library.html">library()</a></code> calls collected</p></li>
+<li><p><code>library()</code> calls collected</p></li>
 <li><p>Uses code sections to make it easier to navigate</p></li>
 <li><p>Uses white space and proper indentation</p></li>
 <li><p>Commented</p></li>
 <li><p>Uses more informative name for the dataframe</p></li>
-</ul></section></section><section><section id="code-algorithmically" class="title-slide slide level1 center"><h1>Code ‘algorithmically’</h1>
+</ul>
+</section></section>
+<section>
+<section id="code-algorithmically" class="title-slide slide level1 center">
+<h1>Code ‘algorithmically’</h1>
 
-</section><section id="code-algorithmically-1" class="slide level2"><h2>Code ‘algorithmically’</h2>
+</section>
+<section id="code-algorithmically-1" class="slide level2">
+<h2>Code ‘algorithmically’</h2>
 <ul>
 <li class="fragment"><p>Write code which expresses the structure of the problem/solution.</p></li>
 <li class="fragment"><p>Avoid hard coding numbers if at all possible - declare variables instead</p></li>
 <li class="fragment"><p>Declare frequently used values as variables at the start e.g., colour schemes, figure saving settings</p></li>
-</ul></section><section id="hard-coding-numbers." class="slide level2"><h2>😩 Hard coding numbers.</h2>
+</ul>
+</section>
+<section id="hard-coding-numbers." class="slide level2">
+<h2>😩 Hard coding numbers.</h2>
 <ul>
 <li class="fragment"><p>Suppose we want to calculate the sums of squares, <span class="math inline">\(SS(x)\)</span>, for the number of eggs in five nests.</p></li>
 <li class="fragment"><p>The formula is given by: <span class="math inline">\(\sum (x_i- \bar{x})^2\)</span></p></li>
 <li class="fragment"><p>We could calculate the mean and copy it, and the individual numbers into the formula</p></li>
-</ul></section><section id="hard-coding-numbers.-1" class="slide level2"><h2>😩 Hard coding numbers.</h2>
+</ul>
+</section>
+<section id="hard-coding-numbers.-1" class="slide level2">
+<h2>😩 Hard coding numbers.</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># mean number of eggs per nest</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8</span><span class="op">)</span> <span class="op">/</span> <span class="fl">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># mean number of eggs per nest</span></span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>) <span class="sc">/</span> <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5.8</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># ss(x) of number of eggs</span></span>
-<span><span class="op">(</span><span class="fl">3</span> <span class="op">-</span> <span class="fl">5.8</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="op">(</span><span class="fl">5</span> <span class="op">-</span> <span class="fl">5.8</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="op">(</span><span class="fl">6</span> <span class="op">-</span> <span class="fl">5.8</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="op">(</span><span class="fl">7</span> <span class="op">-</span> <span class="fl">5.8</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="op">(</span><span class="fl">8</span> <span class="op">-</span> <span class="fl">5.8</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># ss(x) of number of eggs</span></span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span> <span class="sc">-</span> <span class="fl">5.8</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">5</span> <span class="sc">-</span> <span class="fl">5.8</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">6</span> <span class="sc">-</span> <span class="fl">5.8</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">7</span> <span class="sc">-</span> <span class="fl">5.8</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">8</span> <span class="sc">-</span> <span class="fl">5.8</span>)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 14.8</code></pre>
 </div>
 </div>
-<p>I am coding the calculation of the mean rather using the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function only to explain what ‘coding algorithmically’ means using a simple example.</p>
-</section><section id="hard-coding-numbers" class="slide level2"><h2>😩 Hard coding numbers</h2>
+<p>I am coding the calculation of the mean rather using the <code>mean()</code> function only to explain what ‘coding algorithmically’ means using a simple example.</p>
+</section>
+<section id="hard-coding-numbers" class="slide level2">
+<h2>😩 Hard coding numbers</h2>
 <ul>
 <li class="fragment"><p>if any of the sample numbers must be altered, all the code needs changing</p></li>
 <li class="fragment"><p>it is hard to tell that the output of the first line is a mean</p></li>
 <li class="fragment"><p>its hard to recognise that the numbers in the mean calculation correspond to those in the next calculation</p></li>
 <li class="fragment"><p>it is hard to tell that 5 is just the number of nests</p></li>
 <li class="fragment"><p>no way of know if numbers are the same by coincidence or they refer to the same thing</p></li>
-</ul></section><section id="better" class="slide level2"><h2>😎 Better</h2>
+</ul>
+</section>
+<section id="better" class="slide level2">
+<h2>😎 Better</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># eggs each nest</span></span>
-<span><span class="va">eggs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># mean eggs per nest</span></span>
-<span><span class="va">mean_eggs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">eggs</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">eggs</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># ss(x) of number of eggs</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="op">(</span><span class="va">eggs</span> <span class="op">-</span> <span class="va">mean_eggs</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># eggs each nest</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>eggs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>)</span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># mean eggs per nest</span></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>mean_eggs <span class="ot">&lt;-</span> <span class="fu">sum</span>(eggs) <span class="sc">/</span> <span class="fu">length</span>(eggs)</span>
+<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a><span class="co"># ss(x) of number of eggs</span></span>
+<span id="cb11-8"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((eggs <span class="sc">-</span> mean_eggs)<span class="sc">^</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 14.8</code></pre>
 </div>
 </div>
-</section><section id="better-1" class="slide level2"><h2>😎 Better</h2>
+</section>
+<section id="better-1" class="slide level2">
+<h2>😎 Better</h2>
 <ul>
 <li class="fragment"><p>the commenting is similar but it is easier to follow</p></li>
 <li class="fragment"><p>if any of the sample numbers must be altered, only that number needs changing</p></li>
 <li class="fragment"><p>assigning a value you will later use to a variable with a meaningful name allows us to understand the first and second calculations</p></li>
 <li class="fragment"><p>makes use of R’s elementwise calculation which resembles the formula (i.e., is expressed as the general rule)</p></li>
-</ul></section><section id="naming-things" class="slide level2"><h2>Naming things</h2>
+</ul>
+</section>
+<section id="naming-things" class="slide level2">
+<h2>Naming things</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/xkcd-comic-file-names.png" alt="A comic figure is looking over the shoulder of another and is shocked by a list of files with names like 'Untitled 138 copy.docx' and 'Untitled 243.doc'. Caption: 'Protip: Never look in someone else's documents folder'"></p>
-<figcaption>documents, CC-BY-NC, https://xkcd.com/1459/</figcaption></figure>
+<figure>
+<p><img data-src="images/xkcd-comic-file-names.png" alt="A comic figure is looking over the shoulder of another and is shocked by a list of files with names like 'Untitled 138 copy.docx' and 'Untitled 243.doc'. Caption: 'Protip: Never look in someone else's documents folder'"></p>
+<figcaption>documents, CC-BY-NC, https://xkcd.com/1459/</figcaption>
+</figure>
 </div>
 </div><div class="column" style="width:50%;">
 <p>Guiding principle - Have a convention! Good file names are:</p>
@@ -613,7 +741,9 @@ Emma Rand
 <li><p>play nicely with sorting</p></li>
 </ul>
 </div></div>
-</section><section id="naming-suggestions" class="slide level2"><h2>Naming suggestions</h2>
+</section>
+<section id="naming-suggestions" class="slide level2">
+<h2>Naming suggestions</h2>
 <ul>
 <li><p>no spaces in names</p></li>
 <li><p>use snake_case or kebab-case rather than CamelCase or dot.case</p></li>
@@ -621,7 +751,11 @@ Emma Rand
 <li><p>ordering: use left-padded numbers e.g., 01, 02….99 or 001, 002….999</p></li>
 <li><p>dates <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format: 2020-10-16</p></li>
 <li><p>write down your conventions</p></li>
-</ul></section></section><section><section id="workflow-tips" class="title-slide slide level1 center"><h1>Workflow tips</h1>
+</ul>
+</section></section>
+<section>
+<section id="workflow-tips" class="title-slide slide level1 center">
+<h1>Workflow tips</h1>
 <div style="font-size: 60%;">
 <ul>
 <li><p>multiple cursors</p></li>
@@ -638,33 +772,36 @@ Emma Rand
 <li><p><a href="https://github.com/tonsky/FiraCode?tab=readme-ov-file">Fira Code</a></p></li>
 </ul>
 </div>
-</section><section id="summary" class="slide level2"><h2>Summary</h2>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
 <ul>
 <li class="fragment"><p>Use an RStudio project for any R work (you can also incorporate other languages)</p></li>
 <li class="fragment"><p>Write Cool code not Ugly code: space, consistency, indentation, comments, meaningful variable names</p></li>
 <li class="fragment"><p>Write code which expresses the structure of the problem/solution.</p></li>
 <li class="fragment"><p>Avoid hard coding numbers if at all possible - declare variables instead</p></li>
-</ul></section><section id="reading" class="slide level2"><h2>Reading</h2>
+</ul>
+</section>
+<section id="reading" class="slide level2">
+<h2>Reading</h2>
 <p>Completely optional suggestions for further reading</p>
 <div style="font-size: 70%;">
 <ul>
-<li>
-<a href="https://rstats.wtf/projects">Project-oriented workflow | What They Forgot to Teach You About R</a> <span class="citation" data-cites="bryan">(<a href="#/references" role="doc-biblioref" onclick="">Bryan et al., n.d.</a>)</span>. Recommended if you still need convincing to use RStudio Projects</li>
-<li>Ten simple rules for reproducible computational research <span class="citation" data-cites="sandve2013">(<a href="#/references" role="doc-biblioref" onclick="">Sandve et al. 2013</a>)</span>
-</li>
-<li>Good enough practices in scientific computing <span class="citation" data-cites="wilson2017">(<a href="#/references" role="doc-biblioref" onclick="">Wilson et al. 2017</a>)</span>
-</li>
-<li>Excuse Me, Do You Have a Moment to Talk About Version Control? <span class="citation" data-cites="bryan2018">(<a href="#/references" role="doc-biblioref" onclick="">Bryan 2018</a>)</span>
-</li>
+<li><a href="https://rstats.wtf/projects">Project-oriented workflow | What They Forgot to Teach You About R</a> <span class="citation" data-cites="bryan">(<a href="#/references" role="doc-biblioref" onclick="">Bryan et al., n.d.</a>)</span>. Recommended if you still need convincing to use RStudio Projects</li>
+<li>Ten simple rules for reproducible computational research <span class="citation" data-cites="sandve2013">(<a href="#/references" role="doc-biblioref" onclick="">Sandve et al. 2013</a>)</span></li>
+<li>Good enough practices in scientific computing <span class="citation" data-cites="wilson2017">(<a href="#/references" role="doc-biblioref" onclick="">Wilson et al. 2017</a>)</span></li>
+<li>Excuse Me, Do You Have a Moment to Talk About Version Control? <span class="citation" data-cites="bryan2018">(<a href="#/references" role="doc-biblioref" onclick="">Bryan 2018</a>)</span></li>
 </ul>
 <p>Pages made with R <span class="citation" data-cites="R-core">(<a href="#/references" role="doc-biblioref" onclick="">R Core Team 2024</a>)</span>, Quarto <span class="citation" data-cites="Allaire_Quarto_2024">(<a href="#/references" role="doc-biblioref" onclick="">Allaire et al. 2024</a>)</span>, <code>knitr</code> <span class="citation" data-cites="knitr1 knitr2 knitr3">(<a href="#/references" role="doc-biblioref" onclick="">Xie 2024</a>, <a href="#/references" role="doc-biblioref" onclick="">2015</a>, <a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span>, <code>kableExtra</code> <span class="citation" data-cites="kableExtra">(<a href="#/references" role="doc-biblioref" onclick="">Zhu 2021</a>)</span></p>
 </div>
-</section><section id="references" class="slide level2 smaller scrollable"><h2>References</h2>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-Allaire_Quarto_2024" class="csl-entry" role="listitem">
-Allaire, J. J., Charles Teague, Carlos Scheidegger, Yihui Xie, and Christophe Dervieux. 2024. <span>“<span>Quarto</span>.”</span> <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>.
+Allaire, J. J., Charles Teague, Carlos Scheidegger, Yihui Xie, and Christophe Dervieux. 2024. <em><span>Quarto</span></em>. V. 1.4. Released February. <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>.
 </div>
 <div id="ref-baggerly2009" class="csl-entry" role="listitem">
 Baggerly, Keith A, and Kevin R Coombes. 2009. <span>“DERIVING CHEMOSENSITIVITY FROM CELL LINES: FORENSIC BIOINFORMATICS AND REPRODUCIBLE RESEARCH IN HIGH-THROUGHPUT BIOLOGY.”</span> <em>Ann. Appl. Stat.</em> 3 (4): 1309–34. <a href="http://www.jstor.org/stable/27801549">http://www.jstor.org/stable/27801549</a>.
@@ -679,13 +816,13 @@ Bryan, Jennifer, Jim Hester, Shannon Pileggi, and E. David Aja. n.d. <em>What Th
 Markowetz, Florian. 2015. <span>“Five Selfish Reasons to Work Reproducibly.”</span> <em>Genome Biol.</em> 16 (December): 274. <a href="https://doi.org/10.1186/s13059-015-0850-7">https://doi.org/10.1186/s13059-015-0850-7</a>.
 </div>
 <div id="ref-nationalacademiesofsciences2019" class="csl-entry" role="listitem">
-National Academies of Sciences, Engineering, Medicine, Policy, Global Affairs, Engineering, Medicine Committee on Science, Public Policy, Board on Research Data, et al. 2019. <em>Understanding Reproducibility and Replicability</em>. National Academies Press (US). <a href="https://www.ncbi.nlm.nih.gov/books/NBK547546/">https://www.ncbi.nlm.nih.gov/books/NBK547546/</a>.
+National Academies of Sciences, Engineering, Medicine, Policy, et al. 2019. <em>Understanding Reproducibility and Replicability</em>. National Academies Press (US). <a href="https://www.ncbi.nlm.nih.gov/books/NBK547546/">https://www.ncbi.nlm.nih.gov/books/NBK547546/</a>.
 </div>
 <div id="ref-oecdglobalscienceforum2020" class="csl-entry" role="listitem">
-OECD Global Science Forum. 2020. <span>“Building Digital Workforce Capacity and Skills for Data-Intensive Science.”</span> <a href="http://www.oecd.org/officialdocuments/publicdisplaydocumentpdf/?cote=DSTI/STP/GSF(2020)6/FINAL&amp;docLanguage=En">http://www.oecd.org/officialdocuments/publicdisplaydocumentpdf/?cote=DSTI/STP/GSF(2020)6/FINAL&amp;docLanguage=En</a>.
+OECD Global Science Forum. 2020. <em>Building Digital Workforce Capacity and Skills for Data-Intensive Science</em>. <a href="http://www.oecd.org/officialdocuments/publicdisplaydocumentpdf/?cote=DSTI/STP/GSF(2020)6/FINAL&amp;docLanguage=En">http://www.oecd.org/officialdocuments/publicdisplaydocumentpdf/?cote=DSTI/STP/GSF(2020)6/FINAL&amp;docLanguage=En</a>.
 </div>
 <div id="ref-R-core" class="csl-entry" role="listitem">
-R Core Team. 2024. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+R Core Team. 2024. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 <div id="ref-sandve2013" class="csl-entry" role="listitem">
 Sandve, Geir Kjetil, Anton Nekrutenko, James Taylor, and Eivind Hovig. 2013. <span>“Ten Simple Rules for Reproducible Computational Research.”</span> <em>PLoS Comput. Biol.</em> 9 (10): e1003285. <a href="https://doi.org/10.1371/journal.pcbi.1003285">https://doi.org/10.1371/journal.pcbi.1003285</a>.
@@ -697,24 +834,42 @@ Wilson, Greg, Jennifer Bryan, Karen Cranston, Justin Kitzes, Lex Nederbragt, and
 Xie, Yihui. 2014. <span>“Knitr: A Comprehensive Tool for Reproducible Research in <span>R</span>.”</span> In <em>Implementing Reproducible Computational Research</em>, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC.
 </div>
 <div id="ref-knitr2" class="csl-entry" role="listitem">
-———. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 <div id="ref-knitr1" class="csl-entry" role="listitem">
-———. 2024. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+Xie, Yihui. 2024. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 <div id="ref-kableExtra" class="csl-entry" role="listitem">
-Zhu, Hao. 2021. <span>“kableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax.”</span> <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.
+Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax</em>. <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.
 </div>
 </div>
 </section></section>
-</div>
+
+    </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
 <p>🔗 <a href="https://3mmarand.github.io/BIO00088H-data/core/week-2/overview.html">About Core: Supporting Information 1</a></p>
 </div>
 </div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script><script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../../site_libs/revealjs/plugin/search/search.js"></script><script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -906,7 +1061,9 @@ Zhu, Hao. 2021. <span>“kableExtra: Construct Complex Table with ’Kable’ an
           RevealZoom
         ]
       });
-    </script><script>
+    </script>
+    
+    <script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -941,7 +1098,9 @@ Zhu, Hao. 2021. <span>“kableExtra: Construct Complex Table with ’Kable’ an
         }
 
       })();
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
         tabsets.forEach(function(tabset) {
@@ -1109,6 +1268,6 @@ Zhu, Hao. 2021. <span>“kableExtra: Construct Complex Table with ’Kable’ an
         }
       });
       </script>
-
+    
 
 </body></html>
