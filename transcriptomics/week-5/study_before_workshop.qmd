@@ -4,7 +4,7 @@ subtitle: "Transcriptomics 3: Visualising"
 author: "Emma Rand"
 format: 
   revealjs:
-    footer: "🔗 [About Transcriptomics 3: Visualising](https://3mmarand.github.io/BIO00088H-data/transcriptomics/week-5/overview.html)"
+    footer: "🔗 [About Transcriptomics 3: Visualising](https://sandyjmacdonald.github.io/BIO00088H-data/transcriptomics/week-5/overview.html)"
     slide-number: true
     chalkboard: true
     code-link: true

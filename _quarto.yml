@@ -8,7 +8,7 @@ date-format: D MMMM, YYYY
 website:
   title: "Data Analysis for Group Project"
   google-analytics: "G-TVF95J593T"
-  repo-url: https://github.com/3mmaRand/BIO00088H-data
+  repo-url: https://github.com/sandyjmacdonald/BIO00088H-data
   repo-actions: [edit]
  
   other-links:
@@ -26,8 +26,8 @@ website:
 
   navbar:
     background: light
-    site-url: https://3mmarand.github.io/BIO00088H-data/
-    repo-url: https://github.com/3mmaRand/BIO00088H-data
+    site-url: https://sandyjmacdonald.github.io/BIO00088H-data/
+    repo-url: https://github.com/sandyjmacdonald/BIO00088H-data
     page-navigation: true
     search: true
     left:
@@ -43,7 +43,7 @@ website:
         file:  structures/structures.qmd
     tools:
       - icon: github
-        href: https://github.com/3mmaRand/BIO00088H-data
+        href: https://github.com/sandyjmacdonald/BIO00088H-data
         text: BIO00088H-data GitHub
 
   sidebar:
@@ -139,7 +139,7 @@ format:
   html:
     css: styles.css
     link-external-newwindow: true
-    link-external-filter: '^(?:http:|https:)\/\/3mmarand\.github\.io\/BIO00088H-data'
+    link-external-filter: '^(?:http:|https:)\/\/sandyjmacdonald\.github\.io\/BIO00088H-data'
     theme:
       light: [cosmo, custom.scss]
       dark:  [solar, custom.scss]
@@ -166,7 +166,7 @@ format:
             if (a.textContent.trim() === 'Make a suggestion') {
               const pageUrl   = encodeURIComponent(window.location.href);
               const pageTitle = encodeURIComponent(document.title);
-              a.href = 'https://github.com/3mmaRand/BIO00088H-data/issues/new'
+              a.href = 'https://github.com/sandyjmacdonald/BIO00088H-data/issues/new'
                      + '?title=' + pageTitle
                      + '&body='  + pageUrl;
               a.target = '_blank';

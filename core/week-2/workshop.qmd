@@ -5,7 +5,7 @@ author: "Emma Rand"
 format: 
   revealjs:
     css: styles.css
-    footer: "🔗 [About Core: Supporting Information 1](https://3mmarand.github.io/BIO00088H-data/core/week-2/overview.html)"
+    footer: "🔗 [About Core: Supporting Information 1](https://sandyjmacdonald.github.io/BIO00088H-data/core/week-2/overview.html)"
     slide-number: true
     chalkboard: true
     code-link: true

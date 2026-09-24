@@ -4,5 +4,4 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of BIO00088H-data is to ....
-
+These are teaching materials for the [BIO00088H Data Analysis workshops](https://sandyjmacdonald.github.io/BIO00088H-data/), taught in 2026 by Sandy Macdonald.
