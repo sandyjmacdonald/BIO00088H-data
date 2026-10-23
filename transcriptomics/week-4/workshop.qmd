@@ -1109,6 +1109,12 @@ are web-based tools to use these but the R package **`biomaRt`**
 [@biomaRt1; @biomaRt2] gives you programmatic access making it easier to
 integrate information into R dataframes.
 
+*Note:* EBI announced in summer 2026 that they were effectively freezing BioMart 
+in its current form before moving to a new platform. This means that access to 
+historical data sets will remain, but newer versions will not be accessible 
+through it. Practically, that means that the way you access the data has
+changed slightly, and the updated instructions are below.
+
 🎬 Load the **`biomaRt`** [@biomaRt1; @biomaRt2] package:
 
 ```{r}
@@ -1141,8 +1147,9 @@ we want.
 🎬 Connect to the `athaliana_eg_gene` database in `plants_mart`:
 
 ```{r}
-ensembl <- useEnsemblGenomes(biomart = "plants_mart",
-                             dataset = "athaliana_eg_gene")
+ensembl <- useMart(biomart = "plants_mart",
+                   dataset = "athaliana_eg_gene",
+                   host = "https://jun2026-plants.ensembl.org")
 ```
 
 🎬 See the the types of information we can retrieve:
@@ -1265,7 +1272,13 @@ number of databases but
 [@smedley2009] provides a consistent interface to the material. There
 are web-based tools to use these but the R package **`biomaRt`**
 [@biomaRt1; @biomaRt2] gives you programmatic access making it easier to
-integrate information into R dataframes
+integrate information into R dataframes.
+
+*Note:* EBI announced in summer 2026 that they were effectively freezing BioMart 
+in its current form before moving to a new platform. This means that access to 
+historical data sets will remain, but newer versions will not be accessible 
+through it. Practically, that means that the way you access the data has
+changed slightly, and the updated instructions are below.
 
 🎬 Load the **`biomaRt`** [@biomaRt1; @biomaRt2] package:
 
@@ -1279,8 +1292,9 @@ library(biomaRt)
 ```{r}
 # Connect to the mouse database
 
-ensembl <- useMart(biomart = "ensembl", 
-                   dataset = "mmusculus_gene_ensembl")
+ensembl <- useEnsembl(biomart = "genes",
+                      dataset = "mmusculus_gene_ensembl",
+                      version = 116)
 ```
 
 🎬 See information we can retrieve:
