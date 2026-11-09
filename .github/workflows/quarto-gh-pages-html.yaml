@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}   # lets renv fetch tweetrmd from GitHub without rate limits
     steps:
       - uses: actions/checkout@v4
 
@@ -30,6 +32,9 @@ jobs:
             libglpk-dev libmagick++-dev libx11-dev gsfonts
 
       - uses: r-lib/actions/setup-renv@v2
+
+      - name: Install rtracklayer (not in renv.lock)
+        run: Rscript -e 'renv::install("bioc::rtracklayer")'
 
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/install-quarto@v1
