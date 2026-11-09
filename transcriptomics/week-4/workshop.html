@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,18 +93,19 @@ div.csl-indent {
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-13bae01c0f956a1927ddbed1d3128b47.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-9aca03cbbe1be38d25039917819234fd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-13bae01c0f956a1927ddbed1d3128b47.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-13d4f76e89cdfc04dc4ea667379eb340.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8d4c9a5f29541e90f991fea7412f36d3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-13d4f76e89cdfc04dc4ea667379eb340.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -146,7 +147,7 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -169,6 +170,7 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -198,13 +200,19 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -298,6 +306,7 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -312,15 +321,14 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Data Analysis for Group Project</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -349,17 +357,18 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
     <a href="https://github.com/sandyjmacdonald/BIO00088H-data" title="BIO00088H-data GitHub" class="quarto-navigation-tool px-1" aria-label="BIO00088H-data GitHub"><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../transcriptomics/week-4/overview.html">Week 4: Statistical Analysis</a></li><li class="breadcrumb-item"><a href="../../transcriptomics/week-4/workshop.html">Workshop</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../transcriptomics/week-4/overview.html">Week 4: Statistical Analysis</a></li><li class="breadcrumb-item"><a href="../../transcriptomics/week-4/workshop.html">Workshop</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -367,7 +376,7 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Section">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -378,13 +387,10 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Week 3: Hello data!</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Week 3: Hello data!</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../transcriptomics/week-3/overview.html" class="sidebar-item-text sidebar-link">
@@ -413,13 +419,10 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Week 4: Statistical Analysis</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Week 4: Statistical Analysis</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../transcriptomics/week-4/overview.html" class="sidebar-item-text sidebar-link">
@@ -448,13 +451,10 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Week 5: Visualising and Interpreting</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Week 5: Visualising and Interpreting</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../transcriptomics/week-5/overview.html" class="sidebar-item-text sidebar-link">
@@ -483,13 +483,10 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Semester 2: Extras</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Semester 2: Extras</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../transcriptomics/semester-2/stem_cell_variant.html" class="sidebar-item-text sidebar-link">
@@ -500,13 +497,10 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Kelly’s Project</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-5-label">Kelly’s Project</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../transcriptomics/kelly/workshop.html" class="sidebar-item-text sidebar-link">
@@ -521,7 +515,7 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -580,10 +574,10 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <div class="toc-actions"><ul><li><a href="https://github.com/sandyjmacdonald/BIO00088H-data/edit/main/transcriptomics/week-4/workshop.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="#"><i class="bi bi-chat-left-dots"></i>Make a suggestion</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../transcriptomics/week-4/overview.html">Week 4: Statistical Analysis</a></li><li class="breadcrumb-item"><a href="../../transcriptomics/week-4/workshop.html">Workshop</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../transcriptomics/week-4/overview.html">Week 4: Statistical Analysis</a></li><li class="breadcrumb-item"><a href="../../transcriptomics/week-4/workshop.html">Workshop</a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Workshop</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead">Transcripttranscriptomics 2: Statistical Analysis</p>
@@ -603,7 +597,7 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">23 October, 2026</p>
+      <p class="date">9 November, 2026</p>
     </div>
   </div>
   
@@ -745,22 +739,6 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">AT1G63820</td>
-<td style="text-align: left;">AT1G63820</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">9</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">AT1G27090</td>
 <td style="text-align: left;">AT1G27090</td>
 <td style="text-align: right;">0</td>
@@ -776,7 +754,7 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <td style="text-align: right;">13</td>
 <td style="text-align: right;">14</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">AT1G14950</td>
 <td style="text-align: left;">AT1G14950</td>
 <td style="text-align: right;">0</td>
@@ -792,37 +770,53 @@ gtag('config', 'G-TVF95J593T', { 'anonymize_ip': true});
 <td style="text-align: right;">13</td>
 <td style="text-align: right;">17</td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">AT1G80160</td>
+<td style="text-align: left;">GLYI7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">27</td>
+</tr>
 <tr class="even">
-<td style="text-align: left;">AT1G18350</td>
-<td style="text-align: left;">MKK7</td>
+<td style="text-align: left;">AT1G18700</td>
+<td style="text-align: left;">AT1G18700</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">8</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">9</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">8</td>
+<td style="text-align: right;">11</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">AT1G65910</td>
-<td style="text-align: left;">NAC028</td>
+<td style="text-align: left;">AT5G39775</td>
+<td style="text-align: left;">AT5G39775</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">4</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: right;">15</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">16</td>
 </tr>
 </tbody>
 </table>
@@ -960,9 +954,9 @@ LWR6        root   low_ni</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sizeFactors</span>(dds)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     CTR1      CTR2      CTR3      CTR4      CTR5      CTR6      LWR1      LWR2 
-1.0241774 1.3312269 1.0264881 1.1672503 1.0274692 1.0104721 0.9390444 0.8343701 
+1.0242216 1.3312269 1.0268583 1.1672719 1.0272988 1.0104053 0.9386242 0.8341973 
      LWR3      LWR4      LWR5      LWR6 
-0.8624386 0.9117912 1.0260560 0.9740408 </code></pre>
+0.8622105 0.9117686 1.0260255 0.9740288 </code></pre>
 </div>
 </div>
 <p>The normalised counts will be useful to use later. To get the normalised counts we again used the <code>counts()</code> function but this time we use the <code>normalized=TRUE</code> argument.</p>
@@ -1476,7 +1470,7 @@ lm_meta_3 metacyclic         3</code></pre>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>hspc_prog_results <span class="ot">&lt;-</span> hspc_prog_results <span class="sc">|&gt;</span></span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(hspc_prog, <span class="at">by =</span> <span class="st">"ensembl_gene_id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Now go to <a href="#stem-add-info">Add gene information</a>.</p>
+<p>Now go to <a href="#stem-cells-add-info">Add gene information</a>.</p>
 </section>
 </section>
 </section>
@@ -1494,7 +1488,7 @@ lm_meta_3 metacyclic         3</code></pre>
 <p>🎬 List the Ensembl “marts” available:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">listEnsemblGenomes</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
+</div>
 <pre><code>              biomart                        version
 1       protists_mart      Ensembl Protists Genes 63
 2 protists_variations Ensembl Protists Variations 63
@@ -1504,20 +1498,16 @@ lm_meta_3 metacyclic         3</code></pre>
 6  metazoa_variations  Ensembl Metazoa Variations 63
 7         plants_mart        Ensembl Plants Genes 63
 8   plants_variations   Ensembl Plants Variations 63</code></pre>
-</div>
-</div>
 <p><code>plants_mart</code> looks like the one we want. We can see what genomes are available with names like “Arabidopsis” in this mart using the <code>searchDatasets()</code> function.</p>
 <p>🎬</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">searchDatasets</span>(<span class="fu">useEnsemblGenomes</span>(<span class="at">biomart =</span> <span class="st">"plants_mart"</span>), </span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">pattern =</span> <span class="st">"Arabidopsis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
+</div>
 <pre><code>             dataset                         description version
 7   ahalleri_eg_gene Arabidopsis halleri genes (Ahal2.2) Ahal2.2
 11   alyrata_eg_gene    Arabidopsis lyrata genes (v.1.0)   v.1.0
 42 athaliana_eg_gene Arabidopsis thaliana genes (TAIR10)  TAIR10</code></pre>
-</div>
-</div>
 <p><code>athaliana_eg_gene</code> is the Arabidopsis thaliana genes (TAIR10) dataset we want.</p>
 <p>🎬 Connect to the <code>athaliana_eg_gene</code> database in <code>plants_mart</code>:</p>
 <div class="cell">
@@ -1587,52 +1577,54 @@ which is a functional genomic resource for the Trypanosomatidae and Plasmodidae<
 <section id="stem-cells-add-info" class="level2">
 <h2 class="anchored" data-anchor-id="stem-cells-add-info">🐭 Stem cells</h2>
 <p><a href="https://www.ensembl.org/index.html">Ensembl</a> <span class="citation" data-cites="martin2023 birney2004">(<a href="#ref-martin2023" role="doc-biblioref">Martin et al. 2023</a>; <a href="#ref-birney2004" role="doc-biblioref">Birney et al. 2004</a>)</span>is a bioinformatics project to organise all the biological information around the sequences of large genomes. The are a large number of databases but <a href="https://www.ensembl.org/info/data/biomart/index.html">BioMart</a> <span class="citation" data-cites="smedley2009">(<a href="#ref-smedley2009" role="doc-biblioref">Smedley et al. 2009</a>)</span> provides a consistent interface to the material. There are web-based tools to use these but the R package <strong><code>biomaRt</code></strong> <span class="citation" data-cites="biomaRt1 biomaRt2">(<a href="#ref-biomaRt1" role="doc-biblioref">Durinck et al. 2009</a>, <a href="#ref-biomaRt2" role="doc-biblioref">2005</a>)</span> gives you programmatic access making it easier to integrate information into R dataframes.</p>
-<p><em>Note:</em> EBI announced in summer 2026 that they were effectively freezing BioMart in its current form before moving to a new platform. This means that access to historical data sets will remain, but newer versions will not be accessible through it. Practically, that means that the way you access the data has changed slightly, and the updated instructions are below.</p>
-<p>🎬 Load the <strong><code>biomaRt</code></strong> <span class="citation" data-cites="biomaRt1 biomaRt2">(<a href="#ref-biomaRt1" role="doc-biblioref">Durinck et al. 2009</a>, <a href="#ref-biomaRt2" role="doc-biblioref">2005</a>)</span> package:</p>
+<p><em>Note:</em> EBI announced in summer 2026 that BioMart is frozen at Ensembl release 116 and will not move to the new Ensembl platform. The vertebrate BioMart server is also frequently unresponsive. Instead of querying BioMart, we will get the same gene information directly from Ensembl’s release 116 annotation file (GFF3), which is a static download from the Ensembl FTP site. This gives the same gene names and descriptions that BioMart 116 would return, and once downloaded it works offline.</p>
+<p>🎬 Make sure you have the <strong><code>rtracklayer</code></strong> <span class="citation" data-cites="rtracklayer">(<a href="#ref-rtracklayer" role="doc-biblioref"><strong>rtracklayer?</strong></a>)</span> package installed. You only need to do this once, in the console, not in your script:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(biomaRt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"rtracklayer"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>🎬 Connect to the mouse database</p>
+<p>We will use <code>rtracklayer::import()</code> rather than loading the package with <code>library()</code>. This is because <strong><code>rtracklayer</code></strong> has functions with the same names as <strong><code>dplyr</code></strong> functions, and we only need it once.</p>
+<p>🎬 Download the mouse release 116 GFF3 file into your <code>meta</code> folder. It is about 50 MB, so we only download it if we don’t already have it:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to the mouse database</span></span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>ensembl <span class="ot">&lt;-</span> <span class="fu">useEnsembl</span>(<span class="at">biomart =</span> <span class="st">"genes"</span>,</span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">dataset =</span> <span class="st">"mmusculus_gene_ensembl"</span>,</span>
-<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">version =</span> <span class="dv">116</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in .getArchiveList(https = https, http_config = http_config): Unable to contact any Ensembl mirror</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>gff_url  <span class="ot">&lt;-</span> <span class="st">"https://ftp.ensembl.org/pub/release-116/gff3/mus_musculus/Mus_musculus.GRCm39.116.gff3.gz"</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>gff_file <span class="ot">&lt;-</span> <span class="st">"meta/Mus_musculus.GRCm39.116.gff3.gz"</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">timeout =</span> <span class="dv">1800</span>)</span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(gff_file)) <span class="fu">download.file</span>(gff_url, gff_file, <span class="at">mode =</span> <span class="st">"wb"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div>
-<p>🎬 See information we can retrieve:</p>
+<p>🎬 Import the file and extract the gene id, gene name and description for each gene:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># See what information we can retrieve</span></span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">listAttributes</span>(<span class="at">mart =</span> ensembl) <span class="sc">|&gt;</span> <span class="fu">View</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>gff <span class="ot">&lt;-</span> rtracklayer<span class="sc">::</span><span class="fu">import</span>(gff_file)</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="co"># gene-level records are the ones with a gene_id</span></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>genes <span class="ot">&lt;-</span> gff[<span class="sc">!</span><span class="fu">is.na</span>(gff<span class="sc">$</span>gene_id)]</span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>gene_info <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">ensembl_gene_id    =</span> genes<span class="sc">$</span>gene_id,</span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">external_gene_name =</span> genes<span class="sc">$</span>Name,</span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">description        =</span> genes<span class="sc">$</span>description) <span class="sc">|&gt;</span></span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(ensembl_gene_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>There are many (~3000!) possible bits of information (attributes) that can be obtained.</p>
-<p>We use the <code>getBM()</code> function to retrieve information from the database. The <code>filters</code> argument is used to specified what kind of identifier we are supplying in <code>values</code> to retrieve information. The <code>attributes</code> argument is used to select the information we want to retrieve. The <code>values</code> argument is used to specify the identifiers. The mart argument is used to specify the connection we created.</p>
-<p>🎬 Get the the gene name and a description. We also retrieve the gene id so we can later join the information with the results:</p>
+<p>The GFF3 file contains every gene in the mouse genome, not just the ones in our data. That is fine because the join below keeps only the genes in our results.</p>
+<p>🎬 Save the gene information so you don’t need to repeat the download and import next time:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>gene_info <span class="ot">&lt;-</span> <span class="fu">getBM</span>(<span class="at">filters =</span> <span class="st">"ensembl_gene_id"</span>,</span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">attributes =</span> <span class="fu">c</span>(<span class="st">"ensembl_gene_id"</span>,</span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"external_gene_name"</span>,</span>
-<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"description"</span>),</span>
-<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">values =</span> hspc_prog_results<span class="sc">$</span>ensembl_gene_id,</span>
-<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">mart =</span> ensembl)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(gene_info, <span class="st">"meta/mouse_gene_info_e116.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>You should view the resulting dataframe to see what information is available. You can use <code>glimpse()</code> or <code>View()</code>. Notice the dataframe returned only has 0 rows - one of the ids does not have information.</p>
+<p>You should view the resulting dataframe to see what information is available. You can use <code>glimpse()</code> or <code>View()</code>.</p>
 <p>🎬 Merge the gene information with the results:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># join the gene info with the results</span></span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>hspc_prog_results <span class="ot">&lt;-</span> hspc_prog_results <span class="sc">|&gt;</span> </span>
-<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(gene_info, <span class="at">by =</span> <span class="st">"ensembl_gene_id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in `left_join()`:
-! Can't join `x$ensembl_gene_id` with `y$ensembl_gene_id` due to
-  incompatible types.
-ℹ `x$ensembl_gene_id` is a &lt;character&gt;.
-ℹ `y$ensembl_gene_id` is a &lt;logical&gt;.</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># join the gene info with the results</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>hspc_prog_results <span class="ot">&lt;-</span> hspc_prog_results <span class="sc">|&gt;</span> </span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(gene_info, <span class="at">by =</span> <span class="st">"ensembl_gene_id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>🎬 Check whether any of our genes were not found in Ensembl 116:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>hspc_prog_results <span class="sc">|&gt;</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>ensembl_gene_id <span class="sc">%in%</span> gene_info<span class="sc">$</span>ensembl_gene_id) <span class="sc">|&gt;</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nrow</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
 </div>
 </div>
+<p>Genes that don’t have a name in Ensembl will have <code>NA</code> in <code>external_gene_name</code>, just as they would from BioMart.</p>
 <p>🎬 Save the results to a file:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(hspc_prog_results, <span class="at">file =</span> <span class="st">"results/hspc_prog_results.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1736,15 +1728,50 @@ Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pip
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -1870,11 +1897,30 @@ Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pip
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
         var filterRegex = new RegExp("^(?:http:|https:)\/\/sandyjmacdonald\.github\.io\/BIO00088H-data");
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1888,8 +1934,70 @@ Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pip
             if (link.getAttribute("rel") === null) {
               link.setAttribute("rel", "noopener");
             }
+            describeNewWindow(link);
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1903,6 +2011,7 @@ Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pip
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -2065,44 +2174,54 @@ Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pip
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -2200,6 +2319,9 @@ Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pip
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb76" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Workshop"</span></span>
@@ -3296,7 +3418,7 @@ Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pip
 <span id="cb76-1217"><a href="#cb76-1217" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb76-1218"><a href="#cb76-1218" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb76-1219"><a href="#cb76-1219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1220"><a href="#cb76-1220" aria-hidden="true" tabindex="-1"></a>Now go to <span class="co">[</span><span class="ot">Add gene information</span><span class="co">](#stem-add-info)</span>.</span>
+<span id="cb76-1220"><a href="#cb76-1220" aria-hidden="true" tabindex="-1"></a>Now go to <span class="co">[</span><span class="ot">Add gene information</span><span class="co">](#stem-cells-add-info)</span>.</span>
 <span id="cb76-1221"><a href="#cb76-1221" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb76-1222"><a href="#cb76-1222" aria-hidden="true" tabindex="-1"></a><span class="fu"># Add gene information</span></span>
 <span id="cb76-1223"><a href="#cb76-1223" aria-hidden="true" tabindex="-1"></a></span>
@@ -3330,271 +3452,305 @@ Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pip
 <span id="cb76-1253"><a href="#cb76-1253" aria-hidden="true" tabindex="-1"></a>🎬 List the Ensembl "marts" available:</span>
 <span id="cb76-1254"><a href="#cb76-1254" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb76-1257"><a href="#cb76-1257" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1258"><a href="#cb76-1258" aria-hidden="true" tabindex="-1"></a><span class="fu">listEnsemblGenomes</span>()</span>
-<span id="cb76-1259"><a href="#cb76-1259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1260"><a href="#cb76-1260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1261"><a href="#cb76-1261" aria-hidden="true" tabindex="-1"></a><span class="in">`plants_mart`</span> looks like the one we want. We can see what genomes are</span>
-<span id="cb76-1262"><a href="#cb76-1262" aria-hidden="true" tabindex="-1"></a>available with names like "Arabidopsis" in this mart using the</span>
-<span id="cb76-1263"><a href="#cb76-1263" aria-hidden="true" tabindex="-1"></a><span class="in">`searchDatasets()`</span> function.</span>
-<span id="cb76-1264"><a href="#cb76-1264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1265"><a href="#cb76-1265" aria-hidden="true" tabindex="-1"></a>🎬</span>
-<span id="cb76-1266"><a href="#cb76-1266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1269"><a href="#cb76-1269" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1270"><a href="#cb76-1270" aria-hidden="true" tabindex="-1"></a><span class="fu">searchDatasets</span>(<span class="fu">useEnsemblGenomes</span>(<span class="at">biomart =</span> <span class="st">"plants_mart"</span>), </span>
-<span id="cb76-1271"><a href="#cb76-1271" aria-hidden="true" tabindex="-1"></a>               <span class="at">pattern =</span> <span class="st">"Arabidopsis"</span>)</span>
+<span id="cb76-1258"><a href="#cb76-1258" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb76-1259"><a href="#cb76-1259" aria-hidden="true" tabindex="-1"></a><span class="fu">listEnsemblGenomes</span>()</span>
+<span id="cb76-1260"><a href="#cb76-1260" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1261"><a href="#cb76-1261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1262"><a href="#cb76-1262" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1263"><a href="#cb76-1263" aria-hidden="true" tabindex="-1"></a><span class="in">              biomart                        version</span></span>
+<span id="cb76-1264"><a href="#cb76-1264" aria-hidden="true" tabindex="-1"></a><span class="in">1       protists_mart      Ensembl Protists Genes 63</span></span>
+<span id="cb76-1265"><a href="#cb76-1265" aria-hidden="true" tabindex="-1"></a><span class="in">2 protists_variations Ensembl Protists Variations 63</span></span>
+<span id="cb76-1266"><a href="#cb76-1266" aria-hidden="true" tabindex="-1"></a><span class="in">3          fungi_mart         Ensembl Fungi Genes 63</span></span>
+<span id="cb76-1267"><a href="#cb76-1267" aria-hidden="true" tabindex="-1"></a><span class="in">4    fungi_variations    Ensembl Fungi Variations 63</span></span>
+<span id="cb76-1268"><a href="#cb76-1268" aria-hidden="true" tabindex="-1"></a><span class="in">5        metazoa_mart       Ensembl Metazoa Genes 63</span></span>
+<span id="cb76-1269"><a href="#cb76-1269" aria-hidden="true" tabindex="-1"></a><span class="in">6  metazoa_variations  Ensembl Metazoa Variations 63</span></span>
+<span id="cb76-1270"><a href="#cb76-1270" aria-hidden="true" tabindex="-1"></a><span class="in">7         plants_mart        Ensembl Plants Genes 63</span></span>
+<span id="cb76-1271"><a href="#cb76-1271" aria-hidden="true" tabindex="-1"></a><span class="in">8   plants_variations   Ensembl Plants Variations 63</span></span>
 <span id="cb76-1272"><a href="#cb76-1272" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb76-1273"><a href="#cb76-1273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1274"><a href="#cb76-1274" aria-hidden="true" tabindex="-1"></a><span class="in">`athaliana_eg_gene`</span> is the Arabidopsis thaliana genes (TAIR10) dataset</span>
-<span id="cb76-1275"><a href="#cb76-1275" aria-hidden="true" tabindex="-1"></a>we want.</span>
-<span id="cb76-1276"><a href="#cb76-1276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1277"><a href="#cb76-1277" aria-hidden="true" tabindex="-1"></a>🎬 Connect to the <span class="in">`athaliana_eg_gene`</span> database in <span class="in">`plants_mart`</span>:</span>
-<span id="cb76-1278"><a href="#cb76-1278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1281"><a href="#cb76-1281" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1282"><a href="#cb76-1282" aria-hidden="true" tabindex="-1"></a>ensembl <span class="ot">&lt;-</span> <span class="fu">useMart</span>(<span class="at">biomart =</span> <span class="st">"plants_mart"</span>,</span>
-<span id="cb76-1283"><a href="#cb76-1283" aria-hidden="true" tabindex="-1"></a>                   <span class="at">dataset =</span> <span class="st">"athaliana_eg_gene"</span>,</span>
-<span id="cb76-1284"><a href="#cb76-1284" aria-hidden="true" tabindex="-1"></a>                   <span class="at">host =</span> <span class="st">"https://jun2026-plants.ensembl.org"</span>)</span>
-<span id="cb76-1285"><a href="#cb76-1285" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1286"><a href="#cb76-1286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1287"><a href="#cb76-1287" aria-hidden="true" tabindex="-1"></a>🎬 See the the types of information we can retrieve:</span>
-<span id="cb76-1288"><a href="#cb76-1288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1291"><a href="#cb76-1291" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1292"><a href="#cb76-1292" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb76-1293"><a href="#cb76-1293" aria-hidden="true" tabindex="-1"></a><span class="fu">listAttributes</span>(<span class="at">mart =</span> ensembl) <span class="sc">|&gt;</span> <span class="fu">View</span>()</span>
-<span id="cb76-1294"><a href="#cb76-1294" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1295"><a href="#cb76-1295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1296"><a href="#cb76-1296" aria-hidden="true" tabindex="-1"></a>There are many (1,796!) possible bits of information (attributes) that</span>
-<span id="cb76-1297"><a href="#cb76-1297" aria-hidden="true" tabindex="-1"></a>can be obtained.</span>
-<span id="cb76-1298"><a href="#cb76-1298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1299"><a href="#cb76-1299" aria-hidden="true" tabindex="-1"></a>We use the <span class="in">`getBM()`</span> function to retrieve information from the database.</span>
-<span id="cb76-1300"><a href="#cb76-1300" aria-hidden="true" tabindex="-1"></a>The <span class="in">`filters`</span> argument is used to specified what kind of identifier we</span>
-<span id="cb76-1301"><a href="#cb76-1301" aria-hidden="true" tabindex="-1"></a>are supplying in <span class="in">`values`</span> to retrieve information. The <span class="in">`attributes`</span></span>
-<span id="cb76-1302"><a href="#cb76-1302" aria-hidden="true" tabindex="-1"></a>argument is used to select the information we want to retrieve. The</span>
-<span id="cb76-1303"><a href="#cb76-1303" aria-hidden="true" tabindex="-1"></a><span class="in">`values`</span> argument is used to specify the identifiers. The mart argument</span>
-<span id="cb76-1304"><a href="#cb76-1304" aria-hidden="true" tabindex="-1"></a>is used to specify the connection we created.</span>
-<span id="cb76-1305"><a href="#cb76-1305" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1306"><a href="#cb76-1306" aria-hidden="true" tabindex="-1"></a>🎬 Get the the gene name and a description. We also retreive the gene id</span>
-<span id="cb76-1307"><a href="#cb76-1307" aria-hidden="true" tabindex="-1"></a>so we can later join the information with the results:</span>
-<span id="cb76-1308"><a href="#cb76-1308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1311"><a href="#cb76-1311" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1312"><a href="#cb76-1312" aria-hidden="true" tabindex="-1"></a>gene_info <span class="ot">&lt;-</span> <span class="fu">getBM</span>(<span class="at">filters =</span> <span class="st">"ensembl_gene_id"</span>,</span>
-<span id="cb76-1313"><a href="#cb76-1313" aria-hidden="true" tabindex="-1"></a>                   <span class="at">attributes =</span> <span class="fu">c</span>(<span class="st">"ensembl_gene_id"</span>,</span>
-<span id="cb76-1314"><a href="#cb76-1314" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"external_gene_name"</span>,</span>
-<span id="cb76-1315"><a href="#cb76-1315" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"description"</span>),</span>
-<span id="cb76-1316"><a href="#cb76-1316" aria-hidden="true" tabindex="-1"></a>                   <span class="at">values =</span> root_results<span class="sc">$</span>gene_id,</span>
-<span id="cb76-1317"><a href="#cb76-1317" aria-hidden="true" tabindex="-1"></a>                   <span class="at">mart =</span> ensembl)</span>
-<span id="cb76-1318"><a href="#cb76-1318" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1274"><a href="#cb76-1274" aria-hidden="true" tabindex="-1"></a><span class="in">`plants_mart`</span> looks like the one we want. We can see what genomes are</span>
+<span id="cb76-1275"><a href="#cb76-1275" aria-hidden="true" tabindex="-1"></a>available with names like "Arabidopsis" in this mart using the</span>
+<span id="cb76-1276"><a href="#cb76-1276" aria-hidden="true" tabindex="-1"></a><span class="in">`searchDatasets()`</span> function.</span>
+<span id="cb76-1277"><a href="#cb76-1277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1278"><a href="#cb76-1278" aria-hidden="true" tabindex="-1"></a>🎬</span>
+<span id="cb76-1279"><a href="#cb76-1279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1282"><a href="#cb76-1282" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1283"><a href="#cb76-1283" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb76-1284"><a href="#cb76-1284" aria-hidden="true" tabindex="-1"></a><span class="fu">searchDatasets</span>(<span class="fu">useEnsemblGenomes</span>(<span class="at">biomart =</span> <span class="st">"plants_mart"</span>), </span>
+<span id="cb76-1285"><a href="#cb76-1285" aria-hidden="true" tabindex="-1"></a>               <span class="at">pattern =</span> <span class="st">"Arabidopsis"</span>)</span>
+<span id="cb76-1286"><a href="#cb76-1286" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1287"><a href="#cb76-1287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1288"><a href="#cb76-1288" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1289"><a href="#cb76-1289" aria-hidden="true" tabindex="-1"></a><span class="in">             dataset                         description version</span></span>
+<span id="cb76-1290"><a href="#cb76-1290" aria-hidden="true" tabindex="-1"></a><span class="in">7   ahalleri_eg_gene Arabidopsis halleri genes (Ahal2.2) Ahal2.2</span></span>
+<span id="cb76-1291"><a href="#cb76-1291" aria-hidden="true" tabindex="-1"></a><span class="in">11   alyrata_eg_gene    Arabidopsis lyrata genes (v.1.0)   v.1.0</span></span>
+<span id="cb76-1292"><a href="#cb76-1292" aria-hidden="true" tabindex="-1"></a><span class="in">42 athaliana_eg_gene Arabidopsis thaliana genes (TAIR10)  TAIR10</span></span>
+<span id="cb76-1293"><a href="#cb76-1293" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1294"><a href="#cb76-1294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1295"><a href="#cb76-1295" aria-hidden="true" tabindex="-1"></a><span class="in">`athaliana_eg_gene`</span> is the Arabidopsis thaliana genes (TAIR10) dataset</span>
+<span id="cb76-1296"><a href="#cb76-1296" aria-hidden="true" tabindex="-1"></a>we want.</span>
+<span id="cb76-1297"><a href="#cb76-1297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1298"><a href="#cb76-1298" aria-hidden="true" tabindex="-1"></a>🎬 Connect to the <span class="in">`athaliana_eg_gene`</span> database in <span class="in">`plants_mart`</span>:</span>
+<span id="cb76-1299"><a href="#cb76-1299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1302"><a href="#cb76-1302" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1303"><a href="#cb76-1303" aria-hidden="true" tabindex="-1"></a>ensembl <span class="ot">&lt;-</span> <span class="fu">useMart</span>(<span class="at">biomart =</span> <span class="st">"plants_mart"</span>,</span>
+<span id="cb76-1304"><a href="#cb76-1304" aria-hidden="true" tabindex="-1"></a>                   <span class="at">dataset =</span> <span class="st">"athaliana_eg_gene"</span>,</span>
+<span id="cb76-1305"><a href="#cb76-1305" aria-hidden="true" tabindex="-1"></a>                   <span class="at">host =</span> <span class="st">"https://jun2026-plants.ensembl.org"</span>)</span>
+<span id="cb76-1306"><a href="#cb76-1306" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1307"><a href="#cb76-1307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1308"><a href="#cb76-1308" aria-hidden="true" tabindex="-1"></a>🎬 See the the types of information we can retrieve:</span>
+<span id="cb76-1309"><a href="#cb76-1309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1312"><a href="#cb76-1312" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1313"><a href="#cb76-1313" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb76-1314"><a href="#cb76-1314" aria-hidden="true" tabindex="-1"></a><span class="fu">listAttributes</span>(<span class="at">mart =</span> ensembl) <span class="sc">|&gt;</span> <span class="fu">View</span>()</span>
+<span id="cb76-1315"><a href="#cb76-1315" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1316"><a href="#cb76-1316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1317"><a href="#cb76-1317" aria-hidden="true" tabindex="-1"></a>There are many (1,796!) possible bits of information (attributes) that</span>
+<span id="cb76-1318"><a href="#cb76-1318" aria-hidden="true" tabindex="-1"></a>can be obtained.</span>
 <span id="cb76-1319"><a href="#cb76-1319" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1320"><a href="#cb76-1320" aria-hidden="true" tabindex="-1"></a>You should view the resulting dataframe to see what information is</span>
-<span id="cb76-1321"><a href="#cb76-1321" aria-hidden="true" tabindex="-1"></a>available. You can use <span class="in">`glimpse()`</span> or <span class="in">`View()`</span>.</span>
-<span id="cb76-1322"><a href="#cb76-1322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1323"><a href="#cb76-1323" aria-hidden="true" tabindex="-1"></a>🎬 Merge the gene information with the results:</span>
-<span id="cb76-1324"><a href="#cb76-1324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1327"><a href="#cb76-1327" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1328"><a href="#cb76-1328" aria-hidden="true" tabindex="-1"></a><span class="co"># join the gene info with the results</span></span>
-<span id="cb76-1329"><a href="#cb76-1329" aria-hidden="true" tabindex="-1"></a>root_results <span class="ot">&lt;-</span> root_results <span class="sc">|&gt;</span></span>
-<span id="cb76-1330"><a href="#cb76-1330" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(gene_info,</span>
-<span id="cb76-1331"><a href="#cb76-1331" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">join_by</span>(gene_id <span class="sc">==</span> ensembl_gene_id))</span>
-<span id="cb76-1332"><a href="#cb76-1332" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1333"><a href="#cb76-1333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1334"><a href="#cb76-1334" aria-hidden="true" tabindex="-1"></a>🎬 Save the results to a file:</span>
-<span id="cb76-1335"><a href="#cb76-1335" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1338"><a href="#cb76-1338" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1339"><a href="#cb76-1339" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(root_results, <span class="at">file =</span> <span class="st">"results/root_results.csv"</span>)</span>
-<span id="cb76-1340"><a href="#cb76-1340" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1341"><a href="#cb76-1341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1344"><a href="#cb76-1344" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1345"><a href="#cb76-1345" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb76-1346"><a href="#cb76-1346" aria-hidden="true" tabindex="-1"></a><span class="co">#---UNDER THE HOOD CODE---</span></span>
-<span id="cb76-1347"><a href="#cb76-1347" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(root_results, </span>
-<span id="cb76-1348"><a href="#cb76-1348" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"../week-5/results/root_results.csv"</span>)</span>
-<span id="cb76-1349"><a href="#cb76-1349" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1350"><a href="#cb76-1350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1351"><a href="#cb76-1351" aria-hidden="true" tabindex="-1"></a>Now go to <span class="co">[</span><span class="ot">Look after future you</span><span class="co">](#look-after-future-you)</span>.</span>
-<span id="cb76-1352"><a href="#cb76-1352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1353"><a href="#cb76-1353" aria-hidden="true" tabindex="-1"></a><span class="fu">## 💉 *Leishmania* {#leishmania-add-info}</span></span>
+<span id="cb76-1320"><a href="#cb76-1320" aria-hidden="true" tabindex="-1"></a>We use the <span class="in">`getBM()`</span> function to retrieve information from the database.</span>
+<span id="cb76-1321"><a href="#cb76-1321" aria-hidden="true" tabindex="-1"></a>The <span class="in">`filters`</span> argument is used to specified what kind of identifier we</span>
+<span id="cb76-1322"><a href="#cb76-1322" aria-hidden="true" tabindex="-1"></a>are supplying in <span class="in">`values`</span> to retrieve information. The <span class="in">`attributes`</span></span>
+<span id="cb76-1323"><a href="#cb76-1323" aria-hidden="true" tabindex="-1"></a>argument is used to select the information we want to retrieve. The</span>
+<span id="cb76-1324"><a href="#cb76-1324" aria-hidden="true" tabindex="-1"></a><span class="in">`values`</span> argument is used to specify the identifiers. The mart argument</span>
+<span id="cb76-1325"><a href="#cb76-1325" aria-hidden="true" tabindex="-1"></a>is used to specify the connection we created.</span>
+<span id="cb76-1326"><a href="#cb76-1326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1327"><a href="#cb76-1327" aria-hidden="true" tabindex="-1"></a>🎬 Get the the gene name and a description. We also retreive the gene id</span>
+<span id="cb76-1328"><a href="#cb76-1328" aria-hidden="true" tabindex="-1"></a>so we can later join the information with the results:</span>
+<span id="cb76-1329"><a href="#cb76-1329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1332"><a href="#cb76-1332" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1333"><a href="#cb76-1333" aria-hidden="true" tabindex="-1"></a>gene_info <span class="ot">&lt;-</span> <span class="fu">getBM</span>(<span class="at">filters =</span> <span class="st">"ensembl_gene_id"</span>,</span>
+<span id="cb76-1334"><a href="#cb76-1334" aria-hidden="true" tabindex="-1"></a>                   <span class="at">attributes =</span> <span class="fu">c</span>(<span class="st">"ensembl_gene_id"</span>,</span>
+<span id="cb76-1335"><a href="#cb76-1335" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"external_gene_name"</span>,</span>
+<span id="cb76-1336"><a href="#cb76-1336" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"description"</span>),</span>
+<span id="cb76-1337"><a href="#cb76-1337" aria-hidden="true" tabindex="-1"></a>                   <span class="at">values =</span> root_results<span class="sc">$</span>gene_id,</span>
+<span id="cb76-1338"><a href="#cb76-1338" aria-hidden="true" tabindex="-1"></a>                   <span class="at">mart =</span> ensembl)</span>
+<span id="cb76-1339"><a href="#cb76-1339" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1340"><a href="#cb76-1340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1341"><a href="#cb76-1341" aria-hidden="true" tabindex="-1"></a>You should view the resulting dataframe to see what information is</span>
+<span id="cb76-1342"><a href="#cb76-1342" aria-hidden="true" tabindex="-1"></a>available. You can use <span class="in">`glimpse()`</span> or <span class="in">`View()`</span>.</span>
+<span id="cb76-1343"><a href="#cb76-1343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1344"><a href="#cb76-1344" aria-hidden="true" tabindex="-1"></a>🎬 Merge the gene information with the results:</span>
+<span id="cb76-1345"><a href="#cb76-1345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1348"><a href="#cb76-1348" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1349"><a href="#cb76-1349" aria-hidden="true" tabindex="-1"></a><span class="co"># join the gene info with the results</span></span>
+<span id="cb76-1350"><a href="#cb76-1350" aria-hidden="true" tabindex="-1"></a>root_results <span class="ot">&lt;-</span> root_results <span class="sc">|&gt;</span></span>
+<span id="cb76-1351"><a href="#cb76-1351" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(gene_info,</span>
+<span id="cb76-1352"><a href="#cb76-1352" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">join_by</span>(gene_id <span class="sc">==</span> ensembl_gene_id))</span>
+<span id="cb76-1353"><a href="#cb76-1353" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb76-1354"><a href="#cb76-1354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1355"><a href="#cb76-1355" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>I got the information from</span>
-<span id="cb76-1356"><a href="#cb76-1356" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">TriTrypDB</span><span class="co">](https://tritrypdb.org/tritrypdb/app/)</span>\</span>
-<span id="cb76-1357"><a href="#cb76-1357" aria-hidden="true" tabindex="-1"></a>    which is a functional genomic resource for the Trypanosomatidae and</span>
-<span id="cb76-1358"><a href="#cb76-1358" aria-hidden="true" tabindex="-1"></a>    Plasmodidae</span>
-<span id="cb76-1359"><a href="#cb76-1359" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1360"><a href="#cb76-1360" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="ot">&lt;https://tritrypdb.org/tritrypdb/app/downloads&gt;</span> section</span>
-<span id="cb76-1361"><a href="#cb76-1361" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1362"><a href="#cb76-1362" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>I downloaded the [*L. mexicana* MHOM/GT/2001/U1103 Full</span>
-<span id="cb76-1363"><a href="#cb76-1363" aria-hidden="true" tabindex="-1"></a>    GFF](https://tritrypdb.org/common/downloads/release-68/LmexicanaMHOMGT2001U1103/gff/data/TriTrypDB-68_LmexicanaMHOMGT2001U1103.gff)</span>
-<span id="cb76-1364"><a href="#cb76-1364" aria-hidden="true" tabindex="-1"></a>    and extracted the gene information and saved it as</span>
-<span id="cb76-1365"><a href="#cb76-1365" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">leishmania_mex.xlsx</span><span class="co">](meta/leishmania_mex.xlsx)</span></span>
-<span id="cb76-1366"><a href="#cb76-1366" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1367"><a href="#cb76-1367" aria-hidden="true" tabindex="-1"></a>We will import this file and join it to the results dataframe.</span>
-<span id="cb76-1368"><a href="#cb76-1368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1369"><a href="#cb76-1369" aria-hidden="true" tabindex="-1"></a>🎬 Load the **`readxl`** <span class="co">[</span><span class="ot">@readxl</span><span class="co">]</span> package:</span>
-<span id="cb76-1370"><a href="#cb76-1370" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1373"><a href="#cb76-1373" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1374"><a href="#cb76-1374" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb76-1375"><a href="#cb76-1375" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1376"><a href="#cb76-1376" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1377"><a href="#cb76-1377" aria-hidden="true" tabindex="-1"></a>🎬 Import the Xenbase gene information file:</span>
-<span id="cb76-1378"><a href="#cb76-1378" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1381"><a href="#cb76-1381" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1382"><a href="#cb76-1382" aria-hidden="true" tabindex="-1"></a>gene_info <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"meta/leishmania_mex.xlsx"</span>) </span>
-<span id="cb76-1383"><a href="#cb76-1383" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1384"><a href="#cb76-1384" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1385"><a href="#cb76-1385" aria-hidden="true" tabindex="-1"></a>You should view the resulting dataframe to see what information is</span>
-<span id="cb76-1386"><a href="#cb76-1386" aria-hidden="true" tabindex="-1"></a>available. You can use <span class="in">`glimpse()`</span> or <span class="in">`View()`</span>.</span>
+<span id="cb76-1355"><a href="#cb76-1355" aria-hidden="true" tabindex="-1"></a>🎬 Save the results to a file:</span>
+<span id="cb76-1356"><a href="#cb76-1356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1359"><a href="#cb76-1359" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1360"><a href="#cb76-1360" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(root_results, <span class="at">file =</span> <span class="st">"results/root_results.csv"</span>)</span>
+<span id="cb76-1361"><a href="#cb76-1361" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1362"><a href="#cb76-1362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1365"><a href="#cb76-1365" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1366"><a href="#cb76-1366" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb76-1367"><a href="#cb76-1367" aria-hidden="true" tabindex="-1"></a><span class="co">#---UNDER THE HOOD CODE---</span></span>
+<span id="cb76-1368"><a href="#cb76-1368" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(root_results, </span>
+<span id="cb76-1369"><a href="#cb76-1369" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"../week-5/results/root_results.csv"</span>)</span>
+<span id="cb76-1370"><a href="#cb76-1370" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1371"><a href="#cb76-1371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1372"><a href="#cb76-1372" aria-hidden="true" tabindex="-1"></a>Now go to <span class="co">[</span><span class="ot">Look after future you</span><span class="co">](#look-after-future-you)</span>.</span>
+<span id="cb76-1373"><a href="#cb76-1373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1374"><a href="#cb76-1374" aria-hidden="true" tabindex="-1"></a><span class="fu">## 💉 *Leishmania* {#leishmania-add-info}</span></span>
+<span id="cb76-1375"><a href="#cb76-1375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1376"><a href="#cb76-1376" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>I got the information from</span>
+<span id="cb76-1377"><a href="#cb76-1377" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">TriTrypDB</span><span class="co">](https://tritrypdb.org/tritrypdb/app/)</span>\</span>
+<span id="cb76-1378"><a href="#cb76-1378" aria-hidden="true" tabindex="-1"></a>    which is a functional genomic resource for the Trypanosomatidae and</span>
+<span id="cb76-1379"><a href="#cb76-1379" aria-hidden="true" tabindex="-1"></a>    Plasmodidae</span>
+<span id="cb76-1380"><a href="#cb76-1380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1381"><a href="#cb76-1381" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="ot">&lt;https://tritrypdb.org/tritrypdb/app/downloads&gt;</span> section</span>
+<span id="cb76-1382"><a href="#cb76-1382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1383"><a href="#cb76-1383" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>I downloaded the [*L. mexicana* MHOM/GT/2001/U1103 Full</span>
+<span id="cb76-1384"><a href="#cb76-1384" aria-hidden="true" tabindex="-1"></a>    GFF](https://tritrypdb.org/common/downloads/release-68/LmexicanaMHOMGT2001U1103/gff/data/TriTrypDB-68_LmexicanaMHOMGT2001U1103.gff)</span>
+<span id="cb76-1385"><a href="#cb76-1385" aria-hidden="true" tabindex="-1"></a>    and extracted the gene information and saved it as</span>
+<span id="cb76-1386"><a href="#cb76-1386" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">leishmania_mex.xlsx</span><span class="co">](meta/leishmania_mex.xlsx)</span></span>
 <span id="cb76-1387"><a href="#cb76-1387" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1388"><a href="#cb76-1388" aria-hidden="true" tabindex="-1"></a>🎬 Merge the gene information with the results:</span>
+<span id="cb76-1388"><a href="#cb76-1388" aria-hidden="true" tabindex="-1"></a>We will import this file and join it to the results dataframe.</span>
 <span id="cb76-1389"><a href="#cb76-1389" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1392"><a href="#cb76-1392" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1393"><a href="#cb76-1393" aria-hidden="true" tabindex="-1"></a><span class="co"># join the gene info with the results</span></span>
-<span id="cb76-1394"><a href="#cb76-1394" aria-hidden="true" tabindex="-1"></a>pro_meta_results <span class="ot">&lt;-</span> pro_meta_results <span class="sc">|&gt;</span></span>
-<span id="cb76-1395"><a href="#cb76-1395" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(gene_info, <span class="at">by =</span> <span class="st">"gene_id"</span>)</span>
+<span id="cb76-1390"><a href="#cb76-1390" aria-hidden="true" tabindex="-1"></a>🎬 Load the **`readxl`** <span class="co">[</span><span class="ot">@readxl</span><span class="co">]</span> package:</span>
+<span id="cb76-1391"><a href="#cb76-1391" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1394"><a href="#cb76-1394" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1395"><a href="#cb76-1395" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb76-1396"><a href="#cb76-1396" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb76-1397"><a href="#cb76-1397" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1398"><a href="#cb76-1398" aria-hidden="true" tabindex="-1"></a>🎬 Save the results to a file:</span>
+<span id="cb76-1398"><a href="#cb76-1398" aria-hidden="true" tabindex="-1"></a>🎬 Import the Xenbase gene information file:</span>
 <span id="cb76-1399"><a href="#cb76-1399" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb76-1402"><a href="#cb76-1402" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1403"><a href="#cb76-1403" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(pro_meta_results, <span class="at">file =</span> <span class="st">"results/pro_meta_results.csv"</span>)</span>
+<span id="cb76-1403"><a href="#cb76-1403" aria-hidden="true" tabindex="-1"></a>gene_info <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"meta/leishmania_mex.xlsx"</span>) </span>
 <span id="cb76-1404"><a href="#cb76-1404" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb76-1405"><a href="#cb76-1405" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1408"><a href="#cb76-1408" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1409"><a href="#cb76-1409" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb76-1410"><a href="#cb76-1410" aria-hidden="true" tabindex="-1"></a><span class="co">#---UNDER THE HOOD CODE---</span></span>
-<span id="cb76-1411"><a href="#cb76-1411" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(pro_meta_results, </span>
-<span id="cb76-1412"><a href="#cb76-1412" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"../week-5/results/pro_meta_results.csv"</span>)</span>
-<span id="cb76-1413"><a href="#cb76-1413" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1414"><a href="#cb76-1414" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1415"><a href="#cb76-1415" aria-hidden="true" tabindex="-1"></a>Now go to <span class="co">[</span><span class="ot">Look after future you</span><span class="co">](#look-after-future-you)</span>.</span>
-<span id="cb76-1416"><a href="#cb76-1416" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1417"><a href="#cb76-1417" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🐭 Stem cells {#stem-cells-add-info}</span></span>
+<span id="cb76-1406"><a href="#cb76-1406" aria-hidden="true" tabindex="-1"></a>You should view the resulting dataframe to see what information is</span>
+<span id="cb76-1407"><a href="#cb76-1407" aria-hidden="true" tabindex="-1"></a>available. You can use <span class="in">`glimpse()`</span> or <span class="in">`View()`</span>.</span>
+<span id="cb76-1408"><a href="#cb76-1408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1409"><a href="#cb76-1409" aria-hidden="true" tabindex="-1"></a>🎬 Merge the gene information with the results:</span>
+<span id="cb76-1410"><a href="#cb76-1410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1413"><a href="#cb76-1413" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1414"><a href="#cb76-1414" aria-hidden="true" tabindex="-1"></a><span class="co"># join the gene info with the results</span></span>
+<span id="cb76-1415"><a href="#cb76-1415" aria-hidden="true" tabindex="-1"></a>pro_meta_results <span class="ot">&lt;-</span> pro_meta_results <span class="sc">|&gt;</span></span>
+<span id="cb76-1416"><a href="#cb76-1416" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(gene_info, <span class="at">by =</span> <span class="st">"gene_id"</span>)</span>
+<span id="cb76-1417"><a href="#cb76-1417" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb76-1418"><a href="#cb76-1418" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1419"><a href="#cb76-1419" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Ensembl</span><span class="co">](https://www.ensembl.org/index.html)</span> [@martin2023;</span>
-<span id="cb76-1420"><a href="#cb76-1420" aria-hidden="true" tabindex="-1"></a>@birney2004]is a bioinformatics project to organise all the biological</span>
-<span id="cb76-1421"><a href="#cb76-1421" aria-hidden="true" tabindex="-1"></a>information around the sequences of large genomes. The are a large</span>
-<span id="cb76-1422"><a href="#cb76-1422" aria-hidden="true" tabindex="-1"></a>number of databases but</span>
-<span id="cb76-1423"><a href="#cb76-1423" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">BioMart</span><span class="co">](https://www.ensembl.org/info/data/biomart/index.html)</span></span>
-<span id="cb76-1424"><a href="#cb76-1424" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@smedley2009</span><span class="co">]</span> provides a consistent interface to the material. There</span>
-<span id="cb76-1425"><a href="#cb76-1425" aria-hidden="true" tabindex="-1"></a>are web-based tools to use these but the R package **`biomaRt`**</span>
-<span id="cb76-1426"><a href="#cb76-1426" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@biomaRt1; @biomaRt2</span><span class="co">]</span> gives you programmatic access making it easier to</span>
-<span id="cb76-1427"><a href="#cb76-1427" aria-hidden="true" tabindex="-1"></a>integrate information into R dataframes.</span>
-<span id="cb76-1428"><a href="#cb76-1428" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1429"><a href="#cb76-1429" aria-hidden="true" tabindex="-1"></a>*Note:* EBI announced in summer 2026 that they were effectively freezing BioMart </span>
-<span id="cb76-1430"><a href="#cb76-1430" aria-hidden="true" tabindex="-1"></a>in its current form before moving to a new platform. This means that access to </span>
-<span id="cb76-1431"><a href="#cb76-1431" aria-hidden="true" tabindex="-1"></a>historical data sets will remain, but newer versions will not be accessible </span>
-<span id="cb76-1432"><a href="#cb76-1432" aria-hidden="true" tabindex="-1"></a>through it. Practically, that means that the way you access the data has</span>
-<span id="cb76-1433"><a href="#cb76-1433" aria-hidden="true" tabindex="-1"></a>changed slightly, and the updated instructions are below.</span>
-<span id="cb76-1434"><a href="#cb76-1434" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1435"><a href="#cb76-1435" aria-hidden="true" tabindex="-1"></a>🎬 Load the **`biomaRt`** <span class="co">[</span><span class="ot">@biomaRt1; @biomaRt2</span><span class="co">]</span> package:</span>
-<span id="cb76-1436"><a href="#cb76-1436" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1439"><a href="#cb76-1439" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1440"><a href="#cb76-1440" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb76-1441"><a href="#cb76-1441" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(biomaRt)</span>
-<span id="cb76-1442"><a href="#cb76-1442" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1443"><a href="#cb76-1443" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1444"><a href="#cb76-1444" aria-hidden="true" tabindex="-1"></a>🎬 Connect to the mouse database</span>
-<span id="cb76-1445"><a href="#cb76-1445" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1448"><a href="#cb76-1448" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1449"><a href="#cb76-1449" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to the mouse database</span></span>
-<span id="cb76-1450"><a href="#cb76-1450" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1451"><a href="#cb76-1451" aria-hidden="true" tabindex="-1"></a>ensembl <span class="ot">&lt;-</span> <span class="fu">useEnsembl</span>(<span class="at">biomart =</span> <span class="st">"genes"</span>,</span>
-<span id="cb76-1452"><a href="#cb76-1452" aria-hidden="true" tabindex="-1"></a>                      <span class="at">dataset =</span> <span class="st">"mmusculus_gene_ensembl"</span>,</span>
-<span id="cb76-1453"><a href="#cb76-1453" aria-hidden="true" tabindex="-1"></a>                      <span class="at">version =</span> <span class="dv">116</span>)</span>
-<span id="cb76-1454"><a href="#cb76-1454" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1455"><a href="#cb76-1455" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1456"><a href="#cb76-1456" aria-hidden="true" tabindex="-1"></a>🎬 See information we can retrieve:</span>
+<span id="cb76-1419"><a href="#cb76-1419" aria-hidden="true" tabindex="-1"></a>🎬 Save the results to a file:</span>
+<span id="cb76-1420"><a href="#cb76-1420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1423"><a href="#cb76-1423" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1424"><a href="#cb76-1424" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(pro_meta_results, <span class="at">file =</span> <span class="st">"results/pro_meta_results.csv"</span>)</span>
+<span id="cb76-1425"><a href="#cb76-1425" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1426"><a href="#cb76-1426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1429"><a href="#cb76-1429" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1430"><a href="#cb76-1430" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb76-1431"><a href="#cb76-1431" aria-hidden="true" tabindex="-1"></a><span class="co">#---UNDER THE HOOD CODE---</span></span>
+<span id="cb76-1432"><a href="#cb76-1432" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(pro_meta_results, </span>
+<span id="cb76-1433"><a href="#cb76-1433" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"../week-5/results/pro_meta_results.csv"</span>)</span>
+<span id="cb76-1434"><a href="#cb76-1434" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1435"><a href="#cb76-1435" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1436"><a href="#cb76-1436" aria-hidden="true" tabindex="-1"></a>Now go to <span class="co">[</span><span class="ot">Look after future you</span><span class="co">](#look-after-future-you)</span>.</span>
+<span id="cb76-1437"><a href="#cb76-1437" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1438"><a href="#cb76-1438" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🐭 Stem cells {#stem-cells-add-info}</span></span>
+<span id="cb76-1439"><a href="#cb76-1439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1440"><a href="#cb76-1440" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Ensembl</span><span class="co">](https://www.ensembl.org/index.html)</span> [@martin2023;</span>
+<span id="cb76-1441"><a href="#cb76-1441" aria-hidden="true" tabindex="-1"></a>@birney2004]is a bioinformatics project to organise all the biological</span>
+<span id="cb76-1442"><a href="#cb76-1442" aria-hidden="true" tabindex="-1"></a>information around the sequences of large genomes. The are a large</span>
+<span id="cb76-1443"><a href="#cb76-1443" aria-hidden="true" tabindex="-1"></a>number of databases but</span>
+<span id="cb76-1444"><a href="#cb76-1444" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">BioMart</span><span class="co">](https://www.ensembl.org/info/data/biomart/index.html)</span></span>
+<span id="cb76-1445"><a href="#cb76-1445" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@smedley2009</span><span class="co">]</span> provides a consistent interface to the material. There</span>
+<span id="cb76-1446"><a href="#cb76-1446" aria-hidden="true" tabindex="-1"></a>are web-based tools to use these but the R package **`biomaRt`**</span>
+<span id="cb76-1447"><a href="#cb76-1447" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@biomaRt1; @biomaRt2</span><span class="co">]</span> gives you programmatic access making it easier to</span>
+<span id="cb76-1448"><a href="#cb76-1448" aria-hidden="true" tabindex="-1"></a>integrate information into R dataframes.</span>
+<span id="cb76-1449"><a href="#cb76-1449" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1450"><a href="#cb76-1450" aria-hidden="true" tabindex="-1"></a>*Note:* EBI announced in summer 2026 that BioMart is frozen at Ensembl</span>
+<span id="cb76-1451"><a href="#cb76-1451" aria-hidden="true" tabindex="-1"></a>release 116 and will not move to the new Ensembl platform. The vertebrate</span>
+<span id="cb76-1452"><a href="#cb76-1452" aria-hidden="true" tabindex="-1"></a>BioMart server is also frequently unresponsive. Instead of querying</span>
+<span id="cb76-1453"><a href="#cb76-1453" aria-hidden="true" tabindex="-1"></a>BioMart, we will get the same gene information directly from Ensembl's</span>
+<span id="cb76-1454"><a href="#cb76-1454" aria-hidden="true" tabindex="-1"></a>release 116 annotation file (GFF3), which is a static download from the</span>
+<span id="cb76-1455"><a href="#cb76-1455" aria-hidden="true" tabindex="-1"></a>Ensembl FTP site. This gives the same gene names and descriptions that</span>
+<span id="cb76-1456"><a href="#cb76-1456" aria-hidden="true" tabindex="-1"></a>BioMart 116 would return, and once downloaded it works offline.</span>
 <span id="cb76-1457"><a href="#cb76-1457" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1460"><a href="#cb76-1460" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1461"><a href="#cb76-1461" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb76-1462"><a href="#cb76-1462" aria-hidden="true" tabindex="-1"></a><span class="co"># See what information we can retrieve</span></span>
-<span id="cb76-1463"><a href="#cb76-1463" aria-hidden="true" tabindex="-1"></a><span class="fu">listAttributes</span>(<span class="at">mart =</span> ensembl) <span class="sc">|&gt;</span> <span class="fu">View</span>()</span>
-<span id="cb76-1464"><a href="#cb76-1464" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1465"><a href="#cb76-1465" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1466"><a href="#cb76-1466" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1467"><a href="#cb76-1467" aria-hidden="true" tabindex="-1"></a>There are many (\~3000!) possible bits of information (attributes) that</span>
-<span id="cb76-1468"><a href="#cb76-1468" aria-hidden="true" tabindex="-1"></a>can be obtained.</span>
-<span id="cb76-1469"><a href="#cb76-1469" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1470"><a href="#cb76-1470" aria-hidden="true" tabindex="-1"></a>We use the <span class="in">`getBM()`</span> function to retrieve information from the database.</span>
-<span id="cb76-1471"><a href="#cb76-1471" aria-hidden="true" tabindex="-1"></a>The <span class="in">`filters`</span> argument is used to specified what kind of identifier we</span>
-<span id="cb76-1472"><a href="#cb76-1472" aria-hidden="true" tabindex="-1"></a>are supplying in <span class="in">`values`</span> to retrieve information. The <span class="in">`attributes`</span></span>
-<span id="cb76-1473"><a href="#cb76-1473" aria-hidden="true" tabindex="-1"></a>argument is used to select the information we want to retrieve. The</span>
-<span id="cb76-1474"><a href="#cb76-1474" aria-hidden="true" tabindex="-1"></a><span class="in">`values`</span> argument is used to specify the identifiers. The mart argument</span>
-<span id="cb76-1475"><a href="#cb76-1475" aria-hidden="true" tabindex="-1"></a>is used to specify the connection we created.</span>
-<span id="cb76-1476"><a href="#cb76-1476" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1477"><a href="#cb76-1477" aria-hidden="true" tabindex="-1"></a>🎬 Get the the gene name and a description. We also retrieve the gene id</span>
-<span id="cb76-1478"><a href="#cb76-1478" aria-hidden="true" tabindex="-1"></a>so we can later join the information with the results:</span>
-<span id="cb76-1479"><a href="#cb76-1479" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1482"><a href="#cb76-1482" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1483"><a href="#cb76-1483" aria-hidden="true" tabindex="-1"></a>gene_info <span class="ot">&lt;-</span> <span class="fu">getBM</span>(<span class="at">filters =</span> <span class="st">"ensembl_gene_id"</span>,</span>
-<span id="cb76-1484"><a href="#cb76-1484" aria-hidden="true" tabindex="-1"></a>                   <span class="at">attributes =</span> <span class="fu">c</span>(<span class="st">"ensembl_gene_id"</span>,</span>
-<span id="cb76-1485"><a href="#cb76-1485" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"external_gene_name"</span>,</span>
-<span id="cb76-1486"><a href="#cb76-1486" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"description"</span>),</span>
-<span id="cb76-1487"><a href="#cb76-1487" aria-hidden="true" tabindex="-1"></a>                   <span class="at">values =</span> hspc_prog_results<span class="sc">$</span>ensembl_gene_id,</span>
-<span id="cb76-1488"><a href="#cb76-1488" aria-hidden="true" tabindex="-1"></a>                   <span class="at">mart =</span> ensembl)</span>
-<span id="cb76-1489"><a href="#cb76-1489" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1490"><a href="#cb76-1490" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1491"><a href="#cb76-1491" aria-hidden="true" tabindex="-1"></a>You should view the resulting dataframe to see what information is</span>
-<span id="cb76-1492"><a href="#cb76-1492" aria-hidden="true" tabindex="-1"></a>available. You can use <span class="in">`glimpse()`</span> or <span class="in">`View()`</span>. Notice the dataframe</span>
-<span id="cb76-1493"><a href="#cb76-1493" aria-hidden="true" tabindex="-1"></a>returned only has <span class="in">`r nrow(gene_info)`</span> rows - one of the ids does not</span>
-<span id="cb76-1494"><a href="#cb76-1494" aria-hidden="true" tabindex="-1"></a>have information.</span>
-<span id="cb76-1495"><a href="#cb76-1495" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1496"><a href="#cb76-1496" aria-hidden="true" tabindex="-1"></a>🎬 Merge the gene information with the results:</span>
-<span id="cb76-1497"><a href="#cb76-1497" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1500"><a href="#cb76-1500" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1501"><a href="#cb76-1501" aria-hidden="true" tabindex="-1"></a><span class="co"># join the gene info with the results</span></span>
-<span id="cb76-1502"><a href="#cb76-1502" aria-hidden="true" tabindex="-1"></a>hspc_prog_results <span class="ot">&lt;-</span> hspc_prog_results <span class="sc">|&gt;</span> </span>
-<span id="cb76-1503"><a href="#cb76-1503" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(gene_info, <span class="at">by =</span> <span class="st">"ensembl_gene_id"</span>)</span>
-<span id="cb76-1504"><a href="#cb76-1504" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1505"><a href="#cb76-1505" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1506"><a href="#cb76-1506" aria-hidden="true" tabindex="-1"></a>🎬 Save the results to a file:</span>
-<span id="cb76-1507"><a href="#cb76-1507" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1510"><a href="#cb76-1510" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1511"><a href="#cb76-1511" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(hspc_prog_results, <span class="at">file =</span> <span class="st">"results/hspc_prog_results.csv"</span>)</span>
-<span id="cb76-1512"><a href="#cb76-1512" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1513"><a href="#cb76-1513" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1516"><a href="#cb76-1516" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-1517"><a href="#cb76-1517" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb76-1518"><a href="#cb76-1518" aria-hidden="true" tabindex="-1"></a><span class="co">#---UNDER THE HOOD CODE---</span></span>
-<span id="cb76-1519"><a href="#cb76-1519" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(hspc_prog_results, </span>
-<span id="cb76-1520"><a href="#cb76-1520" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"../week-5/results/hspc_prog_results.csv"</span>)</span>
-<span id="cb76-1521"><a href="#cb76-1521" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb76-1522"><a href="#cb76-1522" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1523"><a href="#cb76-1523" aria-hidden="true" tabindex="-1"></a>Now go to <span class="co">[</span><span class="ot">Look after future you</span><span class="co">](#look-after-future-you)</span>.</span>
-<span id="cb76-1524"><a href="#cb76-1524" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1525"><a href="#cb76-1525" aria-hidden="true" tabindex="-1"></a><span class="fu"># 🤗 Look after future you! {#look-after-future-you}</span></span>
-<span id="cb76-1526"><a href="#cb76-1526" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1527"><a href="#cb76-1527" aria-hidden="true" tabindex="-1"></a>🎬 Go through you script and tidy up. You might need to :</span>
+<span id="cb76-1458"><a href="#cb76-1458" aria-hidden="true" tabindex="-1"></a>🎬 Make sure you have the **`rtracklayer`** <span class="co">[</span><span class="ot">@rtracklayer</span><span class="co">]</span> package</span>
+<span id="cb76-1459"><a href="#cb76-1459" aria-hidden="true" tabindex="-1"></a>installed. You only need to do this once, in the console, not in your</span>
+<span id="cb76-1460"><a href="#cb76-1460" aria-hidden="true" tabindex="-1"></a>script:</span>
+<span id="cb76-1461"><a href="#cb76-1461" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1464"><a href="#cb76-1464" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1465"><a href="#cb76-1465" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb76-1466"><a href="#cb76-1466" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"rtracklayer"</span>)</span>
+<span id="cb76-1467"><a href="#cb76-1467" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1468"><a href="#cb76-1468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1469"><a href="#cb76-1469" aria-hidden="true" tabindex="-1"></a>We will use <span class="in">`rtracklayer::import()`</span> rather than loading the package with</span>
+<span id="cb76-1470"><a href="#cb76-1470" aria-hidden="true" tabindex="-1"></a><span class="in">`library()`</span>. This is because **`rtracklayer`** has functions with the</span>
+<span id="cb76-1471"><a href="#cb76-1471" aria-hidden="true" tabindex="-1"></a>same names as **`dplyr`** functions, and we only need it once.</span>
+<span id="cb76-1472"><a href="#cb76-1472" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1473"><a href="#cb76-1473" aria-hidden="true" tabindex="-1"></a>🎬 Download the mouse release 116 GFF3 file into your <span class="in">`meta`</span> folder. It</span>
+<span id="cb76-1474"><a href="#cb76-1474" aria-hidden="true" tabindex="-1"></a>is about 50 MB, so we only download it if we don't already have it:</span>
+<span id="cb76-1475"><a href="#cb76-1475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1478"><a href="#cb76-1478" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1479"><a href="#cb76-1479" aria-hidden="true" tabindex="-1"></a>gff_url  <span class="ot">&lt;-</span> <span class="st">"https://ftp.ensembl.org/pub/release-116/gff3/mus_musculus/Mus_musculus.GRCm39.116.gff3.gz"</span></span>
+<span id="cb76-1480"><a href="#cb76-1480" aria-hidden="true" tabindex="-1"></a>gff_file <span class="ot">&lt;-</span> <span class="st">"meta/Mus_musculus.GRCm39.116.gff3.gz"</span></span>
+<span id="cb76-1481"><a href="#cb76-1481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1482"><a href="#cb76-1482" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">timeout =</span> <span class="dv">1800</span>)</span>
+<span id="cb76-1483"><a href="#cb76-1483" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(gff_file)) <span class="fu">download.file</span>(gff_url, gff_file, <span class="at">mode =</span> <span class="st">"wb"</span>)</span>
+<span id="cb76-1484"><a href="#cb76-1484" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1485"><a href="#cb76-1485" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1486"><a href="#cb76-1486" aria-hidden="true" tabindex="-1"></a>🎬 Import the file and extract the gene id, gene name and description</span>
+<span id="cb76-1487"><a href="#cb76-1487" aria-hidden="true" tabindex="-1"></a>for each gene:</span>
+<span id="cb76-1488"><a href="#cb76-1488" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1491"><a href="#cb76-1491" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1492"><a href="#cb76-1492" aria-hidden="true" tabindex="-1"></a>gff <span class="ot">&lt;-</span> rtracklayer<span class="sc">::</span><span class="fu">import</span>(gff_file)</span>
+<span id="cb76-1493"><a href="#cb76-1493" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1494"><a href="#cb76-1494" aria-hidden="true" tabindex="-1"></a><span class="co"># gene-level records are the ones with a gene_id</span></span>
+<span id="cb76-1495"><a href="#cb76-1495" aria-hidden="true" tabindex="-1"></a>genes <span class="ot">&lt;-</span> gff[<span class="sc">!</span><span class="fu">is.na</span>(gff<span class="sc">$</span>gene_id)]</span>
+<span id="cb76-1496"><a href="#cb76-1496" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1497"><a href="#cb76-1497" aria-hidden="true" tabindex="-1"></a>gene_info <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">ensembl_gene_id    =</span> genes<span class="sc">$</span>gene_id,</span>
+<span id="cb76-1498"><a href="#cb76-1498" aria-hidden="true" tabindex="-1"></a>                    <span class="at">external_gene_name =</span> genes<span class="sc">$</span>Name,</span>
+<span id="cb76-1499"><a href="#cb76-1499" aria-hidden="true" tabindex="-1"></a>                    <span class="at">description        =</span> genes<span class="sc">$</span>description) <span class="sc">|&gt;</span></span>
+<span id="cb76-1500"><a href="#cb76-1500" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(ensembl_gene_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb76-1501"><a href="#cb76-1501" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1502"><a href="#cb76-1502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1503"><a href="#cb76-1503" aria-hidden="true" tabindex="-1"></a>The GFF3 file contains every gene in the mouse genome, not just the ones</span>
+<span id="cb76-1504"><a href="#cb76-1504" aria-hidden="true" tabindex="-1"></a>in our data. That is fine because the join below keeps only the genes in</span>
+<span id="cb76-1505"><a href="#cb76-1505" aria-hidden="true" tabindex="-1"></a>our results.</span>
+<span id="cb76-1506"><a href="#cb76-1506" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1507"><a href="#cb76-1507" aria-hidden="true" tabindex="-1"></a>🎬 Save the gene information so you don't need to repeat the download</span>
+<span id="cb76-1508"><a href="#cb76-1508" aria-hidden="true" tabindex="-1"></a>and import next time:</span>
+<span id="cb76-1509"><a href="#cb76-1509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1512"><a href="#cb76-1512" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1513"><a href="#cb76-1513" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(gene_info, <span class="st">"meta/mouse_gene_info_e116.csv"</span>)</span>
+<span id="cb76-1514"><a href="#cb76-1514" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1515"><a href="#cb76-1515" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1516"><a href="#cb76-1516" aria-hidden="true" tabindex="-1"></a>You should view the resulting dataframe to see what information is</span>
+<span id="cb76-1517"><a href="#cb76-1517" aria-hidden="true" tabindex="-1"></a>available. You can use <span class="in">`glimpse()`</span> or <span class="in">`View()`</span>.</span>
+<span id="cb76-1518"><a href="#cb76-1518" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1519"><a href="#cb76-1519" aria-hidden="true" tabindex="-1"></a>🎬 Merge the gene information with the results:</span>
+<span id="cb76-1520"><a href="#cb76-1520" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1523"><a href="#cb76-1523" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1524"><a href="#cb76-1524" aria-hidden="true" tabindex="-1"></a><span class="co"># join the gene info with the results</span></span>
+<span id="cb76-1525"><a href="#cb76-1525" aria-hidden="true" tabindex="-1"></a>hspc_prog_results <span class="ot">&lt;-</span> hspc_prog_results <span class="sc">|&gt;</span> </span>
+<span id="cb76-1526"><a href="#cb76-1526" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(gene_info, <span class="at">by =</span> <span class="st">"ensembl_gene_id"</span>)</span>
+<span id="cb76-1527"><a href="#cb76-1527" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb76-1528"><a href="#cb76-1528" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1529"><a href="#cb76-1529" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>collect together library statements at the top of the script</span>
-<span id="cb76-1530"><a href="#cb76-1530" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>remove code that you needed to start today but which wouldn't be</span>
-<span id="cb76-1531"><a href="#cb76-1531" aria-hidden="true" tabindex="-1"></a>    needed if you were running the script from the top (e.g., importing)</span>
-<span id="cb76-1532"><a href="#cb76-1532" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>edit your comments for clarity</span>
-<span id="cb76-1533"><a href="#cb76-1533" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>rename variables for consistency or clarity</span>
-<span id="cb76-1534"><a href="#cb76-1534" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>remove house keeping or exploratory code</span>
-<span id="cb76-1535"><a href="#cb76-1535" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>restyle code, add code section headers etc</span>
-<span id="cb76-1536"><a href="#cb76-1536" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1537"><a href="#cb76-1537" aria-hidden="true" tabindex="-1"></a><span class="fu"># 🥳 Finished</span></span>
+<span id="cb76-1529"><a href="#cb76-1529" aria-hidden="true" tabindex="-1"></a>🎬 Check whether any of our genes were not found in Ensembl 116:</span>
+<span id="cb76-1530"><a href="#cb76-1530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1533"><a href="#cb76-1533" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1534"><a href="#cb76-1534" aria-hidden="true" tabindex="-1"></a>hspc_prog_results <span class="sc">|&gt;</span></span>
+<span id="cb76-1535"><a href="#cb76-1535" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>ensembl_gene_id <span class="sc">%in%</span> gene_info<span class="sc">$</span>ensembl_gene_id) <span class="sc">|&gt;</span></span>
+<span id="cb76-1536"><a href="#cb76-1536" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nrow</span>()</span>
+<span id="cb76-1537"><a href="#cb76-1537" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb76-1538"><a href="#cb76-1538" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1539"><a href="#cb76-1539" aria-hidden="true" tabindex="-1"></a>Well Done!</span>
-<span id="cb76-1540"><a href="#cb76-1540" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1541"><a href="#cb76-1541" aria-hidden="true" tabindex="-1"></a><span class="fu"># Independent study following the workshop</span></span>
-<span id="cb76-1542"><a href="#cb76-1542" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1543"><a href="#cb76-1543" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Consolidate</span><span class="co">](study_after_workshop.qmd)</span></span>
-<span id="cb76-1544"><a href="#cb76-1544" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1545"><a href="#cb76-1545" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Code file</span></span>
-<span id="cb76-1546"><a href="#cb76-1546" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1547"><a href="#cb76-1547" aria-hidden="true" tabindex="-1"></a>These contain all the code needed in the workshop even where it is not</span>
-<span id="cb76-1548"><a href="#cb76-1548" aria-hidden="true" tabindex="-1"></a>visible on the webpage.</span>
+<span id="cb76-1539"><a href="#cb76-1539" aria-hidden="true" tabindex="-1"></a>Genes that don't have a name in Ensembl will have <span class="in">`NA`</span> in</span>
+<span id="cb76-1540"><a href="#cb76-1540" aria-hidden="true" tabindex="-1"></a><span class="in">`external_gene_name`</span>, just as they would from BioMart.</span>
+<span id="cb76-1541"><a href="#cb76-1541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1542"><a href="#cb76-1542" aria-hidden="true" tabindex="-1"></a>🎬 Save the results to a file:</span>
+<span id="cb76-1543"><a href="#cb76-1543" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1546"><a href="#cb76-1546" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1547"><a href="#cb76-1547" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(hspc_prog_results, <span class="at">file =</span> <span class="st">"results/hspc_prog_results.csv"</span>)</span>
+<span id="cb76-1548"><a href="#cb76-1548" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb76-1549"><a href="#cb76-1549" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1550"><a href="#cb76-1550" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">workshop.qmd</span><span class="co">](workshop.qmd)</span> file is the file I use to compile the</span>
-<span id="cb76-1551"><a href="#cb76-1551" aria-hidden="true" tabindex="-1"></a>practical. Qmd stands for Quarto markdown. It allows code and ordinary</span>
-<span id="cb76-1552"><a href="#cb76-1552" aria-hidden="true" tabindex="-1"></a>text to be interleaved to produce well-formatted reports including</span>
-<span id="cb76-1553"><a href="#cb76-1553" aria-hidden="true" tabindex="-1"></a>webpages. View the source code for this workshop using the <span class="in">`&lt;/&gt; Code`</span></span>
-<span id="cb76-1554"><a href="#cb76-1554" aria-hidden="true" tabindex="-1"></a>button at the top of the page. Coding and thinking answers are marked</span>
-<span id="cb76-1555"><a href="#cb76-1555" aria-hidden="true" tabindex="-1"></a>with <span class="in">`#---CODING ANSWER---`</span> and <span class="in">`#---THINKING ANSWER---`</span></span>
-<span id="cb76-1556"><a href="#cb76-1556" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1557"><a href="#cb76-1557" aria-hidden="true" tabindex="-1"></a>Pages made with R <span class="co">[</span><span class="ot">@R-core</span><span class="co">]</span>, Quarto <span class="co">[</span><span class="ot">@Allaire_Quarto_2024</span><span class="co">]</span>, <span class="in">`knitr`</span></span>
-<span id="cb76-1558"><a href="#cb76-1558" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@knitr1; @knitr2; @knitr3</span><span class="co">]</span>, <span class="in">`kableExtra`</span> <span class="co">[</span><span class="ot">@kableExtra</span><span class="co">]</span></span>
-<span id="cb76-1559"><a href="#cb76-1559" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-1560"><a href="#cb76-1560" aria-hidden="true" tabindex="-1"></a><span class="fu"># References</span></span>
+<span id="cb76-1552"><a href="#cb76-1552" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-1553"><a href="#cb76-1553" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb76-1554"><a href="#cb76-1554" aria-hidden="true" tabindex="-1"></a><span class="co">#---UNDER THE HOOD CODE---</span></span>
+<span id="cb76-1555"><a href="#cb76-1555" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(hspc_prog_results, </span>
+<span id="cb76-1556"><a href="#cb76-1556" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"../week-5/results/hspc_prog_results.csv"</span>)</span>
+<span id="cb76-1557"><a href="#cb76-1557" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-1558"><a href="#cb76-1558" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1559"><a href="#cb76-1559" aria-hidden="true" tabindex="-1"></a>Now go to <span class="co">[</span><span class="ot">Look after future you</span><span class="co">](#look-after-future-you)</span>.</span>
+<span id="cb76-1560"><a href="#cb76-1560" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1561"><a href="#cb76-1561" aria-hidden="true" tabindex="-1"></a><span class="fu"># 🤗 Look after future you! {#look-after-future-you}</span></span>
+<span id="cb76-1562"><a href="#cb76-1562" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1563"><a href="#cb76-1563" aria-hidden="true" tabindex="-1"></a>🎬 Go through you script and tidy up. You might need to :</span>
+<span id="cb76-1564"><a href="#cb76-1564" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1565"><a href="#cb76-1565" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>collect together library statements at the top of the script</span>
+<span id="cb76-1566"><a href="#cb76-1566" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>remove code that you needed to start today but which wouldn't be</span>
+<span id="cb76-1567"><a href="#cb76-1567" aria-hidden="true" tabindex="-1"></a>    needed if you were running the script from the top (e.g., importing)</span>
+<span id="cb76-1568"><a href="#cb76-1568" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>edit your comments for clarity</span>
+<span id="cb76-1569"><a href="#cb76-1569" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>rename variables for consistency or clarity</span>
+<span id="cb76-1570"><a href="#cb76-1570" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>remove house keeping or exploratory code</span>
+<span id="cb76-1571"><a href="#cb76-1571" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>restyle code, add code section headers etc</span>
+<span id="cb76-1572"><a href="#cb76-1572" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1573"><a href="#cb76-1573" aria-hidden="true" tabindex="-1"></a><span class="fu"># 🥳 Finished</span></span>
+<span id="cb76-1574"><a href="#cb76-1574" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1575"><a href="#cb76-1575" aria-hidden="true" tabindex="-1"></a>Well Done!</span>
+<span id="cb76-1576"><a href="#cb76-1576" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1577"><a href="#cb76-1577" aria-hidden="true" tabindex="-1"></a><span class="fu"># Independent study following the workshop</span></span>
+<span id="cb76-1578"><a href="#cb76-1578" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1579"><a href="#cb76-1579" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Consolidate</span><span class="co">](study_after_workshop.qmd)</span></span>
+<span id="cb76-1580"><a href="#cb76-1580" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1581"><a href="#cb76-1581" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Code file</span></span>
+<span id="cb76-1582"><a href="#cb76-1582" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1583"><a href="#cb76-1583" aria-hidden="true" tabindex="-1"></a>These contain all the code needed in the workshop even where it is not</span>
+<span id="cb76-1584"><a href="#cb76-1584" aria-hidden="true" tabindex="-1"></a>visible on the webpage.</span>
+<span id="cb76-1585"><a href="#cb76-1585" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1586"><a href="#cb76-1586" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">workshop.qmd</span><span class="co">](workshop.qmd)</span> file is the file I use to compile the</span>
+<span id="cb76-1587"><a href="#cb76-1587" aria-hidden="true" tabindex="-1"></a>practical. Qmd stands for Quarto markdown. It allows code and ordinary</span>
+<span id="cb76-1588"><a href="#cb76-1588" aria-hidden="true" tabindex="-1"></a>text to be interleaved to produce well-formatted reports including</span>
+<span id="cb76-1589"><a href="#cb76-1589" aria-hidden="true" tabindex="-1"></a>webpages. View the source code for this workshop using the <span class="in">`&lt;/&gt; Code`</span></span>
+<span id="cb76-1590"><a href="#cb76-1590" aria-hidden="true" tabindex="-1"></a>button at the top of the page. Coding and thinking answers are marked</span>
+<span id="cb76-1591"><a href="#cb76-1591" aria-hidden="true" tabindex="-1"></a>with <span class="in">`#---CODING ANSWER---`</span> and <span class="in">`#---THINKING ANSWER---`</span></span>
+<span id="cb76-1592"><a href="#cb76-1592" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1593"><a href="#cb76-1593" aria-hidden="true" tabindex="-1"></a>Pages made with R <span class="co">[</span><span class="ot">@R-core</span><span class="co">]</span>, Quarto <span class="co">[</span><span class="ot">@Allaire_Quarto_2024</span><span class="co">]</span>, <span class="in">`knitr`</span></span>
+<span id="cb76-1594"><a href="#cb76-1594" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@knitr1; @knitr2; @knitr3</span><span class="co">]</span>, <span class="in">`kableExtra`</span> <span class="co">[</span><span class="ot">@kableExtra</span><span class="co">]</span></span>
+<span id="cb76-1595"><a href="#cb76-1595" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-1596"><a href="#cb76-1596" aria-hidden="true" tabindex="-1"></a><span class="fu"># References</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
