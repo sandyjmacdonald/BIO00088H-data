@@ -10,6 +10,7 @@ name: Render and deploy Book
 jobs:
   build-deploy:
     runs-on: ubuntu-24.04
+    timeout-minutes: 60
     permissions:
       contents: write
     env:

@@ -1127,7 +1127,20 @@ datasets
 🎬 List the Ensembl "marts" available:
 
 ```{r}
+#| eval: false
 listEnsemblGenomes()
+```
+
+```
+              biomart                        version
+1       protists_mart      Ensembl Protists Genes 63
+2 protists_variations Ensembl Protists Variations 63
+3          fungi_mart         Ensembl Fungi Genes 63
+4    fungi_variations    Ensembl Fungi Variations 63
+5        metazoa_mart       Ensembl Metazoa Genes 63
+6  metazoa_variations  Ensembl Metazoa Variations 63
+7         plants_mart        Ensembl Plants Genes 63
+8   plants_variations   Ensembl Plants Variations 63
 ```
 
 `plants_mart` looks like the one we want. We can see what genomes are
@@ -1137,8 +1150,16 @@ available with names like "Arabidopsis" in this mart using the
 🎬
 
 ```{r}
+#| eval: false
 searchDatasets(useEnsemblGenomes(biomart = "plants_mart"), 
                pattern = "Arabidopsis")
+```
+
+```
+             dataset                         description version
+7   ahalleri_eg_gene Arabidopsis halleri genes (Ahal2.2) Ahal2.2
+11   alyrata_eg_gene    Arabidopsis lyrata genes (v.1.0)   v.1.0
+42 athaliana_eg_gene Arabidopsis thaliana genes (TAIR10)  TAIR10
 ```
 
 `athaliana_eg_gene` is the Arabidopsis thaliana genes (TAIR10) dataset
