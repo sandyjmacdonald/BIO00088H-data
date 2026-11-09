@@ -1093,7 +1093,7 @@ hspc_prog_results <- hspc_prog_results |>
 
 ```
 
-Now go to [Add gene information](#stem-add-info).
+Now go to [Add gene information](#stem-cells-add-info).
 
 # Add gene information
 
@@ -1274,64 +1274,66 @@ are web-based tools to use these but the R package **`biomaRt`**
 [@biomaRt1; @biomaRt2] gives you programmatic access making it easier to
 integrate information into R dataframes.
 
-*Note:* EBI announced in summer 2026 that they were effectively freezing BioMart 
-in its current form before moving to a new platform. This means that access to 
-historical data sets will remain, but newer versions will not be accessible 
-through it. Practically, that means that the way you access the data has
-changed slightly, and the updated instructions are below.
+*Note:* EBI announced in summer 2026 that BioMart is frozen at Ensembl
+release 116 and will not move to the new Ensembl platform. The vertebrate
+BioMart server is also frequently unresponsive. Instead of querying
+BioMart, we will get the same gene information directly from Ensembl's
+release 116 annotation file (GFF3), which is a static download from the
+Ensembl FTP site. This gives the same gene names and descriptions that
+BioMart 116 would return, and once downloaded it works offline.
 
-🎬 Load the **`biomaRt`** [@biomaRt1; @biomaRt2] package:
-
-```{r}
-#| eval: false
-library(biomaRt)
-```
-
-🎬 Connect to the mouse database
-
-```{r}
-# Connect to the mouse database
-
-ensembl <- useEnsembl(biomart = "genes",
-                      dataset = "mmusculus_gene_ensembl",
-                      version = 116)
-```
-
-🎬 See information we can retrieve:
+🎬 Make sure you have the **`rtracklayer`** [@rtracklayer] package
+installed. You only need to do this once, in the console, not in your
+script:
 
 ```{r}
 #| eval: false
-# See what information we can retrieve
-listAttributes(mart = ensembl) |> View()
-
+BiocManager::install("rtracklayer")
 ```
 
-There are many (\~3000!) possible bits of information (attributes) that
-can be obtained.
+We will use `rtracklayer::import()` rather than loading the package with
+`library()`. This is because **`rtracklayer`** has functions with the
+same names as **`dplyr`** functions, and we only need it once.
 
-We use the `getBM()` function to retrieve information from the database.
-The `filters` argument is used to specified what kind of identifier we
-are supplying in `values` to retrieve information. The `attributes`
-argument is used to select the information we want to retrieve. The
-`values` argument is used to specify the identifiers. The mart argument
-is used to specify the connection we created.
-
-🎬 Get the the gene name and a description. We also retrieve the gene id
-so we can later join the information with the results:
+🎬 Download the mouse release 116 GFF3 file into your `meta` folder. It
+is about 50 MB, so we only download it if we don't already have it:
 
 ```{r}
-gene_info <- getBM(filters = "ensembl_gene_id",
-                   attributes = c("ensembl_gene_id",
-                                  "external_gene_name",
-                                  "description"),
-                   values = hspc_prog_results$ensembl_gene_id,
-                   mart = ensembl)
+gff_url  <- "https://ftp.ensembl.org/pub/release-116/gff3/mus_musculus/Mus_musculus.GRCm39.116.gff3.gz"
+gff_file <- "meta/Mus_musculus.GRCm39.116.gff3.gz"
+
+options(timeout = 1800)
+if (!file.exists(gff_file)) download.file(gff_url, gff_file, mode = "wb")
+```
+
+🎬 Import the file and extract the gene id, gene name and description
+for each gene:
+
+```{r}
+gff <- rtracklayer::import(gff_file)
+
+# gene-level records are the ones with a gene_id
+genes <- gff[!is.na(gff$gene_id)]
+
+gene_info <- tibble(ensembl_gene_id    = genes$gene_id,
+                    external_gene_name = genes$Name,
+                    description        = genes$description) |>
+  distinct(ensembl_gene_id, .keep_all = TRUE)
+```
+
+The GFF3 file contains every gene in the mouse genome, not just the ones
+in our data. That is fine because the join below keeps only the genes in
+our results.
+
+🎬 Save the gene information so you don't need to repeat the download
+and import next time:
+
+```{r}
+write_csv(gene_info, "meta/mouse_gene_info_e116.csv")
 ```
 
 You should view the resulting dataframe to see what information is
-available. You can use `glimpse()` or `View()`. Notice the dataframe
-returned only has `r nrow(gene_info)` rows - one of the ids does not
-have information.
+available. You can use `glimpse()` or `View()`.
 
 🎬 Merge the gene information with the results:
 
@@ -1340,6 +1342,17 @@ have information.
 hspc_prog_results <- hspc_prog_results |> 
   left_join(gene_info, by = "ensembl_gene_id")
 ```
+
+🎬 Check whether any of our genes were not found in Ensembl 116:
+
+```{r}
+hspc_prog_results |>
+  filter(!ensembl_gene_id %in% gene_info$ensembl_gene_id) |>
+  nrow()
+```
+
+Genes that don't have a name in Ensembl will have `NA` in
+`external_gene_name`, just as they would from BioMart.
 
 🎬 Save the results to a file:
 
